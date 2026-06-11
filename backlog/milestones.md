@@ -814,6 +814,9 @@ Add high-pressure entities, equation-of-state hook, synthetic benchmark, residua
 
 ## M29 Sequential and parametric workflow foundation
 
+- Status: Closed
+- Closed: 2026-06-11
+- Closed by: Batch E subagent execution
 - Phase: Workflow
 - Priority: P1
 - Issues: #168, #169, #170, #171, #172, #173, #174, #175, #176, #177, #178, #179, #180, #181, #182
@@ -830,19 +833,28 @@ Implement sequential/parametric study execution, parameter evolution tables, and
 - workflow validation examples
 
 ### Acceptance criteria
-- [ ] Sequential studies run deterministically on synthetic series.
-- [ ] Parameter evolution tables include units, uncertainties, and provenance.
-- [ ] Workflow recipes are scriptable and replayable.
+- [x] Sequential studies run deterministically on synthetic series.
+- [x] Parameter evolution tables include units, uncertainties, and provenance.
+- [x] Workflow recipes are scriptable and replayable.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/batch_e_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## M30 AI tool-grounded refinement foundation
 
+- Status: Closed
+- Closed: 2026-06-11
+- Closed by: Batch E subagent execution
 - Phase: AI
 - Priority: P1
 - Issues: #183, #184, #185, #186, #187, #188, #189, #190, #191, #192, #193, #194, #195, #196, #197, #198, #199, #200, #201, #202
@@ -859,19 +871,28 @@ Implement deterministic tool contracts, agent diagnostics, rollback-aware planni
 - AI evaluation tasks
 
 ### Acceptance criteria
-- [ ] Every AI action maps to a deterministic tool call.
-- [ ] Agent logs are replayable without the LLM.
-- [ ] Safety tests cover nonphysical and overfitting scenarios.
+- [x] Every AI action maps to a deterministic tool call.
+- [x] Agent logs are replayable without the LLM.
+- [x] Safety tests cover nonphysical and overfitting scenarios.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/batch_e_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## M31 Desktop and web UX foundation
 
+- Status: Closed
+- Closed: 2026-06-11
+- Closed by: Batch E subagent execution
 - Phase: UX
 - Priority: P1
 - Issues: #203, #204, #205, #206, #207, #208, #209, #210, #211, #212, #213, #214, #215, #216, #217, #218, #219, #220, #221, #222
@@ -889,19 +910,28 @@ Build the first desktop/web user experience for import, visualization, parameter
 - report export
 
 ### Acceptance criteria
-- [ ] Core workflows are accessible from GUI and script API.
-- [ ] GUI actions emit provenance events.
-- [ ] UX tests cover import-through-simple-refinement path.
+- [x] Core workflows are accessible from GUI and script API.
+- [x] GUI actions emit provenance events.
+- [x] UX tests cover import-through-simple-refinement path.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/batch_e_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## M32 Visualization and diagnostics foundation
 
+- Status: Closed
+- Closed: 2026-06-11
+- Closed by: Batch E subagent execution
 - Phase: UX
 - Priority: P1
 - Issues: #223, #224, #225, #226, #227, #228, #229, #230, #231, #232
@@ -918,19 +948,28 @@ Implement core visual diagnostics for profiles, correlations, residuals, sequent
 - sequential dashboards
 
 ### Acceptance criteria
-- [ ] Visual data payloads are testable without rendering.
-- [ ] Plots distinguish observed, calculated, difference, and phase ticks.
-- [ ] Correlation and residual warnings are linked to parameters.
+- [x] Visual data payloads are testable without rendering.
+- [x] Plots distinguish observed, calculated, difference, and phase ticks.
+- [x] Correlation and residual warnings are linked to parameters.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/batch_e_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## M33 HPC and cloud execution foundation
 
+- Status: Closed
+- Closed: 2026-06-11
+- Closed by: Batch E subagent execution
 - Phase: HPC
 - Priority: P1
 - Issues: #233, #234, #235, #236, #237, #238, #239, #240, #241, #242, #243, #244, #245, #246, #247
@@ -948,16 +987,22 @@ Implement local, Slurm, Dask/Ray, Kubernetes, and result-store execution foundat
 - result store
 
 ### Acceptance criteria
-- [ ] Local batch execution handles synthetic ensembles.
-- [ ] Scheduler adapters have fake/local tests.
-- [ ] Result records are reproducible and portable.
+- [x] Local batch execution handles synthetic ensembles.
+- [x] Scheduler adapters have fake/local tests.
+- [x] Result records are reproducible and portable.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/batch_e_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## M34 Validation and testing baseline
 

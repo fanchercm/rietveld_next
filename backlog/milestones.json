@@ -1118,7 +1118,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-11",
+    "closed_by": "Batch E subagent execution",
+    "closure_evidence": [
+      "docs/batch_e_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
   },
   {
     "id": "M30",
@@ -1172,7 +1179,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-11",
+    "closed_by": "Batch E subagent execution",
+    "closure_evidence": [
+      "docs/batch_e_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
   },
   {
     "id": "M31",
@@ -1227,7 +1241,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-11",
+    "closed_by": "Batch E subagent execution",
+    "closure_evidence": [
+      "docs/batch_e_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
   },
   {
     "id": "M32",
@@ -1270,7 +1291,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-11",
+    "closed_by": "Batch E subagent execution",
+    "closure_evidence": [
+      "docs/batch_e_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
   },
   {
     "id": "M33",
@@ -1318,7 +1346,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-11",
+    "closed_by": "Batch E subagent execution",
+    "closure_evidence": [
+      "docs/batch_e_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
   },
   {
     "id": "M34",

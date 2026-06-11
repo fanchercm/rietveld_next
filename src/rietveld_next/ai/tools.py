@@ -11,6 +11,59 @@ ToolHandler = Callable[[Mapping[str, Any]], Mapping[str, Any]]
 
 
 @dataclass(frozen=True)
+class ToolField:
+    """Field metadata for an AI-callable deterministic tool contract.
+
+    Args:
+        name: Stable field name.
+        field_type: Human-readable scalar or structured type name.
+        description: Short field purpose.
+        required: Whether the field is required in the payload.
+        unit: Scientific unit when the value has dimensional meaning.
+        bounds: Optional inclusive numeric bounds.
+
+    Raises:
+        ValueError: If names, type labels, units, or bounds are invalid.
+    """
+
+    name: str
+    field_type: str
+    description: str
+    required: bool = True
+    unit: str | None = None
+    bounds: tuple[float | None, float | None] | None = None
+
+    def __post_init__(self) -> None:
+        if not self.name:
+            raise ValueError("ToolField.name must be non-empty")
+        if not self.field_type:
+            raise ValueError("ToolField.field_type must be non-empty")
+        if not self.description:
+            raise ValueError("ToolField.description must be non-empty")
+        if self.unit is not None and not self.unit:
+            raise ValueError("ToolField.unit must be non-empty when provided")
+        if self.bounds is not None:
+            lower, upper = self.bounds
+            if lower is not None and upper is not None and lower > upper:
+                raise ValueError("ToolField.bounds lower value cannot exceed upper value")
+
+    def to_schema(self) -> Mapping[str, Any]:
+        """Return a JSON-like schema payload for this field."""
+
+        payload: dict[str, Any] = {
+            "name": self.name,
+            "type": self.field_type,
+            "description": self.description,
+            "required": self.required,
+        }
+        if self.unit is not None:
+            payload["unit"] = self.unit
+        if self.bounds is not None:
+            payload["bounds"] = self.bounds
+        return MappingProxyType(payload)
+
+
+@dataclass(frozen=True)
 class ToolContract:
     """Schema-like contract for an AI-callable deterministic tool."""
 
@@ -18,14 +71,50 @@ class ToolContract:
     input_fields: tuple[str, ...]
     output_fields: tuple[str, ...]
     description: str
+    version: str = "1"
+    input_schema: tuple[ToolField, ...] = ()
+    output_schema: tuple[ToolField, ...] = ()
+    mutates_state: bool = False
+    requires_approval: bool = False
 
     def __post_init__(self) -> None:
         if not self.name:
             raise ValueError("ToolContract.name must be non-empty")
         if not self.description:
             raise ValueError("ToolContract.description must be non-empty")
+        if not self.version:
+            raise ValueError("ToolContract.version must be non-empty")
         _validate_field_names("input_fields", self.input_fields)
         _validate_field_names("output_fields", self.output_fields)
+        _validate_unique("input_fields", self.input_fields)
+        _validate_unique("output_fields", self.output_fields)
+        _validate_schema_names("input_schema", self.input_schema, self.input_fields)
+        _validate_schema_names("output_schema", self.output_schema, self.output_fields)
+        object.__setattr__(
+            self,
+            "input_schema",
+            _complete_schema(self.input_schema, self.input_fields, "input"),
+        )
+        object.__setattr__(
+            self,
+            "output_schema",
+            _complete_schema(self.output_schema, self.output_fields, "output"),
+        )
+
+    def to_schema(self) -> Mapping[str, Any]:
+        """Return a deterministic JSON-like contract payload."""
+
+        return MappingProxyType(
+            {
+                "name": self.name,
+                "version": self.version,
+                "description": self.description,
+                "inputs": tuple(field.to_schema() for field in self.input_schema),
+                "outputs": tuple(field.to_schema() for field in self.output_schema),
+                "mutates_state": self.mutates_state,
+                "requires_approval": self.requires_approval,
+            }
+        )
 
 
 @dataclass(frozen=True)
@@ -64,6 +153,21 @@ class ActionLogEntry:
         if self.output is not None:
             object.__setattr__(self, "output", MappingProxyType(dict(self.output)))
 
+    def to_payload(self) -> Mapping[str, Any]:
+        """Return a deterministic viewer/replay payload for this log entry."""
+
+        payload: dict[str, Any] = {
+            "sequence": self.sequence,
+            "tool": self.tool,
+            "inputs": dict(self.inputs),
+            "status": self.status,
+        }
+        if self.output is not None:
+            payload["output"] = dict(self.output)
+        if self.error is not None:
+            payload["error"] = self.error
+        return MappingProxyType(payload)
+
 
 class ToolRegistry:
     """Registry that exposes only deterministic tools to AI agents."""
@@ -78,6 +182,12 @@ class ToolRegistry:
         """Immutable action log for audit and replay diagnostics."""
 
         return tuple(self._log)
+
+    @property
+    def contracts(self) -> Mapping[str, ToolContract]:
+        """Immutable mapping of registered tool contracts."""
+
+        return MappingProxyType(dict(self._contracts))
 
     def register(self, contract: ToolContract, handler: ToolHandler) -> None:
         """Register a deterministic tool handler.
@@ -97,6 +207,11 @@ class ToolRegistry:
             raise TypeError("handler must be callable")
         self._contracts[contract.name] = contract
         self._handlers[contract.name] = handler
+
+    def contract_schema(self) -> tuple[Mapping[str, Any], ...]:
+        """Return registered contracts sorted by tool name for stable display."""
+
+        return tuple(self._contracts[name].to_schema() for name in sorted(self._contracts))
 
     def call_tool(self, name: str, payload: Mapping[str, Any]) -> ToolCallResult:
         """Call a registered deterministic tool and record an action log entry."""
@@ -172,3 +287,26 @@ def _validate_field_names(label: str, fields: Sequence[str]) -> None:
     for field in fields:
         if not field:
             raise ValueError(f"ToolContract.{label} entries must be non-empty")
+
+
+def _validate_unique(label: str, fields: Sequence[str]) -> None:
+    seen: set[str] = set()
+    for field in fields:
+        if field in seen:
+            raise ValueError(f"ToolContract.{label} contains duplicate field '{field}'")
+        seen.add(field)
+
+
+def _validate_schema_names(label: str, schema: Sequence[ToolField], fields: Sequence[str]) -> None:
+    allowed = set(fields)
+    for field in schema:
+        if field.name not in allowed:
+            raise ValueError(f"ToolContract.{label} field '{field.name}' is not declared")
+
+
+def _complete_schema(schema: Sequence[ToolField], fields: Sequence[str], direction: str) -> tuple[ToolField, ...]:
+    by_name = {field.name: field for field in schema}
+    return tuple(
+        by_name.get(field, ToolField(name=field, field_type="json", description=f"Required {direction} field `{field}`."))
+        for field in fields
+    )

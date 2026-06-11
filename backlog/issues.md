@@ -4618,6 +4618,9 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD documentation 
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4634,16 +4637,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement sequential runner` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement sequential runner` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #169: Implement sequential result table
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4660,16 +4676,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement sequential result table` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement sequential result table` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #170: Implement previous-point initialization
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4686,16 +4715,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement previous-point initialization` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement previous-point initialization` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #171: Implement failed-point retry policy
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4712,16 +4754,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement failed-point retry policy` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement failed-point retry policy` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #172: Implement parameter evolution export
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4738,16 +4793,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement parameter evolution export` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement parameter evolution export` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #173: Implement parametric model expression API
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4764,16 +4832,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement parametric model expression API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement parametric model expression API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #174: Implement temperature-dependent parameter model
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4790,16 +4871,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement temperature-dependent parameter model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement temperature-dependent parameter model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #175: Implement pressure-dependent parameter model
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4816,16 +4910,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement pressure-dependent parameter model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement pressure-dependent parameter model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #176: Implement sequential dashboard data API
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4842,16 +4949,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement sequential dashboard data API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement sequential dashboard data API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #177: Implement residual heatmap data export
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4868,16 +4988,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement residual heatmap data export` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement residual heatmap data export` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #178: Implement batch recipe format
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4894,16 +5027,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement batch recipe format` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement batch recipe format` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #179: Implement workflow replay command
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4920,16 +5066,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement workflow replay command` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement workflow replay command` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #180: Implement workflow checkpointing
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4946,16 +5105,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement workflow checkpointing` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement workflow checkpointing` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #181: Implement workflow comparison report
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4972,16 +5144,29 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement workflow comparison report` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement workflow comparison report` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #182: Implement high-throughput result summary
 
 - **Category:** Sequential and Parametric Workflows
 - **Phase:** Workflows
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** sequential-and-parametric-workflows, workflows, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##101, ##121
@@ -4998,12 +5183,21 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement high-throughput result summary` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Implementation or document for `Implement high-throughput result summary` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
 
+**Closure evidence**
+
+- `src/rietveld_next/workflows/`
+- `src/rietveld_next/workflows/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## AI and Agents
 
@@ -5011,6 +5205,9 @@ Deliver a granular, testable increment for Sequential and Parametric Workflows: 
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, design
 - **Dependencies:** ##1, ##136, ##181
@@ -5027,18 +5224,31 @@ Deliver a granular, testable increment for AI and Agents: Define AI tool contrac
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Define AI tool contract schema` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Define AI tool contract schema` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #184: Implement run_refinement tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5055,18 +5265,31 @@ Deliver a granular, testable increment for AI and Agents: Implement run_refineme
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement run_refinement tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement run_refinement tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #185: Implement diagnose_residuals tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5083,18 +5306,31 @@ Deliver a granular, testable increment for AI and Agents: Implement diagnose_res
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement diagnose_residuals tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement diagnose_residuals tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #186: Implement set_refinement_flags tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5111,18 +5347,31 @@ Deliver a granular, testable increment for AI and Agents: Implement set_refineme
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement set_refinement_flags tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement set_refinement_flags tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #187: Implement rollback tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5139,18 +5388,31 @@ Deliver a granular, testable increment for AI and Agents: Implement rollback too
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement rollback tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement rollback tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #188: Implement freeze_parameter tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5167,18 +5429,31 @@ Deliver a granular, testable increment for AI and Agents: Implement freeze_param
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement freeze_parameter tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement freeze_parameter tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #189: Implement add_constraint tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5195,18 +5470,31 @@ Deliver a granular, testable increment for AI and Agents: Implement add_constrai
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement add_constraint tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement add_constraint tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #190: Implement compare_models tool wrapper
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5223,18 +5511,31 @@ Deliver a granular, testable increment for AI and Agents: Implement compare_mode
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement compare_models tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement compare_models tool wrapper` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #191: Implement strategy rule engine v0
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5251,18 +5552,31 @@ Deliver a granular, testable increment for AI and Agents: Implement strategy rul
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement strategy rule engine v0` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement strategy rule engine v0` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #192: Implement nonphysical solution detector
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5279,18 +5593,31 @@ Deliver a granular, testable increment for AI and Agents: Implement nonphysical 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement nonphysical solution detector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement nonphysical solution detector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #193: Implement overfitting detector
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5307,18 +5634,31 @@ Deliver a granular, testable increment for AI and Agents: Implement overfitting 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement overfitting detector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement overfitting detector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #194: Implement residual pattern classifier skeleton
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5335,18 +5675,31 @@ Deliver a granular, testable increment for AI and Agents: Implement residual pat
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement residual pattern classifier skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement residual pattern classifier skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #195: Implement agent action log viewer
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5363,18 +5716,31 @@ Deliver a granular, testable increment for AI and Agents: Implement agent action
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement agent action log viewer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement agent action log viewer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #196: Implement scientific copilot report generator
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5391,18 +5757,31 @@ Deliver a granular, testable increment for AI and Agents: Implement scientific c
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement scientific copilot report generator` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement scientific copilot report generator` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #197: Implement AI safety policy checks
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5419,18 +5798,31 @@ Deliver a granular, testable increment for AI and Agents: Implement AI safety po
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement AI safety policy checks` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement AI safety policy checks` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #198: Implement AI evaluation benchmark suite
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5447,18 +5839,31 @@ Deliver a granular, testable increment for AI and Agents: Implement AI evaluatio
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement AI evaluation benchmark suite` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement AI evaluation benchmark suite` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #199: Implement prompt injection regression tests
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5475,18 +5880,31 @@ Deliver a granular, testable increment for AI and Agents: Implement prompt injec
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement prompt injection regression tests` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement prompt injection regression tests` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #200: Implement human approval checkpoint mechanism
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5503,18 +5921,31 @@ Deliver a granular, testable increment for AI and Agents: Implement human approv
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement human approval checkpoint mechanism` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement human approval checkpoint mechanism` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #201: Implement knowledge-base citation model
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5531,18 +5962,31 @@ Deliver a granular, testable increment for AI and Agents: Implement knowledge-ba
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement knowledge-base citation model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement knowledge-base citation model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #202: Implement autonomous recipe planner v0
 
 - **Category:** AI and Agents
 - **Phase:** AI
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** ai-and-agents, ai, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##136, ##181
@@ -5559,14 +6003,23 @@ Deliver a granular, testable increment for AI and Agents: Implement autonomous r
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement autonomous recipe planner v0` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
-- [ ] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
+- [x] Implementation or document for `Implement autonomous recipe planner v0` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Agent-facing behavior is tool-grounded, logged, and replayable without relying on hidden LLM state.
+- [x] Unsafe or unsupported automated actions fail closed with a clear diagnostic.
 
+**Closure evidence**
+
+- `src/rietveld_next/ai/`
+- `src/rietveld_next/ai/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## UX Desktop and Web
 
@@ -5574,6 +6027,9 @@ Deliver a granular, testable increment for AI and Agents: Implement autonomous r
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5590,18 +6046,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement desktop
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement desktop shell src layout` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement desktop shell src layout` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #204: Implement project open screen
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5618,18 +6087,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement project
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement project open screen` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement project open screen` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #205: Implement data import screen
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5646,18 +6128,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement data im
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement data import screen` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement data import screen` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #206: Implement CIF validation screen
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5674,18 +6169,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement CIF val
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement CIF validation screen` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement CIF validation screen` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #207: Implement pattern viewer
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5702,18 +6210,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement pattern
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement pattern viewer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement pattern viewer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #208: Implement reflection tick overlay
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5730,18 +6251,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement reflect
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement reflection tick overlay` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement reflection tick overlay` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #209: Implement difference plot panel
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5758,18 +6292,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement differe
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement difference plot panel` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement difference plot panel` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #210: Implement parameter table
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5786,18 +6333,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement paramet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement parameter table` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement parameter table` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #211: Implement parameter graph view
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5814,18 +6374,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement paramet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement parameter graph view` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement parameter graph view` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #212: Implement constraint editor
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5842,18 +6415,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement constra
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement constraint editor` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement constraint editor` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #213: Implement correlation heatmap
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5870,18 +6456,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement correla
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement correlation heatmap` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement correlation heatmap` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #214: Implement covariance detail view
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5898,18 +6497,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement covaria
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement covariance detail view` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement covariance detail view` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #215: Implement sequential dashboard
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5926,18 +6538,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement sequent
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement sequential dashboard` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement sequential dashboard` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #216: Implement residual diagnostics panel
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5954,18 +6579,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement residua
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement residual diagnostics panel` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement residual diagnostics panel` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #217: Implement refinement recipe wizard
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -5982,18 +6620,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement refinem
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement refinement recipe wizard` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement refinement recipe wizard` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #218: Implement beginner guided workflow
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6010,18 +6661,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement beginne
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement beginner guided workflow` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement beginner guided workflow` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #219: Implement expert mode toggle
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6038,18 +6702,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement expert 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement expert mode toggle` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement expert mode toggle` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #220: Implement report export UI
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6066,18 +6743,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement report 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement report export UI` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement report export UI` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #221: Implement provenance timeline UI
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6094,18 +6784,31 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement provena
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement provenance timeline UI` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement provenance timeline UI` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #222: Implement keyboard command palette
 
 - **Category:** UX Desktop and Web
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** ux-desktop-and-web, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6122,14 +6825,23 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement keyboar
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement keyboard command palette` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement keyboard command palette` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
 
+**Closure evidence**
+
+- `src/rietveld_next/desktop/`
+- `src/rietveld_next/desktop/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## Visualization
 
@@ -6137,6 +6849,9 @@ Deliver a granular, testable increment for UX Desktop and Web: Implement keyboar
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6153,18 +6868,31 @@ Deliver a granular, testable increment for Visualization: Implement profile plot
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement profile plot data model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement profile plot data model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #224: Implement multi-bank plot aggregation
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6181,18 +6909,31 @@ Deliver a granular, testable increment for Visualization: Implement multi-bank p
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement multi-bank plot aggregation` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement multi-bank plot aggregation` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #225: Implement residual heatmap renderer
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6209,18 +6950,31 @@ Deliver a granular, testable increment for Visualization: Implement residual hea
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement residual heatmap renderer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement residual heatmap renderer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #226: Implement parameter evolution chart data
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6237,18 +6991,31 @@ Deliver a granular, testable increment for Visualization: Implement parameter ev
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement parameter evolution chart data` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement parameter evolution chart data` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #227: Implement phase fraction evolution chart data
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6265,18 +7032,31 @@ Deliver a granular, testable increment for Visualization: Implement phase fracti
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement phase fraction evolution chart data` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement phase fraction evolution chart data` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #228: Implement covariance matrix renderer
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6293,18 +7073,31 @@ Deliver a granular, testable increment for Visualization: Implement covariance m
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement covariance matrix renderer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement covariance matrix renderer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #229: Implement dependency graph renderer
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6321,18 +7114,31 @@ Deliver a granular, testable increment for Visualization: Implement dependency g
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement dependency graph renderer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement dependency graph renderer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #230: Implement reflection browser
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6349,18 +7155,31 @@ Deliver a granular, testable increment for Visualization: Implement reflection b
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement reflection browser` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement reflection browser` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #231: Implement mask and exclusion editor
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6377,18 +7196,31 @@ Deliver a granular, testable increment for Visualization: Implement mask and exc
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement mask and exclusion editor` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement mask and exclusion editor` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
+
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #232: Implement publication figure export
 
 - **Category:** Visualization
 - **Phase:** UX
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P1
 - **Labels:** visualization, ux, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##16
@@ -6405,14 +7237,23 @@ Deliver a granular, testable increment for Visualization: Implement publication 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement publication figure export` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] UI state is driven by typed data models rather than ad hoc unstructured objects.
-- [ ] The feature remains accessible from keyboard or scriptable workflow where applicable.
+- [x] Implementation or document for `Implement publication figure export` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] UI state is driven by typed data models rather than ad hoc unstructured objects.
+- [x] The feature remains accessible from keyboard or scriptable workflow where applicable.
 
+**Closure evidence**
+
+- `src/rietveld_next/visualization/`
+- `src/rietveld_next/visualization/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## HPC and Cloud
 
@@ -6420,6 +7261,9 @@ Deliver a granular, testable increment for Visualization: Implement publication 
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6436,18 +7280,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement local parall
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement local parallel batch runner` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement local parallel batch runner` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #234: Implement scheduler abstraction
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6464,18 +7321,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement scheduler ab
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement scheduler abstraction` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement scheduler abstraction` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #235: Implement Slurm job-array adapter
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6492,18 +7362,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement Slurm job-ar
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Slurm job-array adapter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement Slurm job-array adapter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #236: Implement Slurm result collector
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6520,18 +7403,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement Slurm result
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Slurm result collector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement Slurm result collector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #237: Implement Dask adapter skeleton
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6548,18 +7444,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement Dask adapter
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Dask adapter skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement Dask adapter skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #238: Implement Ray adapter skeleton
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6576,18 +7485,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement Ray adapter 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Ray adapter skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement Ray adapter skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #239: Implement Kubernetes worker manifest
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6604,18 +7526,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement Kubernetes w
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Kubernetes worker manifest` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement Kubernetes worker manifest` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #240: Implement object storage URI abstraction
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6632,18 +7567,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement object stora
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement object storage URI abstraction` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement object storage URI abstraction` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #241: Implement distributed result database writer
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6660,18 +7608,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement distributed 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement distributed result database writer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement distributed result database writer` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #242: Implement benchmark cluster smoke test
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6688,18 +7649,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement benchmark cl
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement benchmark cluster smoke test` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement benchmark cluster smoke test` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #243: Implement beamline live-ingest mock
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6716,18 +7690,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement beamline liv
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement beamline live-ingest mock` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement beamline live-ingest mock` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #244: Implement real-time status stream
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6744,18 +7731,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement real-time st
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement real-time status stream` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement real-time status stream` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #245: Implement job cancellation API
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6772,18 +7772,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement job cancella
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement job cancellation API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement job cancellation API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #246: Implement retry and backoff policy
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6800,18 +7813,31 @@ Deliver a granular, testable increment for HPC and Cloud: Implement retry and ba
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement retry and backoff policy` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement retry and backoff policy` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
+
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #247: Implement HPC provenance capture
 
 - **Category:** HPC and Cloud
 - **Phase:** HPC
+- **Status:** Closed
+- **Closed:** 2026-06-11
+- **Closed by:** Batch E subagent execution
 - **Priority:** P2
 - **Labels:** hpc-and-cloud, hpc, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##196
@@ -6828,14 +7854,23 @@ Deliver a granular, testable increment for HPC and Cloud: Implement HPC provenan
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement HPC provenance capture` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] The feature can be exercised locally with a mock or dry-run backend.
-- [ ] Job metadata, environment, and result provenance are captured.
+- [x] Implementation or document for `Implement HPC provenance capture` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] The feature can be exercised locally with a mock or dry-run backend.
+- [x] Job metadata, environment, and result provenance are captured.
 
+**Closure evidence**
+
+- `src/rietveld_next/hpc/`
+- `src/rietveld_next/hpc/tests/`
+- `docs/batch_e_completion_report.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ## Testing and Validation
 

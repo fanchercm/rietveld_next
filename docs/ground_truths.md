@@ -142,30 +142,67 @@
 
 - Workflow replay primitives live in `src/rietveld_next/workflows/` and emit
   ordered action records suitable for provenance logs.
-- AI integration is limited to deterministic tool contracts and action logging
-  in `src/rietveld_next/ai/`; no LLM calls or autonomous data mutation are
-  implemented in this foundation.
-- HPC support is limited to a scheduler abstraction and deterministic local
-  scheduler in `src/rietveld_next/hpc/`; no live cluster adapter is included.
+- Batch E completion evidence for issues #168-#247 and milestones M29-M33 is
+  recorded in [batch_e_completion_report.md](batch_e_completion_report.md).
+- Workflow helpers now cover deterministic sequential execution, retry policy,
+  previous-point initialization, parametric expressions, batch recipes,
+  checkpoints, comparison reports, dashboards, residual heatmap payloads, and
+  high-throughput summaries.
+- AI integration remains deterministic and tool-grounded in
+  `src/rietveld_next/ai/`; no LLM calls or autonomous data mutation outside
+  registered tool wrappers are implemented in this foundation.
+- AI helpers include tool contracts, refinement wrappers, residual diagnostics,
+  safety checks, approval checkpoints, strategy rules, evaluation scaffolding,
+  citation metadata, copilot report payloads, and autonomous recipe planning.
+- HPC support includes scheduler abstractions, deterministic local execution,
+  local cancellation, retry/backoff policy, Slurm artifact payloads, optional
+  Dask/Ray skipped adapters, Kubernetes manifest payloads, object-storage URI
+  records, status streams, smoke fixtures, and provenance capture in
+  `src/rietveld_next/hpc/`; no live cluster execution is required.
 - UI work is framework-neutral and lives in `src/rietveld_next/desktop/`,
   where view commands can be converted into replayable workflow steps.
+- UX view models cover project open/import/CIF validation, pattern viewing,
+  parameter tables and graphs, constraints, correlation/covariance displays,
+  sequential dashboards, diagnostics, recipe wizards, guided workflows, expert
+  mode, report export, provenance timelines, and command palettes.
 - Visualization transforms live in `src/rietveld_next/visualization/` and
   prepare profile/difference display series without calculating scientific model
   values.
+- Visualization payloads also cover multi-bank aggregation, residual heatmaps,
+  parameter and phase-fraction evolution, covariance/correlation matrices,
+  dependency graphs, reflection browsers, mask/exclusion payloads, and
+  publication figure export requests.
 
 ## Batch D Foundations
 
 - TOF histogram-axis helpers live in `src/rietveld_next/tof/` and store
   strictly increasing positive bin edges in microseconds with optional
   detector-bank metadata.
+- TOF detector-bank entities live in `src/rietveld_next/tof/` and store stable
+  bank IDs, representative two-theta angles in degrees, detector counts, and
+  optional sample-to-detector distances in meters.
+- TOF calibration parameter sets live in `src/rietveld_next/tof/` and store
+  DIFC/DIFA/zero values with explicit microsecond and angstrom units plus
+  optional positive d-spacing validity bounds.
 - EDXRD histogram-axis helpers live in `src/rietveld_next/edxrd/` and store
   strictly increasing positive energy bin edges in keV; the initial calibration
   helper supports a linear channel-to-energy edge model only.
 - Magnetic moment entities live in `src/rietveld_next/neutron/magnetic/` and
   record three components in Bohr magnetons plus an explicit coordinate frame.
+- Magnetic propagation vector entities live in
+  `src/rietveld_next/neutron/magnetic/` and use reciprocal-lattice fractional
+  components in reciprocal lattice units; phase helpers evaluate `k dot r` for
+  direct-lattice fractional positions.
+- Magnetic moment magnitude validation is explicit: serialized declared
+  magnitudes must match the Euclidean component norm within `1e-12` Bohr
+  magneton, and `validate_magnitude()` checks inclusive Bohr-magneton bounds.
 - The initial storage reader lives in `src/rietveld_next/storage/` and loads
   directory-backed packages from `project.json` plus optional `manifest.json`
   without creating, overwriting, or repairing user files.
+- Storage package writing is deterministic and refuses to overwrite existing
+  package files unless `overwrite=True` is explicit.
+- Storage package integrity checks are read-only and report missing or corrupt
+  `project.json`/`manifest.json` metadata with stable issue codes.
 - Unit test conventions are documented in
   [unit_test_conventions.md](unit_test_conventions.md); package-local tests
   remain under `src/rietveld_next/**/tests/` to satisfy the current source
