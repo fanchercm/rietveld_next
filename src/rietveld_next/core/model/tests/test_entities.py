@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import unittest
 
 from rietveld_next.core.model import (
@@ -15,11 +16,13 @@ from rietveld_next.core.model import (
     Experiment,
     Histogram,
     Instrument,
+    MagneticStructure,
     ModelValidationError,
     OptimizationMethod,
     OptimizationStrategy,
     ParameterPath,
     Phase,
+    Prior,
     Project,
     Provenance,
     RadiationType,
@@ -70,6 +73,7 @@ def build_project() -> Project:
         refine=True,
         unit=UnitMetadata(symbol="angstrom", quantity="length", scale_to_si=1.0e-10),
         bounds=Bounds(lower=5.0, upper=6.0),
+        prior=Prior(distribution="normal", parameters={"mean": 5.431, "sigma": 0.05}),
     )
     constraint = Constraint(
         id="c_cell_a_positive",
@@ -121,8 +125,12 @@ class CoreModelEntityTests(unittest.TestCase):
         self.assertIsInstance(payload["experiments"], list)
         self.assertIsInstance(payload["phases"], list)
         self.assertIsInstance(payload["parameters"], list)
-        self.assertEqual(payload["parameters"][0]["units"], "angstrom")
+        self.assertEqual(
+            payload["parameters"][0]["unit"],
+            {"symbol": "angstrom", "quantity": "length", "scale_to_si": 1.0e-10},
+        )
         self.assertEqual(payload["parameters"][0]["bounds"], [5.0, 6.0])
+        self.assertEqual(payload["parameters"][0]["prior"]["distribution"], "normal")
 
     def test_missing_required_field_reports_structured_error(self) -> None:
         with self.assertRaises(ModelValidationError) as context:
@@ -130,6 +138,23 @@ class CoreModelEntityTests(unittest.TestCase):
 
         self.assertEqual(context.exception.code, "missing_required_field")
         self.assertIn("schema_version", context.exception.details["missing"])
+
+    def test_project_from_json_rejects_schema_invalid_primitives(self) -> None:
+        payload = build_project().to_schema_dict()
+        payload["parameters"][0]["refine"] = "yes"
+
+        with self.assertRaises(ModelValidationError) as refine_context:
+            Project.from_json(json.dumps(payload))
+
+        self.assertEqual(refine_context.exception.code, "invalid_type")
+
+        payload = build_project().to_schema_dict()
+        payload["parameters"][0]["unit"]["symbol"] = 123
+
+        with self.assertRaises(ModelValidationError) as unit_context:
+            Project.from_json(json.dumps(payload))
+
+        self.assertEqual(unit_context.exception.code, "invalid_type")
 
     def test_invalid_entity_id_is_rejected(self) -> None:
         with self.assertRaises(ModelValidationError) as context:
@@ -148,6 +173,27 @@ class CoreModelEntityTests(unittest.TestCase):
             )
 
         self.assertEqual(context.exception.code, "value_out_of_bounds")
+
+    def test_unit_and_prior_metadata_are_validated(self) -> None:
+        with self.assertRaises(ModelValidationError) as unit_context:
+            UnitMetadata(symbol="angstrom", quantity="length", scale_to_si=0.0)
+
+        self.assertEqual(unit_context.exception.code, "invalid_unit")
+
+        with self.assertRaises(ModelValidationError) as prior_context:
+            Prior(distribution="normal", parameters={"sigma": float("nan")})
+
+        self.assertEqual(prior_context.exception.code, "invalid_number")
+
+    def test_magnetic_structure_requires_three_component_vectors(self) -> None:
+        structure = MagneticStructure(propagation_vectors=[[0.0, 0.0, 0.5]])
+
+        self.assertEqual(structure.propagation_vectors, [[0.0, 0.0, 0.5]])
+
+        with self.assertRaises(ModelValidationError) as context:
+            MagneticStructure(propagation_vectors=[[0.0, 0.5]])
+
+        self.assertEqual(context.exception.code, "invalid_vector")
 
     def test_constraint_references_must_target_existing_parameters(self) -> None:
         project = build_project()
@@ -188,9 +234,11 @@ class CoreModelEntityTests(unittest.TestCase):
             refine=True,
             unit=UnitMetadata(symbol="angstrom", quantity="length", scale_to_si=1.0e-10),
             bounds=Bounds(lower=5.0, upper=6.0),
+            prior=Prior(distribution="normal", parameters={"mean": 5.431, "sigma": 0.05}),
         )
         changed = Project(
             id=original.id,
+            name=original.name,
             experiments=original.experiments,
             phases=original.phases,
             parameters=[changed_parameter],
@@ -198,9 +246,33 @@ class CoreModelEntityTests(unittest.TestCase):
             constraints=original.constraints,
             strategies=original.strategies,
             studies=original.studies,
+            provenance=original.provenance,
         )
 
         self.assertEqual(original.diff(changed), {"parameters": ["p_cell_a"]})
+
+    def test_project_diff_reports_instruments_and_provenance(self) -> None:
+        original = build_project()
+        changed = Project(
+            id=original.id,
+            name=original.name,
+            experiments=original.experiments,
+            phases=original.phases,
+            parameters=original.parameters,
+            instruments=[
+                Instrument(
+                    id="inst1",
+                    radiation=RadiationType.LAB_XRAY_CW,
+                    detector_banks=[DetectorBank(id="bank1", axis=AxisType.TWO_THETA, mask_uri="masks/bank1")],
+                )
+            ],
+            constraints=original.constraints,
+            strategies=original.strategies,
+            studies=original.studies,
+            provenance=Provenance(created_by="changed"),
+        )
+
+        self.assertEqual(original.diff(changed), {"instruments": ["inst1"], "provenance": ["project1"]})
 
 
 if __name__ == "__main__":

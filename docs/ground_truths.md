@@ -51,6 +51,11 @@
 - M01 completion evidence for closing issues #1-15 is recorded in
   [m01_completion_report.md](m01_completion_report.md), which maps each issue to
   committed code, docs, and validation evidence.
+- M02 core project model closure evidence for issues #16-35 is recorded in
+  [m02_completion_report.md](m02_completion_report.md). The M02 schema emits
+  full `unit` metadata, accepts legacy `units` strings, validates prior metadata
+  through the typed model, compares model graph changes by stable IDs, and
+  includes a `1.0.x` project metadata migration harness.
 
 ## Numerical Kernels
 

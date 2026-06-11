@@ -53,6 +53,9 @@ Numeric refinement parameters may carry:
 
 The model validates finite numeric values, ordered bounds, non-negative standard
 uncertainties, and values that fall inside declared bounds.
+The schema-compatible representation preserves full `UnitMetadata` under the
+`unit` field. Legacy input payloads that use a `units` string are still accepted
+and converted to `UnitMetadata` with `quantity="unspecified"`.
 
 ## Constraints And References
 
@@ -70,6 +73,9 @@ Constraints reference refinement parameters by ID. A `Project` validates that:
 `Project.to_json()` emits deterministic JSON with sorted object keys and the
 schema-compatible fields required by `schemas/project.schema.json`.
 `Project.from_json()` performs structured deserialization and validation.
+`Project.diff()` compares stable entity IDs across instruments, experiments,
+phases, parameters, constraints, strategies, and sequential studies, and reports
+top-level project or provenance changes separately.
 
 Example:
 
@@ -109,12 +115,21 @@ loaded = Project.from_json(payload)
 assert loaded.to_json() == payload
 ```
 
+## Migration Harness
+
+Project metadata migration helpers live in `src/rietveld_next/core/schema/`.
+M02 supports the `1.0.x` compatibility line. `plan_project_migration()` returns
+an explicit no-change plan for already-current payloads or a deterministic
+patch-line normalization step. Unsupported major or minor versions raise
+`ModelValidationError` with code `unsupported_schema_version`.
+
 ## Current Limitations
 
 - The model layer does not claim scientific correctness for calculations; it
   only validates metadata shape, units, IDs, and references.
-- `schemas/project.schema.json` is currently permissive and remains on the
-  `1.0.x` compatibility line.
+- `schemas/project.schema.json` remains on the `1.0.x` compatibility line and
+  intentionally keeps legacy `units` input compatibility while emitting full
+  `unit` metadata from the typed model.
 - Cross-software validation data is not included in this metadata-only
   increment.
 - Build-system conventions are not changed here because M01 workspace

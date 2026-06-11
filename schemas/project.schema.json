@@ -13,7 +13,7 @@
     "properties": {
         "schema_version": {
             "type": "string",
-            "pattern": "^1\\.0\\."
+            "pattern": "^1\\.0\\.[0-9]+$"
         },
         "id": {
             "type": "string",
@@ -351,6 +351,9 @@
             "null"
           ]
         },
+        "unit": {
+          "$ref": "#/$defs/unit_metadata"
+        },
         "units": {
           "type": "string"
         },
@@ -369,12 +372,47 @@
           "maxItems": 2
         },
                 "prior": {
-                    "type": "object"
+                    "$ref": "#/$defs/prior"
                 },
                 "owner_id": {
                     "$ref": "#/$defs/entity_id"
                 },
                 "metadata": {
+                    "type": "object"
+                }
+            }
+        },
+        "unit_metadata": {
+            "type": "object",
+            "required": [
+                "symbol",
+                "quantity"
+            ],
+            "properties": {
+                "symbol": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "string"
+                },
+                "scale_to_si": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "prior": {
+            "type": "object",
+            "required": [
+                "distribution"
+            ],
+            "properties": {
+                "distribution": {
+                    "type": "string"
+                },
+                "parameters": {
                     "type": "object"
                 }
             }

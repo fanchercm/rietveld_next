@@ -157,6 +157,8 @@ def _load_dataclass(cls: type[T], data: Any, required: tuple[str, ...]) -> T:
 def _coerce_value(type_hint: Any, value: Any, path: str) -> Any:
     origin = get_origin(type_hint)
     args = get_args(type_hint)
+    if type_hint is Any:
+        return value
     if origin is list:
         if not isinstance(value, list):
             raise ModelValidationError("invalid_type", "Expected a list.", path, {"value": value})
@@ -172,6 +174,22 @@ def _coerce_value(type_hint: Any, value: Any, path: str) -> Any:
             return None
         non_none = [arg for arg in args if arg is not type(None)][0]
         return _coerce_value(non_none, value, path)
+    if type_hint is str:
+        if not isinstance(value, str):
+            raise ModelValidationError("invalid_type", "Expected a string.", path, {"value": value})
+        return value
+    if type_hint is bool:
+        if not isinstance(value, bool):
+            raise ModelValidationError("invalid_type", "Expected a boolean.", path, {"value": value})
+        return value
+    if type_hint is float:
+        if not isinstance(value, int | float) or isinstance(value, bool):
+            raise ModelValidationError("invalid_type", "Expected a number.", path, {"value": value})
+        return float(value)
+    if type_hint is int:
+        if not isinstance(value, int) or isinstance(value, bool):
+            raise ModelValidationError("invalid_type", "Expected an integer.", path, {"value": value})
+        return value
     if isinstance(type_hint, type) and isinstance(value, type_hint):
         return value
     if isinstance(type_hint, type) and issubclass(type_hint, StrValueEnum):
@@ -593,9 +611,6 @@ class RefinementParameter:
     def to_schema_dict(self) -> dict[str, Any]:
         """Return the representation expected by ``schemas/project.schema.json``."""
         data = self.to_dict()
-        if self.unit is not None:
-            data["units"] = self.unit.symbol
-            data.pop("unit", None)
         if self.bounds is not None:
             data["bounds"] = self.bounds.to_schema_list()
         data["path"] = str(self.path)
@@ -800,12 +815,27 @@ class Project:
             Mapping from entity collection name to changed entity IDs.
         """
         changes: dict[str, list[str]] = {}
-        for name in ("experiments", "phases", "parameters", "constraints", "strategies", "studies"):
+        top_level = {
+            "id": self.id,
+            "schema_version": self.schema_version,
+            "name": self.name,
+        }
+        other_top_level = {
+            "id": other.id,
+            "schema_version": other.schema_version,
+            "name": other.name,
+        }
+        if top_level != other_top_level:
+            changes["project"] = sorted({self.id, other.id})
+
+        for name in ("instruments", "experiments", "phases", "parameters", "constraints", "strategies", "studies"):
             left = {item.id: item.to_dict() if hasattr(item, "to_dict") else _serialize(item) for item in getattr(self, name)}
             right = {item.id: item.to_dict() if hasattr(item, "to_dict") else _serialize(item) for item in getattr(other, name)}
             changed = sorted((set(left) | set(right)) - {key for key in set(left) & set(right) if left[key] == right[key]})
             if changed:
                 changes[name] = changed
+        if _serialize(self.provenance) != _serialize(other.provenance):
+            changes["provenance"] = [self.id]
         return changes
 
     def _validate_references(self) -> None:

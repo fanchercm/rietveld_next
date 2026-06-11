@@ -21,6 +21,7 @@ from rietveld_next.core.model import (
     OptimizationStrategy,
     ParameterPath,
     Phase,
+    Prior,
     Project,
     Provenance,
     RadiationType,
@@ -32,6 +33,8 @@ from rietveld_next.core.model import (
 from rietveld_next.core.schema import (
     SchemaValidationError,
     load_project_schema,
+    migrate_project_mapping,
+    plan_project_migration,
     project_from_json,
     project_to_json,
     validate_project_json,
@@ -87,6 +90,7 @@ def build_realistic_project() -> Project:
         refine=True,
         unit=UnitMetadata(symbol="angstrom", quantity="length", scale_to_si=1.0e-10),
         bounds=Bounds(lower=5.0, upper=6.0),
+        prior=Prior(distribution="normal", parameters={"mean": 5.431, "sigma": 0.05}),
         owner_id="phase1",
     )
     return Project(
@@ -135,6 +139,8 @@ class ProjectSchemaValidationTests(unittest.TestCase):
         self.assertEqual(payload, project_to_json(loaded))
         self.assertEqual(loaded.schema_version, "1.0.0")
         self.assertEqual(loaded.instruments[0].detector_banks[0].id, "bank1")
+        self.assertEqual(loaded.parameters[0].unit.quantity, "length")
+        self.assertEqual(loaded.parameters[0].prior.distribution, "normal")
 
     def test_project_mapping_validates_against_loaded_schema(self) -> None:
         schema = load_project_schema()
@@ -145,6 +151,7 @@ class ProjectSchemaValidationTests(unittest.TestCase):
         self.assertIn("instruments", data)
         self.assertIn("strategies", data)
         self.assertIn("studies", data)
+        self.assertEqual(data["parameters"][0]["unit"]["symbol"], "angstrom")
 
     def test_missing_required_field_reports_clear_schema_error(self) -> None:
         data = build_realistic_project().to_schema_dict()
@@ -177,6 +184,16 @@ class ProjectSchemaValidationTests(unittest.TestCase):
         self.assertEqual(context.exception.issues[0].path, "$.schema_version")
         self.assertEqual(context.exception.issues[0].keyword, "pattern")
 
+    def test_non_numeric_patch_schema_version_fails_pattern_validation(self) -> None:
+        data = build_realistic_project().to_schema_dict()
+        data["schema_version"] = "1.0.foo"
+
+        with self.assertRaises(SchemaValidationError) as context:
+            validate_project_mapping(data)
+
+        self.assertEqual(context.exception.issues[0].path, "$.schema_version")
+        self.assertEqual(context.exception.issues[0].keyword, "pattern")
+
     def test_invalid_json_fails_before_model_deserialization(self) -> None:
         with self.assertRaises(SchemaValidationError) as context:
             validate_project_json("{not-json")
@@ -195,6 +212,38 @@ class ProjectSchemaValidationTests(unittest.TestCase):
             project_from_json(invalid_json)
 
         self.assertEqual(context.exception.code, "invalid_reference")
+
+    def test_legacy_units_string_deserializes_to_unit_metadata(self) -> None:
+        payload = build_realistic_project().to_schema_dict()
+        payload["parameters"][0]["units"] = "angstrom"
+        del payload["parameters"][0]["unit"]
+
+        validate_project_mapping(payload)
+        loaded = project_from_json(json.dumps(payload, sort_keys=True, separators=(",", ":")))
+
+        self.assertEqual(loaded.parameters[0].unit.symbol, "angstrom")
+        self.assertEqual(loaded.parameters[0].unit.quantity, "unspecified")
+
+    def test_schema_migration_harness_normalizes_supported_patch_versions(self) -> None:
+        payload = build_realistic_project().to_schema_dict()
+        payload["schema_version"] = "1.0.9"
+
+        plan = plan_project_migration("1.0.9", "1.0.0")
+        migrated = migrate_project_mapping(payload)
+
+        self.assertTrue(plan.requires_changes)
+        self.assertEqual(plan.steps[0].source_version, "1.0.9")
+        self.assertEqual(migrated["schema_version"], "1.0.0")
+        self.assertEqual(payload["schema_version"], "1.0.9")
+
+    def test_schema_migration_harness_rejects_unsupported_versions(self) -> None:
+        payload = build_realistic_project().to_schema_dict()
+        payload["schema_version"] = "2.0.0"
+
+        with self.assertRaises(ModelValidationError) as context:
+            migrate_project_mapping(payload)
+
+        self.assertEqual(context.exception.code, "unsupported_schema_version")
 
 
 if __name__ == "__main__":

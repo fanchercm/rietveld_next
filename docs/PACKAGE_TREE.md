@@ -27,7 +27,7 @@ rietveld_next/
 - `src/` contains all implementation source and package-local tests.
 - `src/rietveld_next/core/model/` contains typed core project entities.
 - `src/rietveld_next/core/schema/` contains schema-backed project
-  serialization helpers.
+  serialization and migration helpers.
 - `src/rietveld_next/core/architecture/` contains source-layout and dependency
   boundary checks plus M01 architecture foundation helpers.
 - `src/rietveld_next/diffraction/` contains dependency-free diffraction
