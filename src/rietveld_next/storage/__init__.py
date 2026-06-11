@@ -9,6 +9,8 @@ from rietveld_next.storage.manifest import (
 )
 from rietveld_next.storage.project_package import (
     ProjectPackage,
+    ProjectImportWarning,
+    ProjectImportWarningReport,
     ProjectPackageError,
     ProjectPackageIntegrityIssue,
     ProjectPackageIntegrityReport,
@@ -26,6 +28,8 @@ from rietveld_next.storage.uri import ResolvedDataUri, resolve_data_uri
 __all__ = [
     "FileManifestEntry",
     "FileManifestVerificationIssue",
+    "ProjectImportWarning",
+    "ProjectImportWarningReport",
     "ProjectPackage",
     "ProjectPackageError",
     "ProjectPackageIntegrityIssue",

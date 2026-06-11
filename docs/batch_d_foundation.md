@@ -41,6 +41,10 @@ datasets.
   package escape checks.
 - Issue #47: Package files can be listed with size and SHA-256 checksums and
   verified against a manifest.
+- Issue #48: Import warning reports use deterministic JSON with stable warning
+  codes for non-blocking import findings.
+- Issue #49: Project package metadata can be written as deterministic
+  `project.json.gz` when gzip compression is explicitly selected.
 - Issue #248: Unit tests remain package-local under `src/rietveld_next/**/tests`
   until repository build conventions permit a different layout.
 

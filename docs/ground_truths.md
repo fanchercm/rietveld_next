@@ -214,6 +214,13 @@
   package root.
 - Storage file manifests record package-relative paths, byte sizes, and SHA-256
   digests for deterministic verification.
+- Storage import warnings are represented as versioned deterministic JSON
+  reports; missing optional `manifest.json` records a warning rather than
+  failing package import.
+- Storage project metadata supports `compression="none"` and
+  `compression="gzip"` only. Gzip output uses a fixed timestamp for
+  deterministic bytes and ambiguous `project.json`/`project.json.gz`
+  combinations are rejected.
 - Unit test conventions are documented in
   [unit_test_conventions.md](unit_test_conventions.md); package-local tests
   remain under `src/rietveld_next/**/tests/` to satisfy the current source
