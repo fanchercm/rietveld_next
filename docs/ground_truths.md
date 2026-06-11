@@ -91,3 +91,21 @@
 - Visualization transforms live in `src/rietveld_next/visualization/` and
   prepare profile/difference display series without calculating scientific model
   values.
+
+## Batch D Foundations
+
+- TOF histogram-axis helpers live in `src/rietveld_next/tof/` and store
+  strictly increasing positive bin edges in microseconds with optional
+  detector-bank metadata.
+- EDXRD histogram-axis helpers live in `src/rietveld_next/edxrd/` and store
+  strictly increasing positive energy bin edges in keV; the initial calibration
+  helper supports a linear channel-to-energy edge model only.
+- Magnetic moment entities live in `src/rietveld_next/neutron/magnetic/` and
+  record three components in Bohr magnetons plus an explicit coordinate frame.
+- The initial storage reader lives in `src/rietveld_next/storage/` and loads
+  directory-backed packages from `project.json` plus optional `manifest.json`
+  without creating, overwriting, or repairing user files.
+- Unit test conventions are documented in
+  [unit_test_conventions.md](unit_test_conventions.md); package-local tests
+  remain under `src/rietveld_next/**/tests/` to satisfy the current source
+  layout guardrail.
