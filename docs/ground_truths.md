@@ -1,5 +1,10 @@
 # Ground Truths
 
+## Repository Hygiene
+
+- `.codegraph/` is generated local Codegraph index and daemon state; it is
+  ignored by Git and is not project source.
+
 ## Core Data Model
 
 - The current core data model implementation is metadata-only and lives under
