@@ -44,4 +44,9 @@ This bundle now includes a one-to-one 100-milestone implementation plan that map
 
 ## Source layout
 
-Implementation source code lives under `src/`. Codex should create source files under `src/<package>/...` and keep top-level `docs/`, `benchmarks/`, `examples/`, and `tests/` as support areas.
+Implementation source code lives under `src/`. Codex should create source files
+under `src/rietveld_next/<package>/...` and keep top-level support content in
+documented directories such as `docs/`, `schemas/`, `prompts/`, `backlog/`,
+`github/`, `scaffold/`, and `validation/`. Do not create top-level
+implementation or test directories such as `core/`, `diffraction/`,
+`benchmarks/`, or `tests/`.

@@ -1,7 +1,6 @@
 rietveld_next_codex_prompt_expanded_with_batch/
   AGENTS.md
   MANIFEST.json
-  PACKAGE_TREE.md
   README.md
   architecture/0001-core-language-rust.md
   architecture/0002-storage-architecture.md

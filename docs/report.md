@@ -1199,50 +1199,38 @@ rietveld-next/
 │       ├── app/
 │       ├── api/
 │       └── visualization/
-├── benchmarks/
-│   ├── profile_eval/
-│   ├── jacobian/
-│   ├── optimization/
-│   ├── tof/
-│   └── end_to_end/
 ├── docs/
 │   ├── theory/
 │   ├── tutorials/
 │   ├── api/
 │   ├── developer/
 │   └── validation/
-├── examples/
-│   ├── lab_xrd/
-│   ├── synchrotron/
-│   ├── neutron_cw/
-│   ├── neutron_tof/
-│   ├── edxrd/
-│   ├── magnetic/
-│   └── sequential/
-└── tests/
-    ├── unit/
-    ├── integration/
-    ├── regression/
-    ├── golden/
-    └── scientific_validation/
+├── backend_corpus/
+│   └── manifests/
+└── validation/
 ```
 
 ## 11.1 Package Boundaries
 
-All implementation source code now lives under `src/`. Top-level directories outside `src/` are reserved for documentation, tests, examples, benchmarks, schemas, and project metadata.
+All implementation source code now lives under `src/`. Top-level directories
+outside `src/` are reserved for documentation, schemas, prompts, backlog files,
+GitHub import payloads, scaffold notes, validation planning, public backend
+corpus fixtures, CI files, and project configuration. Top-level implementation
+or test directories such as `core/`, `diffraction/`, `optimization/`,
+`benchmarks/`, and `tests/` are forbidden.
 
-- `src/core`: domain model, parameter graph, provenance, schema.
-- `src/diffraction`: generic scattering, profiles, backgrounds, corrections.
-- `src/xray`: X-ray scattering, FPA, synchrotron and lab models.
-- `src/neutron`: nuclear scattering, absorption, magnetic structures, Mantid adapters.
-- `src/tof`: TOF calibration, bank models, event-mode hooks.
-- `src/edxrd`: energy calibration, detector response, high-pressure workflows.
-- `src/optimization`: local, global, Bayesian, and MCMC optimizers.
-- `src/workflows`: recipes, sequential, parametric, batch, beamline.
-- `src/ai`: agent, copilot, tool contracts, evals.
-- `src/hpc`: Slurm, Dask, Ray, Kubernetes, result store.
-- `src/desktop`: Tauri shell.
-- `src/web`: browser app and services.
+- `src/rietveld_next/core`: domain model, parameter graph, provenance, schema.
+- `src/rietveld_next/diffraction`: generic scattering, profiles, backgrounds, corrections.
+- `src/rietveld_next/xray`: X-ray scattering, FPA, synchrotron and lab models.
+- `src/rietveld_next/neutron`: nuclear scattering, absorption, magnetic structures, Mantid adapters.
+- `src/rietveld_next/tof`: TOF calibration, bank models, event-mode hooks.
+- `src/rietveld_next/edxrd`: energy calibration, detector response, high-pressure workflows.
+- `src/rietveld_next/optimization`: local, global, Bayesian, and MCMC optimizers.
+- `src/rietveld_next/workflows`: recipes, sequential, parametric, batch, beamline.
+- `src/rietveld_next/ai`: agent, copilot, tool contracts, evals.
+- `src/rietveld_next/hpc`: Slurm, Dask, Ray, Kubernetes, result store.
+- `src/rietveld_next/desktop`: Tauri shell.
+- `src/rietveld_next/web`: browser app and services.
 
 # Part 12: Codex Development Plan
 

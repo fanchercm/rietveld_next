@@ -2,11 +2,16 @@
 
 ## Source-code root
 
-All implementation source code lives under `src/`. Top-level directories outside `src/` are reserved for benchmarks, documentation, examples, tests, schemas, CI files, project configuration, and generated artifacts.
+All implementation source code lives under `src/`. Top-level directories outside
+`src/` are reserved for documentation, schemas, prompts, backlog files, GitHub
+import payloads, scaffold notes, validation planning, public backend corpus
+fixtures, CI files, and project configuration. Do not create top-level
+implementation or test directories such as `core/`,
+`diffraction/`, `optimization/`, `benchmarks/`, or `tests/`.
 
 ## Dependency direction
 
-`src/core` must not depend on UI, AI, or workflow packages. Numerical kernels may depend on core domain abstractions but should not know about desktop/web implementation details. UX packages must call public APIs only. AI tools must call deterministic workflow and engine APIs only.
+`src/rietveld_next/core` must not depend on UI, AI, or workflow packages. Numerical kernels may depend on core domain abstractions but should not know about desktop/web implementation details. UX packages must call public APIs only. AI tools must call deterministic workflow and engine APIs only.
 
 ## Public API rule
 
@@ -18,4 +23,7 @@ Plugins must declare capabilities: supported radiation types, axis types, deriva
 
 ## Codex placement rule
 
-When Codex creates or modifies implementation files, it must place them in the appropriate `src/<package>/...` subtree. Tests should live in `tests/` unless they are package-local unit tests required by a language ecosystem, such as Rust crate tests under `src/core/rn-core-rs/tests/`.
+When Codex creates or modifies implementation files, it must place them in the
+appropriate `src/rietveld_next/<package>/...` subtree. Tests should be
+package-local under `src/rietveld_next/.../tests/` unless a future build-system
+decision explicitly introduces a different, documented test layout.
