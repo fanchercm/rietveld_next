@@ -9,6 +9,7 @@ utilities only; they do not perform scientific calculations.
 This increment provides implementation coverage for:
 
 - #4 shared architecture error taxonomy
+- #5 plugin capability model
 - #7 JSON configuration loading
 - #8 provenance event envelope
 - #9 environment capture
@@ -81,8 +82,8 @@ manifest = build_release_manifest(
 - Configuration loading supports JSON only.
 - Environment capture intentionally avoids dumping the full environment.
 - Release manifest helpers do not publish or package artifacts.
-- Plugin capability modeling and ADR workflow templates remain separate M01
-  follow-up work.
+- Plugin discovery, loading, and execution remain follow-up work.
+- ADR enforcement is documented and template-based; no ADR CLI exists yet.
 
 ## Test Command
 

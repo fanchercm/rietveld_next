@@ -15,6 +15,7 @@ from rietveld_next.core.architecture import (
     ArchitectureErrorCode,
     FeatureFlag,
     FeatureFlagRegistry,
+    PluginCapability,
     build_release_manifest,
     capture_environment,
     create_provenance_event,
@@ -89,6 +90,55 @@ class ArchitectureFoundationTests(unittest.TestCase):
 
         self.assertEqual(context.exception.code, ArchitectureErrorCode.INVALID_FEATURE_FLAG)
         self.assertEqual(context.exception.details["duplicates"], ["duplicate.flag"])
+
+    def test_plugin_capability_serializes_deterministically(self) -> None:
+        capability = PluginCapability(
+            name="cw_xrd.profile",
+            version="1.0.0",
+            supported_radiation_types=("lab_xray_cw", "synchrotron_xray_cw"),
+            supported_axes=("two_theta",),
+            parameter_names=("u", "v", "w"),
+            units={"u": "degree2", "v": "degree2", "w": "degree2"},
+            supports_derivatives=True,
+            validation_functions=("validate_profile_parameters",),
+            stability=ApiStability.PROVISIONAL,
+        )
+
+        self.assertEqual(
+            capability.to_dict(),
+            {
+                "name": "cw_xrd.profile",
+                "parameter_names": ["u", "v", "w"],
+                "stability": "provisional",
+                "supported_axes": ["two_theta"],
+                "supported_radiation_types": ["lab_xray_cw", "synchrotron_xray_cw"],
+                "supports_derivatives": True,
+                "units": {"u": "degree2", "v": "degree2", "w": "degree2"},
+                "validation_functions": ["validate_profile_parameters"],
+                "version": "1.0.0",
+            },
+        )
+
+    def test_plugin_capability_requires_axis_and_radiation(self) -> None:
+        with self.assertRaises(ArchitectureError) as context:
+            PluginCapability(name="bad.plugin", version="1.0.0")
+
+        self.assertEqual(context.exception.code, ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY)
+
+    def test_plugin_capability_requires_units_for_all_parameters(self) -> None:
+        with self.assertRaises(ArchitectureError) as context:
+            PluginCapability(
+                name="bad.plugin",
+                version="1.0.0",
+                supported_radiation_types=("lab_xray_cw",),
+                supported_axes=("two_theta",),
+                parameter_names=("u", "v"),
+                units={"u": "degree2", "extra": "degree2"},
+            )
+
+        self.assertEqual(context.exception.code, ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY)
+        self.assertEqual(context.exception.details["missing_units"], ["v"])
+        self.assertEqual(context.exception.details["unknown_units"], ["extra"])
 
     def test_create_provenance_event_derives_stable_id(self) -> None:
         first = create_provenance_event(
@@ -178,6 +228,20 @@ class ArchitectureFoundationTests(unittest.TestCase):
                 )
 
         self.assertEqual(context.exception.code, ArchitectureErrorCode.INVALID_ARTIFACT)
+
+    def test_m01_design_documents_are_present(self) -> None:
+        root = Path(__file__).resolve().parents[5]
+
+        required_docs = {
+            root / "docs" / "workspace_build_conventions.md": "PYTHONPATH=src",
+            root / "docs" / "adr_workflow.md": "Architecture Decision Record",
+            root / "docs" / "plugin_capability_model.md": "PluginCapability",
+            root / "architecture" / "0000-adr-template.md": "Status:",
+        }
+
+        for path, required_text in required_docs.items():
+            self.assertTrue(path.is_file(), str(path))
+            self.assertIn(required_text, path.read_text(encoding="utf-8"))
 
 
 def _restore_env(name: str, value: str | None) -> None:

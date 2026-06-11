@@ -39,6 +39,10 @@
   architecture errors, JSON configuration loading, provenance event envelopes,
   environment capture, API stability levels, feature flags, and release
   artifact manifests.
+- M01 design docs now define workspace build conventions, plugin capability
+  metadata, and the ADR workflow in `docs/workspace_build_conventions.md`,
+  `docs/plugin_capability_model.md`, `docs/adr_workflow.md`, and
+  `architecture/0000-adr-template.md`.
 
 ## Numerical Kernels
 

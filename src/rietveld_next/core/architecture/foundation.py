@@ -35,6 +35,7 @@ class ArchitectureErrorCode(StrEnum):
     INVALID_PROVENANCE_EVENT = "invalid_provenance_event"
     INVALID_RELEASE_MANIFEST = "invalid_release_manifest"
     INVALID_ARTIFACT = "invalid_artifact"
+    INVALID_PLUGIN_CAPABILITY = "invalid_plugin_capability"
 
 
 class ApiStability(StrEnum):
@@ -179,6 +180,116 @@ class FeatureFlagRegistry:
         """Return deterministic registry metadata."""
 
         return {"flags": [flag.to_dict() for flag in sorted(self.flags, key=lambda item: item.name)]}
+
+
+@dataclass(frozen=True)
+class PluginCapability:
+    """Declared capabilities for an extension or backend plugin.
+
+    Args:
+        name: Stable plugin capability identifier.
+        version: Capability contract version.
+        supported_radiation_types: Radiation type identifiers supported by the
+            plugin.
+        supported_axes: Histogram axis identifiers supported by the plugin.
+        parameter_names: Parameter names the plugin owns or exposes.
+        units: Mapping from parameter name to unit symbol.
+        supports_derivatives: Whether the plugin can provide derivatives.
+        validation_functions: Stable names of validation functions supplied by
+            the plugin.
+        stability: Public API stability level.
+    """
+
+    name: str
+    version: str
+    supported_radiation_types: tuple[str, ...] = field(default_factory=tuple)
+    supported_axes: tuple[str, ...] = field(default_factory=tuple)
+    parameter_names: tuple[str, ...] = field(default_factory=tuple)
+    units: Mapping[str, str] = field(default_factory=dict)
+    supports_derivatives: bool = False
+    validation_functions: tuple[str, ...] = field(default_factory=tuple)
+    stability: ApiStability = ApiStability.EXPERIMENTAL
+
+    def __post_init__(self) -> None:
+        """Validate capability metadata and normalize sequence fields."""
+
+        _validate_identifier(self.name, "plugin_capability.name", ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY)
+        if not self.version:
+            raise ArchitectureError(
+                ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY,
+                "Plugin capability version must be non-empty.",
+                "plugin_capability.version",
+            )
+        object.__setattr__(
+            self,
+            "supported_radiation_types",
+            _coerce_identifier_tuple(
+                self.supported_radiation_types,
+                "plugin_capability.supported_radiation_types",
+                allow_empty=False,
+            ),
+        )
+        object.__setattr__(
+            self,
+            "supported_axes",
+            _coerce_identifier_tuple(self.supported_axes, "plugin_capability.supported_axes", allow_empty=False),
+        )
+        object.__setattr__(
+            self,
+            "parameter_names",
+            _coerce_identifier_tuple(self.parameter_names, "plugin_capability.parameter_names", allow_empty=True),
+        )
+        object.__setattr__(
+            self,
+            "validation_functions",
+            _coerce_identifier_tuple(
+                self.validation_functions,
+                "plugin_capability.validation_functions",
+                allow_empty=True,
+            ),
+        )
+        normalized_units = _canonical_mapping(dict(self.units))
+        parameter_set = set(self.parameter_names)
+        unit_set = set(normalized_units)
+        if parameter_set != unit_set:
+            raise ArchitectureError(
+                ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY,
+                "Plugin capability units must exactly match declared parameter names.",
+                "plugin_capability.units",
+                {
+                    "missing_units": sorted(parameter_set - unit_set),
+                    "unknown_units": sorted(unit_set - parameter_set),
+                },
+            )
+        for parameter_name, unit_symbol in normalized_units.items():
+            _validate_identifier(
+                parameter_name,
+                "plugin_capability.units",
+                ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY,
+            )
+            if not isinstance(unit_symbol, str) or not unit_symbol:
+                raise ArchitectureError(
+                    ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY,
+                    "Plugin capability unit symbols must be non-empty strings.",
+                    "plugin_capability.units",
+                    {"parameter": parameter_name},
+                )
+        object.__setattr__(self, "units", MappingProxyType(normalized_units))
+
+    def to_dict(self) -> dict[str, Any]:
+        """Return deterministic plugin capability metadata."""
+
+        return {
+            "name": self.name,
+            "parameter_names": sorted(self.parameter_names),
+            "stability": self.stability.value,
+            "supported_axes": sorted(self.supported_axes),
+            "supported_radiation_types": sorted(self.supported_radiation_types),
+            "supports_derivatives": self.supports_derivatives,
+            "units": dict(sorted(self.units.items())),
+            "validation_functions": sorted(self.validation_functions),
+            "version": self.version,
+        }
 
 
 @dataclass(frozen=True)
@@ -499,6 +610,27 @@ def build_release_manifest(
 def _validate_identifier(value: str, path: str, code: ArchitectureErrorCode) -> None:
     if not isinstance(value, str) or IDENTIFIER_PATTERN.fullmatch(value) is None:
         raise ArchitectureError(code, "Value must be a stable identifier.", path, {"value": value})
+
+
+def _coerce_identifier_tuple(values: Iterable[str], path: str, *, allow_empty: bool) -> tuple[str, ...]:
+    normalized = tuple(values)
+    if not normalized and not allow_empty:
+        raise ArchitectureError(
+            ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY
+            if path.startswith("plugin_capability.")
+            else ArchitectureErrorCode.INVALID_FEATURE_FLAG,
+            "At least one identifier is required.",
+            path,
+        )
+    for value in normalized:
+        _validate_identifier(
+            value,
+            path,
+            ArchitectureErrorCode.INVALID_PLUGIN_CAPABILITY
+            if path.startswith("plugin_capability.")
+            else ArchitectureErrorCode.INVALID_FEATURE_FLAG,
+        )
+    return tuple(sorted(normalized))
 
 
 def _parse_utc_timestamp(
