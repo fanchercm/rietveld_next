@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rietveld-next.org/schema/project.schema.json",
+  "title": "RietveldNextProject",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "experiments",
+    "phases",
+    "parameters"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.0\\."
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/experiment"
+      }
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/phase"
+      }
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/refinement_parameter"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/constraint"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  },
+  "$defs": {
+    "experiment": {
+      "type": "object",
+      "required": [
+        "id",
+        "radiation",
+        "datasets"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "radiation": {
+          "enum": [
+            "lab_xray_cw",
+            "synchrotron_xray_cw",
+            "synchrotron_xray_edxrd",
+            "neutron_cw",
+            "neutron_tof"
+          ]
+        },
+        "instrument_id": {
+          "type": "string"
+        },
+        "sample_environment": {
+          "type": "object"
+        },
+        "datasets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dataset"
+          }
+        }
+      }
+    },
+    "dataset": {
+      "type": "object",
+      "required": [
+        "id",
+        "axis",
+        "data_uri"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "two_theta",
+            "tof",
+            "energy",
+            "d_spacing",
+            "q"
+          ]
+        },
+        "data_uri": {
+          "type": "string"
+        },
+        "uncertainty_model": {
+          "enum": [
+            "gaussian",
+            "poisson",
+            "user_supplied",
+            "empirical"
+          ]
+        },
+        "histograms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/histogram"
+          }
+        }
+      }
+    },
+    "histogram": {
+      "type": "object",
+      "required": [
+        "id",
+        "dataset_id",
+        "bank_id",
+        "x_uri",
+        "y_uri"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dataset_id": {
+          "type": "string"
+        },
+        "bank_id": {
+          "type": "string"
+        },
+        "x_uri": {
+          "type": "string"
+        },
+        "y_uri": {
+          "type": "string"
+        },
+        "sigma_uri": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "background_model": {
+          "type": "object"
+        },
+        "phase_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "crystal_structure"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "crystal_structure": {
+          "$ref": "#/$defs/crystal_structure"
+        },
+        "magnetic_structure": {
+          "$ref": "#/$defs/magnetic_structure"
+        },
+        "microstructure_model": {
+          "type": "object"
+        },
+        "texture_model": {
+          "type": "object"
+        }
+      }
+    },
+    "crystal_structure": {
+      "type": "object"
+    },
+    "magnetic_structure": {
+      "type": "object"
+    },
+    "refinement_parameter": {
+      "type": "object",
+      "required": [
+        "id",
+        "path",
+        "value",
+        "refine"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "standard_uncertainty": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "units": {
+          "type": "string"
+        },
+        "refine": {
+          "type": "boolean"
+        },
+        "bounds": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "prior": {
+          "type": "object"
+        }
+      }
+    },
+    "constraint": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "expression"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "equality",
+            "inequality",
+            "linear",
+            "symbolic",
+            "restraint"
+          ]
+        },
+        "expression": {
+          "type": "string"
+        },
+        "parameter_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "software": {
+          "type": "object"
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

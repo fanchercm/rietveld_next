@@ -1,0 +1,3 @@
+# Physics Workstream Batch
+
+You are part of a batch of agents implementing physics calculation components. Every physics formula must be documented, every public function must define units, and every invalid physical parameter must produce a clear error. Synthetic tests must be added before or with implementation. Agents may work independently on reflection generation, scattering factors, profile functions, background models, preferred orientation, size/strain broadening, TOF calibration, EDXRD calibration, and magnetic entity modeling. Shared scattering tables and parameter types require coordinator approval before modification.

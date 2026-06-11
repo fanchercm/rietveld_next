@@ -1,0 +1,111 @@
+# Part 11: Repository Architecture
+
+```text
+rietveld-next/
+├── src/
+│   ├── core/
+│   │   ├── rn-core-rs/
+│   │   ├── rn-schema/
+│   │   └── rn-sdk-python/
+│   ├── diffraction/
+│   │   ├── symmetry/
+│   │   ├── scattering/
+│   │   ├── profiles/
+│   │   ├── background/
+│   │   └── corrections/
+│   ├── xray/
+│   │   ├── lab_cw/
+│   │   ├── synchrotron_cw/
+│   │   ├── pink_beam/
+│   │   └── fpa/
+│   ├── neutron/
+│   │   ├── nuclear/
+│   │   ├── magnetic/
+│   │   ├── absorption/
+│   │   ├── extinction/
+│   │   └── mantid_adapters/
+│   ├── tof/
+│   │   ├── calibration/
+│   │   ├── profiles/
+│   │   ├── banks/
+│   │   └── event_mode/
+│   ├── edxrd/
+│   │   ├── energy_calibration/
+│   │   ├── detector_response/
+│   │   ├── high_pressure/
+│   │   └── workflows/
+│   ├── optimization/
+│   │   ├── local/
+│   │   ├── global/
+│   │   ├── bayesian/
+│   │   ├── mcmc/
+│   │   └── diagnostics/
+│   ├── workflows/
+│   │   ├── recipes/
+│   │   ├── sequential/
+│   │   ├── parametric/
+│   │   ├── batch/
+│   │   └── beamline/
+│   ├── ai/
+│   │   ├── agent/
+│   │   ├── copilot/
+│   │   ├── knowledge_base/
+│   │   ├── tool_contracts/
+│   │   └── evals/
+│   ├── hpc/
+│   │   ├── slurm/
+│   │   ├── dask/
+│   │   ├── ray/
+│   │   ├── kubernetes/
+│   │   └── result_store/
+│   ├── desktop/
+│   │   ├── tauri/
+│   │   └── ui/
+│   └── web/
+│       ├── app/
+│       ├── api/
+│       └── visualization/
+├── benchmarks/
+│   ├── profile_eval/
+│   ├── jacobian/
+│   ├── optimization/
+│   ├── tof/
+│   └── end_to_end/
+├── docs/
+│   ├── theory/
+│   ├── tutorials/
+│   ├── api/
+│   ├── developer/
+│   └── validation/
+├── examples/
+│   ├── lab_xrd/
+│   ├── synchrotron/
+│   ├── neutron_cw/
+│   ├── neutron_tof/
+│   ├── edxrd/
+│   ├── magnetic/
+│   └── sequential/
+└── tests/
+    ├── unit/
+    ├── integration/
+    ├── regression/
+    ├── golden/
+    └── scientific_validation/
+```
+
+## 11.1 Package Boundaries
+
+All implementation source code now lives under `src/`. Top-level directories outside `src/` are reserved for documentation, tests, examples, benchmarks, schemas, and project metadata.
+
+- `src/core`: domain model, parameter graph, provenance, schema.
+- `src/diffraction`: generic scattering, profiles, backgrounds, corrections.
+- `src/xray`: X-ray scattering, FPA, synchrotron and lab models.
+- `src/neutron`: nuclear scattering, absorption, magnetic structures, Mantid adapters.
+- `src/tof`: TOF calibration, bank models, event-mode hooks.
+- `src/edxrd`: energy calibration, detector response, high-pressure workflows.
+- `src/optimization`: local, global, Bayesian, and MCMC optimizers.
+- `src/workflows`: recipes, sequential, parametric, batch, beamline.
+- `src/ai`: agent, copilot, tool contracts, evals.
+- `src/hpc`: Slurm, Dask, Ray, Kubernetes, result store.
+- `src/desktop`: Tauri shell.
+- `src/web`: browser app and services.

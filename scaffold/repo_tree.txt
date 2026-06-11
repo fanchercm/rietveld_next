@@ -1,0 +1,90 @@
+rietveld-next/
+├── src/
+│   ├── core/
+│   │   ├── rn-core-rs/
+│   │   ├── rn-schema/
+│   │   └── rn-sdk-python/
+│   ├── diffraction/
+│   │   ├── symmetry/
+│   │   ├── scattering/
+│   │   ├── profiles/
+│   │   ├── background/
+│   │   └── corrections/
+│   ├── xray/
+│   │   ├── lab_cw/
+│   │   ├── synchrotron_cw/
+│   │   ├── pink_beam/
+│   │   └── fpa/
+│   ├── neutron/
+│   │   ├── nuclear/
+│   │   ├── magnetic/
+│   │   ├── absorption/
+│   │   ├── extinction/
+│   │   └── mantid_adapters/
+│   ├── tof/
+│   │   ├── calibration/
+│   │   ├── profiles/
+│   │   ├── banks/
+│   │   └── event_mode/
+│   ├── edxrd/
+│   │   ├── energy_calibration/
+│   │   ├── detector_response/
+│   │   ├── high_pressure/
+│   │   └── workflows/
+│   ├── optimization/
+│   │   ├── local/
+│   │   ├── global/
+│   │   ├── bayesian/
+│   │   ├── mcmc/
+│   │   └── diagnostics/
+│   ├── workflows/
+│   │   ├── recipes/
+│   │   ├── sequential/
+│   │   ├── parametric/
+│   │   ├── batch/
+│   │   └── beamline/
+│   ├── ai/
+│   │   ├── agent/
+│   │   ├── copilot/
+│   │   ├── knowledge_base/
+│   │   ├── tool_contracts/
+│   │   └── evals/
+│   ├── hpc/
+│   │   ├── slurm/
+│   │   ├── dask/
+│   │   ├── ray/
+│   │   ├── kubernetes/
+│   │   └── result_store/
+│   ├── desktop/
+│   │   ├── tauri/
+│   │   └── ui/
+│   └── web/
+│       ├── app/
+│       ├── api/
+│       └── visualization/
+├── benchmarks/
+│   ├── profile_eval/
+│   ├── jacobian/
+│   ├── optimization/
+│   ├── tof/
+│   └── end_to_end/
+├── docs/
+│   ├── theory/
+│   ├── tutorials/
+│   ├── api/
+│   ├── developer/
+│   └── validation/
+├── examples/
+│   ├── lab_xrd/
+│   ├── synchrotron/
+│   ├── neutron_cw/
+│   ├── neutron_tof/
+│   ├── edxrd/
+│   ├── magnetic/
+│   └── sequential/
+└── tests/
+    ├── unit/
+    ├── integration/
+    ├── regression/
+    ├── golden/
+    └── scientific_validation/

@@ -1,0 +1,1640 @@
+[
+  {
+    "id": "M01",
+    "title": "M01 Src-first architecture foundation",
+    "phase": "Foundation",
+    "priority": "P0",
+    "issue_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "issue_count": 15,
+    "dependencies": [],
+    "scope": "Establish the repository, source-layout guardrails, package boundaries, plugin capability model, and architecture decision workflow.",
+    "deliverables": [
+      "src-first monorepo scaffold",
+      "workspace/build conventions",
+      "package boundary document",
+      "shared error taxonomy",
+      "plugin capability model",
+      "architecture decision record template"
+    ],
+    "acceptance_criteria": [
+      "Repository has no forbidden top-level implementation directories.",
+      "Build and lint commands are documented.",
+      "Package boundaries are explicit and enforceable.",
+      "Architecture decision records can be created and reviewed."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M02",
+    "title": "M02 Core project model and schemas",
+    "phase": "Foundation",
+    "priority": "P0",
+    "issue_numbers": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "issue_count": 20,
+    "dependencies": [
+      "M01"
+    ],
+    "scope": "Define typed project, experiment, dataset, histogram, phase, parameter, constraint, strategy, and sequential-study models.",
+    "deliverables": [
+      "core JSON schemas",
+      "Rust/Python domain objects",
+      "parameter ownership model",
+      "constraint references",
+      "schema round-trip tests"
+    ],
+    "acceptance_criteria": [
+      "All core entities serialize and deserialize deterministically.",
+      "Schema validation rejects malformed project files.",
+      "Parameter paths are stable and documented.",
+      "Core model tests pass."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M03",
+    "title": "M03 Storage and data interchange foundation",
+    "phase": "Foundation",
+    "priority": "P0",
+    "issue_numbers": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "issue_count": 15,
+    "dependencies": [
+      "M02"
+    ],
+    "scope": "Create the project package, storage adapters, provenance log, and baseline data interchange paths.",
+    "deliverables": [
+      "project package layout",
+      "JSONL provenance",
+      "NeXus/HDF5 references",
+      "Zarr/Parquet/Arrow adapter stubs",
+      "import/export tests"
+    ],
+    "acceptance_criteria": [
+      "Project packages can be created, opened, and validated.",
+      "Large array references are not embedded in JSON metadata.",
+      "Provenance actions are append-only and replayable in tests.",
+      "Storage documentation covers local and cloud usage."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M04",
+    "title": "M04 Residual objective and parameter transform foundation",
+    "phase": "Physics and numerical engine",
+    "priority": "P0",
+    "issue_numbers": [
+      51,
+      52,
+      53,
+      63,
+      64,
+      65,
+      66
+    ],
+    "issue_count": 7,
+    "dependencies": [
+      "M02"
+    ],
+    "scope": "Implement the residual-vector interface, parameter scaling, bounded transforms, objective registry, robust losses, and Poisson likelihood path.",
+    "deliverables": [
+      "residual vector API",
+      "parameter scaling utilities",
+      "bounded transforms",
+      "objective registry",
+      "robust loss functions",
+      "Poisson likelihood objective"
+    ],
+    "acceptance_criteria": [
+      "Gaussian least-squares, robust, and Poisson objectives are selectable through a common interface.",
+      "Invalid parameter values are handled through transforms or structured errors.",
+      "Small synthetic objective tests verify residual shapes and values."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M05",
+    "title": "M05 Derivative and sparse Jacobian infrastructure",
+    "phase": "Physics and numerical engine",
+    "priority": "P0",
+    "issue_numbers": [
+      54,
+      55,
+      56,
+      57,
+      69
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M04"
+    ],
+    "scope": "Implement sparse Jacobian structures, finite-difference fallback, analytic derivatives for scale/background parameters, and gradient test utilities.",
+    "deliverables": [
+      "sparse Jacobian data structure",
+      "finite-difference derivative fallback",
+      "analytic scale derivatives",
+      "analytic background derivatives",
+      "gradient verification utilities"
+    ],
+    "acceptance_criteria": [
+      "Sparse Jacobians preserve parameter-to-residual indexing.",
+      "Analytic derivatives match finite differences within tolerance on synthetic cases.",
+      "Gradient utilities produce actionable failure reports."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M06",
+    "title": "M06 Profile kernel and reflection batching foundation",
+    "phase": "Physics calculation",
+    "priority": "P0",
+    "issue_numbers": [
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M04",
+      "M05"
+    ],
+    "scope": "Implement core peak-profile kernels and execution planning needed for efficient profile calculation.",
+    "deliverables": [
+      "Gaussian profile kernel",
+      "pseudo-Voigt profile kernel",
+      "Thompson-Cox-Hastings profile kernel",
+      "peak window selection",
+      "reflection batching plan"
+    ],
+    "acceptance_criteria": [
+      "Each profile kernel has numerical tests and documented parameter conventions.",
+      "Peak windowing excludes negligible contributions without changing results beyond tolerance.",
+      "Reflection batching produces deterministic execution plans."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M07",
+    "title": "M07 Uncertainty diagnostics and profile benchmark harness",
+    "phase": "Physics and numerical engine",
+    "priority": "P1",
+    "issue_numbers": [
+      67,
+      68,
+      70
+    ],
+    "issue_count": 3,
+    "dependencies": [
+      "M05",
+      "M06"
+    ],
+    "scope": "Implement covariance/correlation diagnostics and the first backend benchmark harness for profile calculations.",
+    "deliverables": [
+      "covariance calculation",
+      "correlation matrix calculation",
+      "profile backend benchmark harness"
+    ],
+    "acceptance_criteria": [
+      "Covariance and correlation outputs include parameter labels and units.",
+      "Singular or ill-conditioned cases return warnings rather than misleading uncertainties.",
+      "Benchmark results are machine-readable and reproducible."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M08",
+    "title": "M08 Local optimization adapters and rollback state",
+    "phase": "Optimization",
+    "priority": "P0",
+    "issue_numbers": [
+      71,
+      72,
+      73,
+      74,
+      75
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M04",
+      "M05"
+    ],
+    "scope": "Implement local refinement infrastructure, including SciPy adapters, Rust optimizer trait, convergence reporting, and rollback snapshots.",
+    "deliverables": [
+      "trust-region adapter",
+      "Levenberg-Marquardt adapter",
+      "Rust optimizer trait",
+      "convergence report object",
+      "rollback snapshots"
+    ],
+    "acceptance_criteria": [
+      "A synthetic refinement runs through both local adapters where dependencies are available.",
+      "Convergence reports include objective, iterations, termination reason, and parameter shifts.",
+      "Rollback restores previous model state exactly."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M09",
+    "title": "M09 Global and multi-start optimization foundation",
+    "phase": "Optimization",
+    "priority": "P1",
+    "issue_numbers": [
+      76,
+      77,
+      78,
+      79
+    ],
+    "issue_count": 4,
+    "dependencies": [
+      "M08"
+    ],
+    "scope": "Implement initial global-search infrastructure for rugged refinement problems and autonomous starting-value discovery.",
+    "deliverables": [
+      "differential evolution adapter",
+      "simulated annealing adapter",
+      "multi-start runner",
+      "Bayesian optimization placeholder API"
+    ],
+    "acceptance_criteria": [
+      "Global optimizers share a common result schema.",
+      "Multi-start runs store seeds, candidates, objective values, and final local-refinement status.",
+      "Expensive global tests are opt-in and excluded from normal CI."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M10",
+    "title": "M10 Probabilistic uncertainty and model comparison foundation",
+    "phase": "Optimization",
+    "priority": "P1",
+    "issue_numbers": [
+      80,
+      81,
+      84,
+      85
+    ],
+    "issue_count": 4,
+    "dependencies": [
+      "M08"
+    ],
+    "scope": "Add uncertainty and model-comparison APIs needed for scientific validation, publication-quality analysis, and autonomous model ranking.",
+    "deliverables": [
+      "MCMC uncertainty API",
+      "optimizer result comparison utilities",
+      "model-selection scoring interface",
+      "reproducibility seed management"
+    ],
+    "acceptance_criteria": [
+      "MCMC API can run a minimal synthetic posterior example or clearly skip when backend dependencies are absent.",
+      "Model-comparison outputs record objective, parameter count, likelihood assumptions, and warnings.",
+      "Seed handling is deterministic and documented."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M11",
+    "title": "M11 Optimizer safeguard heuristics",
+    "phase": "Optimization",
+    "priority": "P1",
+    "issue_numbers": [
+      82,
+      83
+    ],
+    "issue_count": 2,
+    "dependencies": [
+      "M08",
+      "M10"
+    ],
+    "scope": "Implement parameter-freezing and overparameterization diagnostics that protect autonomous workflows from nonphysical or underdetermined refinements.",
+    "deliverables": [
+      "parameter-freezing heuristics",
+      "overparameterization detector"
+    ],
+    "acceptance_criteria": [
+      "Highly correlated or unstable parameters are flagged with explanations.",
+      "Heuristics produce recommendations rather than silently changing the model.",
+      "Diagnostics are covered by synthetic pathological cases."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M12",
+    "title": "M12 Structural IO and symmetry baseline",
+    "phase": "Physics calculation",
+    "priority": "P0",
+    "issue_numbers": [
+      86,
+      87,
+      88,
+      89
+    ],
+    "issue_count": 4,
+    "dependencies": [
+      "M02"
+    ],
+    "scope": "Implement CIF ingestion, validation reporting, space-group lookup, and reflection generation.",
+    "deliverables": [
+      "CIF import v0",
+      "CIF validation report",
+      "space-group lookup service",
+      "reflection generation service"
+    ],
+    "acceptance_criteria": [
+      "Representative CIFs import successfully.",
+      "Validation reports identify missing/ambiguous crystallographic fields.",
+      "Reflection generation matches reference cases for simple space groups."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M13",
+    "title": "M13 Scattering factors and basic corrections",
+    "phase": "Physics calculation",
+    "priority": "P0",
+    "issue_numbers": [
+      90,
+      91,
+      92,
+      93
+    ],
+    "issue_count": 4,
+    "dependencies": [
+      "M12"
+    ],
+    "scope": "Implement scattering tables and first-pass diffraction corrections needed by X-ray and neutron calculations.",
+    "deliverables": [
+      "X-ray form factor table",
+      "neutron scattering length table",
+      "multiplicity calculation",
+      "Lorentz-polarization correction"
+    ],
+    "acceptance_criteria": [
+      "Scattering tables include citation/provenance metadata.",
+      "Multiplicity and Lorentz-polarization tests match reference calculations.",
+      "X-ray and neutron scattering lookup APIs are radiation-specific."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M14",
+    "title": "M14 Orientation, microstructure, and background models",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      94,
+      95,
+      96,
+      97,
+      98
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M06",
+      "M13"
+    ],
+    "scope": "Implement first-generation preferred-orientation, size/strain broadening, and polynomial/Chebyshev background models.",
+    "deliverables": [
+      "preferred orientation model v0",
+      "isotropic size broadening",
+      "isotropic strain broadening",
+      "polynomial background model",
+      "Chebyshev background model"
+    ],
+    "acceptance_criteria": [
+      "Each model has parameter bounds and validation rules.",
+      "Background models can be refined independently from phase/profile parameters.",
+      "Size and strain contributions are separately testable on synthetic patterns."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M15",
+    "title": "M15 Synthetic patterns, phase scales, and structural validation",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "issue_count": 7,
+    "dependencies": [
+      "M12",
+      "M13",
+      "M14"
+    ],
+    "scope": "Create end-to-end synthetic pattern generation and phase quantification support with structural validation checks.",
+    "deliverables": [
+      "reflection tick generation",
+      "synthetic pattern generator",
+      "standard reference dataset registry",
+      "phase scale model",
+      "phase fraction calculation",
+      "occupancy constraints",
+      "ADP validation checks"
+    ],
+    "acceptance_criteria": [
+      "Synthetic patterns include phase ticks and metadata.",
+      "Phase fraction calculation documents assumptions and normalization.",
+      "Occupancy and ADP validation produce structured warnings."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M16",
+    "title": "M16 Lab and synchrotron CW X-ray instrument baseline",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      106,
+      107,
+      108,
+      109,
+      115
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M13",
+      "M15"
+    ],
+    "scope": "Implement lab and synchrotron CW X-ray instrument models and basic calibration/metadata validation workflows.",
+    "deliverables": [
+      "lab CW XRD instrument model",
+      "synchrotron CW XRD instrument model",
+      "wavelength metadata validation",
+      "zero-shift calibration workflow",
+      "beamline metadata template"
+    ],
+    "acceptance_criteria": [
+      "Instrument models distinguish lab and synchrotron metadata.",
+      "Zero-shift calibration is reproducible on a synthetic/reference case.",
+      "Missing wavelength or beamline metadata produces actionable validation messages."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M17",
+    "title": "M17 Fundamental-parameters and detector hook foundation",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      110,
+      111,
+      112,
+      113,
+      114
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M16"
+    ],
+    "scope": "Create extensible APIs for fundamental-parameters, emission spectra, axial divergence, detector resolution, and 2D integration metadata links.",
+    "deliverables": [
+      "fundamental-parameters API skeleton",
+      "emission spectrum model skeleton",
+      "axial divergence hook",
+      "detector resolution hook",
+      "2D integration metadata link"
+    ],
+    "acceptance_criteria": [
+      "Hooks are registered through the plugin/capability system.",
+      "Skeleton implementations are documented as incomplete physics models.",
+      "Tests verify that instrument hooks compose with the profile evaluation path."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M18",
+    "title": "M18 CW neutron instrument and correction physics",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      116,
+      117,
+      118,
+      119,
+      120
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M13",
+      "M15"
+    ],
+    "scope": "Implement CW neutron instrument modeling, isotope scattering lookup, absorption hooks, sample geometry corrections, and extinction interfaces.",
+    "deliverables": [
+      "CW neutron instrument model",
+      "isotope scattering-length lookup",
+      "wavelength-dependent absorption hooks",
+      "sample geometry correction interface",
+      "extinction correction interface"
+    ],
+    "acceptance_criteria": [
+      "Neutron instrument models use neutron scattering lengths rather than X-ray form factors.",
+      "Absorption/extinction interfaces can be attached without changing core profile kernels.",
+      "Reference neutron calculations pass baseline validation."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M19",
+    "title": "M19 Neutron data integration and joint weighting",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M18"
+    ],
+    "scope": "Implement neutron-specific background, joint weighting, Mantid import, and uncertainty checks.",
+    "deliverables": [
+      "container background model",
+      "neutron joint weighting model",
+      "nuclear neutron validation example",
+      "Mantid reduced-data import adapter",
+      "neutron uncertainty model checks"
+    ],
+    "acceptance_criteria": [
+      "Mantid reduced-data import handles at least one documented example shape.",
+      "Joint weighting records likelihood/weighting assumptions.",
+      "Validation example can be run from documentation."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M20",
+    "title": "M20 TOF data model, calibration, and masks",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      126,
+      127,
+      128,
+      129,
+      140
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M18"
+    ],
+    "scope": "Implement TOF histogram axis, detector bank model, calibration parameter set, DIFC/DIFA/zero peak positions, and bank masks.",
+    "deliverables": [
+      "TOF histogram axis model",
+      "TOF detector bank entity",
+      "TOF calibration parameter set",
+      "DIFC-DIFA-zero peak position model",
+      "TOF bank mask handling"
+    ],
+    "acceptance_criteria": [
+      "Multi-bank projects can represent independent bank calibration parameters.",
+      "Peak-position tests cover at least two banks.",
+      "Bank masks propagate into residual calculation."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M21",
+    "title": "M21 TOF bank profile and multi-bank objective",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      130,
+      131,
+      132,
+      133,
+      134
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M20",
+      "M06"
+    ],
+    "scope": "Implement bank-specific backgrounds, profile parameters, back-to-back exponential profiles, TOF windowing, and multi-bank objective assembly.",
+    "deliverables": [
+      "bank-specific background model",
+      "bank-specific profile parameter model",
+      "back-to-back exponential profile",
+      "TOF reflection windowing",
+      "multi-bank objective assembly"
+    ],
+    "acceptance_criteria": [
+      "Each bank can refine local profile/background parameters while sharing phase parameters.",
+      "Back-to-back exponential tests verify asymmetry and normalization behavior.",
+      "Multi-bank objective returns labeled residual blocks."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M22",
+    "title": "M22 TOF validation diagnostics and workflow specs",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      135,
+      136,
+      137,
+      138,
+      139
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M20",
+      "M21"
+    ],
+    "scope": "Add TOF benchmarks, calibration workflow specification, diagnostics, event-mode provenance placeholder, and GSAS-II comparison fixture.",
+    "deliverables": [
+      "TOF synthetic benchmark",
+      "TOF calibration wizard spec",
+      "TOF diagnostic plot data",
+      "event-mode provenance placeholder",
+      "GSAS-II TOF comparison fixture"
+    ],
+    "acceptance_criteria": [
+      "TOF benchmark is reproducible and not run in expensive mode by default.",
+      "Calibration wizard spec maps GUI steps to API calls.",
+      "Comparison fixture documents expected tolerances and limitations."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M23",
+    "title": "M23 Magnetic entities and magnetic scattering foundation",
+    "phase": "Physics calculation",
+    "priority": "P1",
+    "issue_numbers": [
+      141,
+      142,
+      143
+    ],
+    "issue_count": 3,
+    "dependencies": [
+      "M13",
+      "M18"
+    ],
+    "scope": "Introduce magnetic moment, propagation-vector, and magnetic form-factor entities.",
+    "deliverables": [
+      "magnetic moment entity",
+      "propagation vector entity",
+      "magnetic form-factor table"
+    ],
+    "acceptance_criteria": [
+      "Magnetic entities are serializable in the core model.",
+      "Magnetic form-factor lookup includes provenance metadata.",
+      "Basic validation catches invalid moment definitions."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M24",
+    "title": "M24 Magnetic symmetry and import foundation",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      144,
+      145,
+      146
+    ],
+    "issue_count": 3,
+    "dependencies": [
+      "M23"
+    ],
+    "scope": "Create mCIF import skeleton, magnetic symmetry constraint API, and representation-analysis import placeholder.",
+    "deliverables": [
+      "mCIF import skeleton",
+      "magnetic symmetry constraint API",
+      "representation-analysis import placeholder"
+    ],
+    "acceptance_criteria": [
+      "mCIF import clearly reports supported and unsupported fields.",
+      "Magnetic symmetry constraints are represented in the parameter graph.",
+      "Representation-analysis placeholder includes documented extension contract."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M25",
+    "title": "M25 Magnetic joint-refinement validation and recipes",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      147,
+      148,
+      149,
+      150,
+      151,
+      152
+    ],
+    "issue_count": 6,
+    "dependencies": [
+      "M23",
+      "M24",
+      "M19"
+    ],
+    "scope": "Implement nuclear-plus-magnetic coupling, magnetic reflection handling, validation, reports, and refinement recipes.",
+    "deliverables": [
+      "nuclear-plus-magnetic phase coupling",
+      "magnetic reflection flagging",
+      "moment magnitude validation",
+      "tutorial dataset stub",
+      "magnetic report section generator",
+      "magnetic parameter group recipes"
+    ],
+    "acceptance_criteria": [
+      "Magnetic and nuclear contributions can be toggled and reported separately.",
+      "Moment magnitude validation produces scientific warnings.",
+      "Recipe docs explain safe staged magnetic refinement."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M26",
+    "title": "M26 EDXRD axis and calibration foundation",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      153,
+      154,
+      155,
+      164,
+      166
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M13",
+      "M15"
+    ],
+    "scope": "Implement energy-axis histograms, channel-to-energy calibration, fixed-angle Bragg conversion, EDXRD calibration workflow, and import template.",
+    "deliverables": [
+      "energy-axis histogram model",
+      "channel-to-energy calibration polynomial",
+      "fixed-angle Bragg conversion",
+      "EDXRD calibration workflow",
+      "EDXRD import template"
+    ],
+    "acceptance_criteria": [
+      "Energy-axis data can be represented without lossy conversion to 2theta.",
+      "Calibration workflow stores coefficients and provenance.",
+      "Fixed-angle conversion tests cover known standards."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M27",
+    "title": "M27 EDXRD detector response and correction hooks",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      156,
+      157,
+      158,
+      159,
+      160
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M26",
+      "M06"
+    ],
+    "scope": "Implement the EDXRD detector response API, Gaussian response kernel, tail/escape hooks, and dead-time metadata.",
+    "deliverables": [
+      "detector response API",
+      "Gaussian detector response kernel",
+      "low-energy tail response hook",
+      "escape peak correction hook",
+      "dead-time correction metadata"
+    ],
+    "acceptance_criteria": [
+      "Detector response kernels are separable from crystallographic peak generation.",
+      "Correction hooks are optional and provenance-recorded.",
+      "Tests document current physical limitations."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M28",
+    "title": "M28 EDXRD high-pressure validation and documentation",
+    "phase": "Physics calculation",
+    "priority": "P2",
+    "issue_numbers": [
+      161,
+      162,
+      163,
+      165,
+      167
+    ],
+    "issue_count": 5,
+    "dependencies": [
+      "M26",
+      "M27"
+    ],
+    "scope": "Add high-pressure entities, equation-of-state hook, synthetic benchmark, residual diagnostics, and user documentation example.",
+    "deliverables": [
+      "high-pressure marker entity",
+      "equation-of-state hook",
+      "EDXRD synthetic benchmark",
+      "EDXRD residual diagnostics",
+      "EDXRD documentation example"
+    ],
+    "acceptance_criteria": [
+      "High-pressure marker metadata is represented in the project model.",
+      "EDXRD benchmark writes reproducible results.",
+      "Documentation walks through calibration and refinement assumptions."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M29",
+    "title": "M29 Sequential and parametric workflow foundation",
+    "phase": "Workflow",
+    "priority": "P1",
+    "issue_numbers": [
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182
+    ],
+    "issue_count": 15,
+    "dependencies": [
+      "M15",
+      "M08"
+    ],
+    "scope": "Implement sequential/parametric study execution, parameter evolution tables, and recipe plumbing.",
+    "deliverables": [
+      "sequential runner",
+      "parametric model API",
+      "batch recipe integration",
+      "study result tables",
+      "workflow validation examples"
+    ],
+    "acceptance_criteria": [
+      "Sequential studies run deterministically on synthetic series.",
+      "Parameter evolution tables include units, uncertainties, and provenance.",
+      "Workflow recipes are scriptable and replayable."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M30",
+    "title": "M30 AI tool-grounded refinement foundation",
+    "phase": "AI",
+    "priority": "P1",
+    "issue_numbers": [
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202
+    ],
+    "issue_count": 20,
+    "dependencies": [
+      "M08",
+      "M11",
+      "M29"
+    ],
+    "scope": "Implement deterministic tool contracts, agent diagnostics, rollback-aware planning, and AI evaluation scaffolding.",
+    "deliverables": [
+      "AI tool schemas",
+      "diagnostic tools",
+      "agent action logs",
+      "strategy rules",
+      "AI evaluation tasks"
+    ],
+    "acceptance_criteria": [
+      "Every AI action maps to a deterministic tool call.",
+      "Agent logs are replayable without the LLM.",
+      "Safety tests cover nonphysical and overfitting scenarios."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M31",
+    "title": "M31 Desktop and web UX foundation",
+    "phase": "UX",
+    "priority": "P1",
+    "issue_numbers": [
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222
+    ],
+    "issue_count": 20,
+    "dependencies": [
+      "M01",
+      "M02",
+      "M08"
+    ],
+    "scope": "Build the first desktop/web user experience for import, visualization, parameter editing, guided workflows, and reports.",
+    "deliverables": [
+      "desktop shell",
+      "web app skeleton",
+      "pattern viewer",
+      "parameter table",
+      "guided workflow screens",
+      "report export"
+    ],
+    "acceptance_criteria": [
+      "Core workflows are accessible from GUI and script API.",
+      "GUI actions emit provenance events.",
+      "UX tests cover import-through-simple-refinement path."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M32",
+    "title": "M32 Visualization and diagnostics foundation",
+    "phase": "UX",
+    "priority": "P1",
+    "issue_numbers": [
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232
+    ],
+    "issue_count": 10,
+    "dependencies": [
+      "M07",
+      "M29"
+    ],
+    "scope": "Implement core visual diagnostics for profiles, correlations, residuals, sequential studies, and parameter graphs.",
+    "deliverables": [
+      "profile plots",
+      "correlation heatmap",
+      "residual diagnostics",
+      "parameter graph visualization",
+      "sequential dashboards"
+    ],
+    "acceptance_criteria": [
+      "Visual data payloads are testable without rendering.",
+      "Plots distinguish observed, calculated, difference, and phase ticks.",
+      "Correlation and residual warnings are linked to parameters."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M33",
+    "title": "M33 HPC and cloud execution foundation",
+    "phase": "HPC",
+    "priority": "P1",
+    "issue_numbers": [
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247
+    ],
+    "issue_count": 15,
+    "dependencies": [
+      "M29"
+    ],
+    "scope": "Implement local, Slurm, Dask/Ray, Kubernetes, and result-store execution foundations.",
+    "deliverables": [
+      "local batch runner",
+      "Slurm adapter",
+      "Dask adapter",
+      "Ray adapter",
+      "Kubernetes worker prototype",
+      "result store"
+    ],
+    "acceptance_criteria": [
+      "Local batch execution handles synthetic ensembles.",
+      "Scheduler adapters have fake/local tests.",
+      "Result records are reproducible and portable."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M34",
+    "title": "M34 Validation and testing baseline",
+    "phase": "Quality",
+    "priority": "P0",
+    "issue_numbers": [
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267
+    ],
+    "issue_count": 20,
+    "dependencies": [
+      "M03",
+      "M15",
+      "M19",
+      "M22"
+    ],
+    "scope": "Establish scientific validation, golden regression tests, CI gates, and numerical tolerance policies.",
+    "deliverables": [
+      "unit/integration tests",
+      "golden scientific cases",
+      "optimizer regression suite",
+      "cross-platform CI",
+      "validation report generator"
+    ],
+    "acceptance_criteria": [
+      "Validation tests run in CI with documented tolerances.",
+      "Expensive tests are clearly marked.",
+      "Validation report summarizes pass/fail and known limitations."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M35",
+    "title": "M35 Documentation and governance baseline",
+    "phase": "Governance",
+    "priority": "P1",
+    "issue_numbers": [
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287
+    ],
+    "issue_count": 20,
+    "dependencies": [
+      "M01",
+      "M34"
+    ],
+    "scope": "Create user, developer, theory, governance, citation, and reproducibility documentation.",
+    "deliverables": [
+      "theory guide",
+      "beginner tutorial",
+      "developer guide",
+      "plugin guide",
+      "governance docs",
+      "citation guide"
+    ],
+    "acceptance_criteria": [
+      "Docs build successfully.",
+      "Tutorials reference tested examples.",
+      "Governance and contribution policies are explicit."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M36",
+    "title": "M36 Benchmarking foundation and result infrastructure",
+    "phase": "Benchmarking",
+    "priority": "P1",
+    "issue_numbers": [
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295
+    ],
+    "issue_count": 8,
+    "dependencies": [
+      "M07"
+    ],
+    "scope": "Define benchmark taxonomy, result schemas, backend comparison harnesses, and initial profile benchmark workflow.",
+    "deliverables": [
+      "benchmark taxonomy",
+      "JSON result schema",
+      "Rust/JAX benchmark harness",
+      "profile benchmark docs"
+    ],
+    "acceptance_criteria": [
+      "Benchmarks write machine-readable results.",
+      "Compile time and steady-state time are separated.",
+      "Large benchmarks are opt-in."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M37",
+    "title": "M37 Numerical and optimization benchmark suite",
+    "phase": "Benchmarking",
+    "priority": "P1",
+    "issue_numbers": [
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303
+    ],
+    "issue_count": 8,
+    "dependencies": [
+      "M08",
+      "M09"
+    ],
+    "scope": "Benchmark profile kernels, sparse Jacobians, AD, local optimizers, global optimizers, and uncertainty APIs.",
+    "deliverables": [
+      "pseudo-Voigt benchmark",
+      "Jacobian benchmark",
+      "AD benchmark",
+      "optimizer benchmark",
+      "global search benchmark"
+    ],
+    "acceptance_criteria": [
+      "Benchmark outputs include size, backend, dtype, iterations, timings, and checksum.",
+      "Baseline results are reproducible.",
+      "Benchmark tests avoid expensive defaults."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M38",
+    "title": "M38 Physics workflow benchmark suite",
+    "phase": "Benchmarking",
+    "priority": "P1",
+    "issue_numbers": [
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311
+    ],
+    "issue_count": 8,
+    "dependencies": [
+      "M21",
+      "M25",
+      "M28",
+      "M29"
+    ],
+    "scope": "Benchmark sequential, parametric, batch, TOF, neutron, magnetic, and EDXRD workflows.",
+    "deliverables": [
+      "sequential benchmark",
+      "parametric benchmark",
+      "TOF benchmark",
+      "magnetic benchmark",
+      "EDXRD benchmark"
+    ],
+    "acceptance_criteria": [
+      "Each benchmark documents scientific assumptions.",
+      "Workflow benchmarks produce result tables and diagnostics.",
+      "Benchmarks are usable for regression tracking."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M39",
+    "title": "M39 Storage, diagnostics, visualization, AI, and HPC benchmark suite",
+    "phase": "Benchmarking",
+    "priority": "P2",
+    "issue_numbers": [
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320
+    ],
+    "issue_count": 9,
+    "dependencies": [
+      "M30",
+      "M32",
+      "M33"
+    ],
+    "scope": "Benchmark storage backends, visualization payloads, diagnostics, AI-agent loops, schedulers, and distributed execution.",
+    "deliverables": [
+      "storage benchmark",
+      "diagnostics benchmark",
+      "visualization benchmark",
+      "AI loop benchmark",
+      "scheduler benchmark"
+    ],
+    "acceptance_criteria": [
+      "Benchmarks produce comparable JSON artifacts.",
+      "Scheduler benchmarks can run locally with fake adapters.",
+      "AI benchmarks do not depend on nondeterministic LLM output for pass/fail."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  },
+  {
+    "id": "M40",
+    "title": "M40 Benchmark regression, dashboard, and CI integration",
+    "phase": "Benchmarking",
+    "priority": "P1",
+    "issue_numbers": [
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327
+    ],
+    "issue_count": 7,
+    "dependencies": [
+      "M36",
+      "M37",
+      "M38",
+      "M39"
+    ],
+    "scope": "Integrate benchmark baselines, dashboards, regression thresholds, CI smoke benchmarks, and documentation.",
+    "deliverables": [
+      "benchmark baseline registry",
+      "dashboard artifact",
+      "performance regression thresholds",
+      "CI smoke benchmark",
+      "benchmark documentation"
+    ],
+    "acceptance_criteria": [
+      "CI runs lightweight benchmarks only.",
+      "Regression thresholds are explicit and reviewable.",
+      "Dashboard artifacts can be regenerated from JSON results."
+    ],
+    "definition_of_done": [
+      "All mapped issues are closed or explicitly deferred with rationale.",
+      "All implementation source created by this milestone is under src/.",
+      "Public APIs, schemas, and generated artifacts are documented.",
+      "Unit, integration, or validation tests relevant to the milestone pass in CI.",
+      "Codex-facing notes include commands to reproduce validation or benchmark results."
+    ]
+  }
+]

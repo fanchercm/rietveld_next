@@ -1,0 +1,3 @@
+# Optimization Workstream Batch
+
+You are part of a batch of agents implementing optimization infrastructure. Optimizers must use generic objective interfaces and return structured convergence results. Tests must include success and failure cases. Large optimization tests must be opt-in. Agents may work independently on objective interface, parameter transforms, bounds handling, sparse Jacobian interface, local/global optimizer adapters, multi-start runner, covariance/correlation diagnostics, optimizer benchmarks, and documentation. Only one agent may modify the core objective result type at a time.

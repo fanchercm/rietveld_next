@@ -1,0 +1,30 @@
+{
+  "package": "rietveld_next_codex_prompt_expanded_with_batch",
+  "issue_count": 327,
+  "milestone_count": 40,
+  "prompt_counts": {
+    "program": 1,
+    "milestones": 40,
+    "issues": 327,
+    "workstreams": 19,
+    "legacy": 8
+  },
+  "canonical_files": {
+    "issues": "backlog/issues.json",
+    "milestones": "backlog/milestones.json",
+    "github_issues": "github/issues_import.json",
+    "github_milestones": "github/milestones_import.json",
+    "agents": "AGENTS.md",
+    "prompts_index": "prompts/README.md"
+  },
+  "source_layout_rule": "All implementation source code must live under src/.",
+  "updated_for": "batch-agent prompts added directly under prompts/",
+  "canonical_package_tree": "docs/PACKAGE_TREE.md",
+  "batch_prompt_count": 30,
+  "batch_prompt_range": "00_universal_agent.md through 29_optimization_batch.md",
+  "updated_at_utc": "2026-06-11T14:46:16Z",
+  "notes": [
+    "All batch-agent prompt files are at prompts/*.md, not prompts/batch_agents/*.md.",
+    "Implementation source-code guardrail remains src/."
+  ]
+}

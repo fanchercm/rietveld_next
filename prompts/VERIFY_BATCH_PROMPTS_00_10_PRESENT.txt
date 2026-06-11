@@ -1,0 +1,12 @@
+OK prompts/00_universal_agent.md
+OK prompts/01_batch_coordinator.md
+OK prompts/02_architecture_boundary.md
+OK prompts/03_core_data_model.md
+OK prompts/04_schema_serialization.md
+OK prompts/05_numerical_kernel.md
+OK prompts/06_profile_function.md
+OK prompts/07_optimization.md
+OK prompts/08_jax_backend.md
+OK prompts/09_rust_backend_benchmark.md
+OK prompts/10_rust_vs_jax_benchmark.md
+OK prompts/batch_agents absent
