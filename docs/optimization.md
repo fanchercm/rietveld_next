@@ -99,12 +99,38 @@ Location: `src/rietveld_next/optimization/diagnostics.py`
 Public API:
 
 ```python
+LabeledMatrix
 parameter_error_metrics(parameters, reference)
+covariance_from_jacobian(
+    jacobian,
+    residual_variance,
+    parameter_labels,
+    parameter_units=None,
+)
 correlation_matrix_from_covariance(covariance)
+labeled_correlation_matrix_from_covariance(
+    covariance,
+    parameter_labels,
+    parameter_units=None,
+)
 ```
 
 Diagnostics validate finite inputs and report clear errors for length mismatch,
-non-square covariance matrices, and non-positive variances.
+non-square covariance matrices, and non-positive variances. The labeled
+covariance and correlation helpers preserve parameter labels and units in their
+result records. Singular or underdetermined covariance estimates return
+`status="singular"` with warnings instead of reporting misleading
+uncertainties.
+
+Covariance estimation:
+
+```text
+C = residual_variance * inv(J^T J)
+```
+
+This dense normal-equation helper is intended only for small synthetic
+diagnostics and validation fixtures. It is not a production sparse
+least-squares covariance engine.
 
 ## Validation Limits
 

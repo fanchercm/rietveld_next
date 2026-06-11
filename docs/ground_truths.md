@@ -4,6 +4,11 @@
 
 - `.codegraph/` is generated local Codegraph index and daemon state; it is
   ignored by Git and is not project source.
+- On 2026-06-11, `github/milestones_import.json` and
+  `github/issues_import.json` were imported into
+  `fanchercm/rietveld_next` on GitHub. The import created 40 open milestones,
+  327 open issues, and 72 backlog-specific labels; GitHub verification showed
+  all 327 open issues assigned to milestones.
 
 ## Core Data Model
 
@@ -69,9 +74,30 @@
   coherent scattering-length subset in `src/rietveld_next/neutron/`; the table
   is intentionally incomplete and unsupported isotopes fail clearly. `H`/`nat H`
   represent the natural hydrogen row, while `1H` uses the isotope-specific row.
+- Batch B diffraction-model helpers now include a tiny provenance-labeled
+  Cromer-Mann X-ray form-factor subset, simple sign/permutation Miller
+  multiplicity helpers, and a CW powder Lorentz-polarization correction in
+  `src/rietveld_next/diffraction/`. These are startup reference utilities and
+  do not yet constitute complete scattering tables, space-group multiplicity,
+  or geometry-specific correction physics.
+- X-ray instrument helpers now include metadata-only lab and synchrotron CW
+  instrument records in `src/rietveld_next/xray/`; they validate wavelength
+  metadata but do not implement fundamental-parameters profile physics.
+- Neutron helpers now include a metadata-only CW neutron instrument model and
+  a wavelength-dependent absorption hook skeleton in `src/rietveld_next/neutron/`.
+  The absorption API is not a validated sample-geometry correction.
+- Optimization diagnostics now include labeled covariance and correlation
+  result records in `src/rietveld_next/optimization/diagnostics.py`. The dense
+  covariance helper uses `residual_variance * inv(J^T J)` for small synthetic
+  fixtures and returns structured singular diagnostics rather than misleading
+  uncertainties.
 - Optional backend benchmark hooks live under `src/rietveld_next/benchmarks/`.
   JAX is imported only inside the opt-in runner and missing JAX returns a
   structured skipped result; no Rust benchmark executable exists yet.
+- Benchmark foundation helpers now include typed taxonomy, a deterministic
+  Gaussian profile dataset generator, a dependency-free result schema helper,
+  and a runner CLI skeleton under `src/rietveld_next/benchmarks/`. Large
+  benchmark presets remain opt-in.
 
 ## Optimization
 

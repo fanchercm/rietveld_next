@@ -19,6 +19,37 @@ Completed results include:
 
 Skipped results use `status="skipped"` and must include `skip_reason`.
 
+`benchmark_result_schema()` returns a dependency-free JSON-schema-like mapping
+for the shared result shape, and `validate_benchmark_result_dict()` validates
+serialized benchmark records without requiring an external schema package.
+
+## Taxonomy And Synthetic Datasets
+
+Locations:
+
+- `src/rietveld_next/benchmarks/taxonomy.py`
+- `src/rietveld_next/benchmarks/datasets.py`
+
+Benchmark identifiers use this stable shape:
+
+```text
+workstream.kernel.backend.size.variant
+```
+
+The initial taxonomy distinguishes microbenchmarks, integration benchmarks,
+scientific-validation benchmarks, and workflow benchmarks. Synthetic Gaussian
+profile datasets are deterministic and record size, seed, axis units, and peak
+metadata. Large presets are opt-in and are not part of the default test suite.
+
+## Runner Skeleton
+
+Location: `src/rietveld_next/benchmarks/runner.py`
+
+The runner parses benchmark family, backend, size, iterations, warmup, dtype,
+seed, and optional output paths. Unsupported or unavailable backends return
+structured skipped results instead of failing the command. JSON output and a
+small Markdown summary can be generated from the same result record.
+
 ## JAX Gaussian Microbenchmark
 
 Function:

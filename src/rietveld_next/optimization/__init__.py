@@ -1,6 +1,12 @@
 """Optimization and residual numerical kernels."""
 
-from rietveld_next.optimization.diagnostics import correlation_matrix_from_covariance, parameter_error_metrics
+from rietveld_next.optimization.diagnostics import (
+    LabeledMatrix,
+    correlation_matrix_from_covariance,
+    covariance_from_jacobian,
+    labeled_correlation_matrix_from_covariance,
+    parameter_error_metrics,
+)
 from rietveld_next.optimization.local import (
     ConvergenceReport,
     LocalOptimizerOptions,
@@ -27,6 +33,7 @@ __all__ = [
     "BoundTransform",
     "ConvergenceReport",
     "LocalOptimizerOptions",
+    "LabeledMatrix",
     "ObjectiveEvaluation",
     "ObjectiveFunction",
     "ObjectiveRegistry",
@@ -34,7 +41,9 @@ __all__ = [
     "ParameterScale",
     "coordinate_search_minimize",
     "correlation_matrix_from_covariance",
+    "covariance_from_jacobian",
     "invalid_model_evaluation",
+    "labeled_correlation_matrix_from_covariance",
     "least_squares_evaluation",
     "parameter_error_metrics",
     "poisson_deviance_evaluation",

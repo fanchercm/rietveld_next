@@ -124,6 +124,28 @@ non-decreasing order.
 them into fixed-size batches. This makes execution plans reproducible even when
 callers supply reflections in different input orders.
 
+## Diffraction Reference Tables And Corrections
+
+Locations:
+
+- `src/rietveld_next/diffraction/scattering.py`
+- `src/rietveld_next/diffraction/corrections.py`
+
+Functions:
+
+```python
+evaluate_xray_form_factor(symbol, sin_theta_over_wavelength_inv_angstrom)
+simple_miller_multiplicity(hkl)
+lorentz_polarization_correction(two_theta_degrees, polarization_fraction=0.5)
+```
+
+The X-ray form-factor helper uses a tiny Cromer-Mann neutral-atom subset for
+`C`, `O`, and `Si`. The table is provenance-labeled and intentionally
+incomplete. The Miller multiplicity helper counts sign/permutation equivalents
+only; it is not a space-group multiplicity calculation. The
+Lorentz-polarization helper validates degree two-theta angles and polarization
+fractions for a CW powder reference expression.
+
 ## Residual Vector
 
 Location: `src/rietveld_next/optimization/residuals.py`
