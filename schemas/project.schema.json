@@ -10,22 +10,29 @@
     "phases",
     "parameters"
   ],
-  "properties": {
-    "schema_version": {
-      "type": "string",
-      "pattern": "^1\\.0\\."
-    },
-    "id": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "experiments": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/experiment"
-      }
+    "properties": {
+        "schema_version": {
+            "type": "string",
+            "pattern": "^1\\.0\\."
+        },
+        "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"
+        },
+        "name": {
+            "type": "string"
+        },
+        "instruments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/instrument"
+            }
+        },
+        "experiments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/experiment"
+            }
     },
     "phases": {
       "type": "array",
@@ -39,43 +46,121 @@
         "$ref": "#/$defs/refinement_parameter"
       }
     },
-    "constraints": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/constraint"
-      }
+        "constraints": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/constraint"
+            }
+        },
+        "strategies": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/optimization_strategy"
+            }
+        },
+        "studies": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/sequential_study"
+            }
+        },
+        "provenance": {
+            "$ref": "#/$defs/provenance"
+        }
     },
-    "provenance": {
-      "$ref": "#/$defs/provenance"
-    }
-  },
-  "$defs": {
-    "experiment": {
-      "type": "object",
-      "required": [
-        "id",
-        "radiation",
-        "datasets"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
+    "$defs": {
+        "entity_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"
+        },
+        "axis": {
+            "enum": [
+                "two_theta",
+                "tof",
+                "energy",
+                "d_spacing",
+                "q"
+            ]
         },
         "radiation": {
-          "enum": [
-            "lab_xray_cw",
-            "synchrotron_xray_cw",
-            "synchrotron_xray_edxrd",
-            "neutron_cw",
-            "neutron_tof"
-          ]
+            "enum": [
+                "lab_xray_cw",
+                "synchrotron_xray_cw",
+                "synchrotron_xray_edxrd",
+                "neutron_cw",
+                "neutron_tof"
+            ]
         },
-        "instrument_id": {
-          "type": "string"
+        "instrument": {
+            "type": "object",
+            "required": [
+                "id",
+                "radiation"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "radiation": {
+                    "$ref": "#/$defs/radiation"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "detector_banks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/detector_bank"
+                    }
+                },
+                "metadata": {
+                    "type": "object"
+                }
+            }
         },
-        "sample_environment": {
-          "type": "object"
+        "detector_bank": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "axis": {
+                    "$ref": "#/$defs/axis"
+                },
+                "calibration": {
+                    "type": "object"
+                },
+                "mask_uri": {
+                    "type": "string"
+                }
+            }
         },
+        "experiment": {
+            "type": "object",
+            "required": [
+                "id",
+                "radiation",
+        "datasets"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "radiation": {
+                    "$ref": "#/$defs/radiation"
+                },
+                "instrument_id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "sample_environment": {
+                    "type": "object"
+                },
         "datasets": {
           "type": "array",
           "items": {
@@ -90,23 +175,17 @@
         "id",
         "axis",
         "data_uri"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "axis": {
-          "enum": [
-            "two_theta",
-            "tof",
-            "energy",
-            "d_spacing",
-            "q"
-          ]
-        },
-        "data_uri": {
-          "type": "string"
-        },
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "axis": {
+                    "$ref": "#/$defs/axis"
+                },
+                "data_uri": {
+                    "type": "string"
+                },
         "uncertainty_model": {
           "enum": [
             "gaussian",
@@ -131,20 +210,20 @@
         "bank_id",
         "x_uri",
         "y_uri"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "dataset_id": {
-          "type": "string"
-        },
-        "bank_id": {
-          "type": "string"
-        },
-        "x_uri": {
-          "type": "string"
-        },
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "dataset_id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "bank_id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "x_uri": {
+                    "type": "string"
+                },
         "y_uri": {
           "type": "string"
         },
@@ -157,28 +236,28 @@
         "background_model": {
           "type": "object"
         },
-        "phase_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
+                "phase_ids": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/entity_id"
+                    }
+                }
+            }
+        },
     "phase": {
       "type": "object",
       "required": [
         "id",
         "name",
         "crystal_structure"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "name": {
+                    "type": "string"
+                },
         "crystal_structure": {
           "$ref": "#/$defs/crystal_structure"
         },
@@ -192,31 +271,80 @@
           "type": "object"
         }
       }
-    },
-    "crystal_structure": {
-      "type": "object"
-    },
-    "magnetic_structure": {
-      "type": "object"
-    },
-    "refinement_parameter": {
-      "type": "object",
-      "required": [
+        },
+        "crystal_structure": {
+            "type": "object",
+            "properties": {
+                "space_group": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell": {
+                    "type": "object"
+                },
+                "atom_sites": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "metadata": {
+                    "type": "object"
+                }
+            }
+        },
+        "magnetic_structure": {
+            "type": "object",
+            "properties": {
+                "propagation_vectors": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        },
+                        "minItems": 3,
+                        "maxItems": 3
+                    }
+                },
+                "moments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "symmetry": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "provenance": {
+                    "type": "object"
+                }
+            }
+        },
+        "refinement_parameter": {
+            "type": "object",
+            "required": [
         "id",
         "path",
         "value",
         "refine"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "path": {
-          "type": "string"
-        },
-        "value": {
-          "type": "number"
-        },
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "path": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*/[A-Za-z][A-Za-z0-9_.:-]*(/[A-Za-z][A-Za-z0-9_.:-]*)+$"
+                },
+                "value": {
+                    "type": "number"
+                },
         "standard_uncertainty": {
           "type": [
             "number",
@@ -240,25 +368,31 @@
           "minItems": 2,
           "maxItems": 2
         },
-        "prior": {
-          "type": "object"
-        }
-      }
-    },
+                "prior": {
+                    "type": "object"
+                },
+                "owner_id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "metadata": {
+                    "type": "object"
+                }
+            }
+        },
     "constraint": {
       "type": "object",
       "required": [
         "id",
         "kind",
         "expression"
-      ],
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "kind": {
-          "enum": [
-            "equality",
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "kind": {
+                    "enum": [
+                        "equality",
             "inequality",
             "linear",
             "symbolic",
@@ -268,17 +402,93 @@
         "expression": {
           "type": "string"
         },
-        "parameter_ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "provenance": {
-      "type": "object",
-      "properties": {
+                "parameter_ids": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/entity_id"
+                    }
+                }
+            }
+        },
+        "optimization_strategy": {
+            "type": "object",
+            "required": [
+                "id",
+                "method"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "method": {
+                    "enum": [
+                        "least_squares",
+                        "robust_least_squares",
+                        "poisson_likelihood",
+                        "global_search"
+                    ]
+                },
+                "parameter_ids": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/entity_id"
+                    }
+                },
+                "stopping_criteria": {
+                    "type": "object"
+                },
+                "diagnostics": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "sequential_study": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "points": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/sequential_point"
+                    }
+                },
+                "shared_parameter_ids": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/entity_id"
+                    }
+                }
+            }
+        },
+        "sequential_point": {
+            "type": "object",
+            "required": [
+                "id",
+                "dataset_id"
+            ],
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "dataset_id": {
+                    "$ref": "#/$defs/entity_id"
+                },
+                "variables": {
+                    "type": "object"
+                }
+            }
+        },
+        "provenance": {
+            "type": "object",
+            "properties": {
         "created_by": {
           "type": "string"
         },

@@ -8,7 +8,7 @@ Implement JAX versions of selected numerical kernels or benchmarks.
 
 ## Scope
 
-Allowed: `src/benchmarks/`, `src/diffraction/` Python/JAX backend files if present, tests, and docs.
+Allowed: `src/rietveld_next/benchmarks/`, `src/rietveld_next/diffraction/` Python/JAX backend files if present, tests, and docs.
 
 ## Requirements
 

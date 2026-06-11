@@ -9634,7 +9634,7 @@
       "Naming convention for benchmark IDs"
     ],
     "acceptance_criteria": [
-      "A document under `src/benchmarks/` or `docs/benchmarking/` defines benchmark families and naming rules.",
+      "A document under `src/rietveld_next/benchmarks/` or `docs/benchmarking/` defines benchmark families and naming rules.",
       "Benchmark IDs include workstream, kernel, backend, size, and variant.",
       "The taxonomy explicitly distinguishes microbenchmarks, integration benchmarks, scientific validation benchmarks, and end-to-end workflow benchmarks.",
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
@@ -9688,7 +9688,7 @@
     "dependencies": [
       289
     ],
-    "scope": "Implement a benchmark runner CLI under `src/benchmarks/` that can discover and run selected benchmarks and emit JSON and Markdown summaries.",
+    "scope": "Implement a benchmark runner CLI under `src/rietveld_next/benchmarks/` that can discover and run selected benchmarks and emit JSON and Markdown summaries.",
     "description": "Implement or specify `Create benchmark runner CLI skeleton` as part of the Rietveld Next benchmarking workstream. Keep the change small, reviewable, deterministic, and aligned with the `src/`-first repository layout.",
     "deliverables": [
       "CLI entry point",

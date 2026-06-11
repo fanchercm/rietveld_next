@@ -21,7 +21,7 @@ All implementation source code must live under `src/`. Do not create top-level i
 
 ## Scope
 
-Implement a benchmark runner CLI under `src/benchmarks/` that can discover and run selected benchmarks and emit JSON and Markdown summaries.
+Implement a benchmark runner CLI under `src/rietveld_next/benchmarks/` that can discover and run selected benchmarks and emit JSON and Markdown summaries.
 
 ## Description
 

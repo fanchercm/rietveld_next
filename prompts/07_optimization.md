@@ -8,7 +8,7 @@ Implement local or global optimization components without coupling them to UI or
 
 ## Scope
 
-Allowed: `src/optimization/`, `src/benchmarks/`, optimization tests, and optimization docs.
+Allowed: `src/rietveld_next/optimization/`, `src/rietveld_next/benchmarks/`, optimization tests, and optimization docs.
 
 ## Possible tasks
 

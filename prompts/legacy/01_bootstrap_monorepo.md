@@ -4,9 +4,9 @@ Create the initial `rietveld-next/` monorepo from `inputs/repo_tree.txt`. Treat 
 
 Requirements:
 
-- Rust workspace for `src/core/rn-core-rs`.
-- Python package skeleton for `src/core/rn-sdk-python`.
-- TypeScript workspace placeholders for `src/desktop` and `src/web`.
+- Rust workspace for `src/rietveld_next/core/rn-core-rs`.
+- Python package skeleton for `src/rietveld_next/core/rn-sdk-python`.
+- TypeScript workspace placeholders for `src/rietveld_next/desktop` and `src/rietveld_next/web`.
 - `schemas/` package or folder with `project.schema.json`.
 - GitHub Actions CI placeholder for Rust, Python, TypeScript, and docs.
 - `docs/architecture/adr/` initialized with ADRs from `adr/`.

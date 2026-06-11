@@ -8,7 +8,7 @@ Implement Rust-side benchmark support for representative profile calculations.
 
 ## Scope
 
-Allowed: Rust numerical packages under `src/`, benchmark harnesses under `src/benchmarks/` or existing project benchmark location, docs/tests.
+Allowed: Rust numerical packages under `src/`, benchmark harnesses under `src/rietveld_next/benchmarks/` or existing project benchmark location, docs/tests.
 
 ## Requirements
 

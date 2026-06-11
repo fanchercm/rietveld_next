@@ -35,7 +35,7 @@ Implement or specify `Define benchmark taxonomy and naming convention` as part o
 
 ## Acceptance criteria
 
-- A document under `src/benchmarks/` or `docs/benchmarking/` defines benchmark families and naming rules.
+- A document under `src/rietveld_next/benchmarks/` or `docs/benchmarking/` defines benchmark families and naming rules.
 - Benchmark IDs include workstream, kernel, backend, size, and variant.
 - The taxonomy explicitly distinguishes microbenchmarks, integration benchmarks, scientific validation benchmarks, and end-to-end workflow benchmarks.
 - All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.

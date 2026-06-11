@@ -8,7 +8,7 @@ Implement small, tested, benchmarkable numerical functions for profile calculati
 
 ## Scope
 
-Allowed: `src/diffraction/`, `src/optimization/`, `src/benchmarks/`, associated tests and docs. Disallowed: UI changes, AI changes, broad schema changes, unrelated storage changes.
+Allowed: `src/rietveld_next/diffraction/`, `src/rietveld_next/optimization/`, `src/rietveld_next/benchmarks/`, associated tests and docs. Disallowed: UI changes, AI changes, broad schema changes, unrelated storage changes.
 
 ## Requirements
 

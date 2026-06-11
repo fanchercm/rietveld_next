@@ -7945,7 +7945,7 @@ Define the benchmark families, naming conventions, result metadata, and required
 
 **Acceptance criteria**
 
-- [ ] A document under `src/benchmarks/` or `docs/benchmarking/` defines benchmark families and naming rules.
+- [ ] A document under `src/rietveld_next/benchmarks/` or `docs/benchmarking/` defines benchmark families and naming rules.
 - [ ] Benchmark IDs include workstream, kernel, backend, size, and variant.
 - [ ] The taxonomy explicitly distinguishes microbenchmarks, integration benchmarks, scientific validation benchmarks, and end-to-end workflow benchmarks.
 - [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
@@ -7989,7 +7989,7 @@ Create a machine-readable schema for benchmark outputs that supports runtime, me
 
 **Scope**
 
-Implement a benchmark runner CLI under `src/benchmarks/` that can discover and run selected benchmarks and emit JSON and Markdown summaries.
+Implement a benchmark runner CLI under `src/rietveld_next/benchmarks/` that can discover and run selected benchmarks and emit JSON and Markdown summaries.
 
 **Deliverables**
 

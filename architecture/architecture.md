@@ -18,4 +18,4 @@ HPC integration: Slurm + Dask/Ray + optional Kokkos/MPI.
 
 ## Source layout update
 
-All implementation source code now lands under `src/`. Use `src/core`, `src/diffraction`, `src/xray`, `src/neutron`, `src/tof`, `src/edxrd`, `src/optimization`, `src/workflows`, `src/ai`, `src/hpc`, `src/desktop`, and `src/web` for generated source files.
+All implementation source code now lands under `src/`. Use `src/rietveld_next/core`, `src/rietveld_next/diffraction`, `src/rietveld_next/xray`, `src/rietveld_next/neutron`, `src/rietveld_next/tof`, `src/rietveld_next/edxrd`, `src/rietveld_next/optimization`, `src/rietveld_next/workflows`, `src/rietveld_next/ai`, `src/rietveld_next/hpc`, `src/rietveld_next/desktop`, and `src/rietveld_next/web` for generated source files.
