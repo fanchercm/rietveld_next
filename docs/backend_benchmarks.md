@@ -51,3 +51,20 @@ The shared result record can represent Rust benchmark output, and tests include
 a Rust-style result fixture. A compiled Rust numerical package and executable
 are not yet present in this repository snapshot, so a real Rust Gaussian
 microbenchmark remains follow-up work.
+
+## Local Optimizer Benchmark
+
+Function:
+
+```python
+run_local_optimizer_benchmark(dimensions=2)
+```
+
+Behavior:
+
+- Runs a deterministic bounded quadratic objective.
+- Reports runtime, optimizer iterations, function evaluations, final objective,
+  convergence status, and parameter-error metrics.
+- Uses the shared `BenchmarkResult` record.
+- Remains opt-in; it is covered by a small smoke test but is not an expensive
+  benchmark workload.

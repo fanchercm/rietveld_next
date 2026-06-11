@@ -56,6 +56,22 @@
   JAX is imported only inside the opt-in runner and missing JAX returns a
   structured skipped result; no Rust benchmark executable exists yet.
 
+## Optimization
+
+- Batch C optimization infrastructure lives under
+  `src/rietveld_next/optimization/` and remains dependency-free.
+- Objective evaluations are structured by `ObjectiveEvaluation`; invalid model
+  states use `status="invalid"` with diagnostic metadata and a large finite
+  penalty rather than non-JSON infinity.
+- Parameter scaling and bounded transforms are generic and do not encode
+  diffraction-specific assumptions.
+- `coordinate_search_minimize` is a deterministic local optimizer for synthetic
+  tests, smoke benchmarks, and adapter validation; it is not a production
+  least-squares, trust-region, or Levenberg-Marquardt implementation.
+- The local optimizer benchmark hook lives in
+  `src/rietveld_next/benchmarks/optimizer.py` and reports convergence metrics
+  through the shared benchmark result record.
+
 ## Batch E Foundations
 
 - Workflow replay primitives live in `src/rietveld_next/workflows/` and emit

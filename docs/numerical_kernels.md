@@ -159,6 +159,22 @@ Validation:
 - Empty observed/calculated sequences return an empty list.
 - Non-positive uncertainty values raise `ValueError`.
 
+## Objective Helpers
+
+Location: `src/rietveld_next/optimization/objectives.py`
+
+Functions:
+
+```python
+least_squares_evaluation(parameters, residuals, loss="linear", loss_scale=1.0)
+poisson_deviance_evaluation(parameters, observed, expected)
+invalid_model_evaluation(parameters, message, **diagnostics)
+```
+
+These helpers produce structured objective evaluations for generic optimizers.
+They do not hard-code diffraction model assumptions. Robust least-squares loss
+options currently include `linear`, `huber`, and `soft_l1`.
+
 ## Precision And Validation Limits
 
 These kernels use Python `float` arithmetic. Tests cover known analytic
