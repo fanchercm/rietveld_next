@@ -29,7 +29,7 @@ rietveld_next/
 - `src/rietveld_next/core/schema/` contains schema-backed project
   serialization helpers.
 - `src/rietveld_next/core/architecture/` contains source-layout and dependency
-  boundary checks.
+  boundary checks plus M01 architecture foundation helpers.
 - `src/rietveld_next/diffraction/` contains dependency-free diffraction
   reference kernels.
 - `src/rietveld_next/xray/` contains X-ray physics reference data and helpers.

@@ -17,6 +17,9 @@ repository layout. The executable checks live in
 - Core, diffraction, and optimization packages are checked for disallowed
   imports from AI, UI, workflow, or HPC packages according to their boundary
   rules.
+- M01 architecture foundation helpers now provide shared architecture errors,
+  JSON configuration loading, provenance event envelopes, environment capture,
+  API stability levels, feature flags, and release artifact manifests.
 
 ## Validation Commands
 

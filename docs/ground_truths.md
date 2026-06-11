@@ -34,6 +34,11 @@
   source package.
 - `backend_corpus/` currently contains public GSAS-II fixture files plus a
   downloader script, but no `__init__.py` package marker.
+- M01 architecture foundation helpers live in
+  `src/rietveld_next/core/architecture/foundation.py` and cover shared
+  architecture errors, JSON configuration loading, provenance event envelopes,
+  environment capture, API stability levels, feature flags, and release
+  artifact manifests.
 
 ## Numerical Kernels
 
