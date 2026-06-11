@@ -185,6 +185,17 @@ class CoreModelEntityTests(unittest.TestCase):
 
         self.assertEqual(prior_context.exception.code, "invalid_number")
 
+    def test_refinement_parameter_refine_must_be_boolean(self) -> None:
+        with self.assertRaises(ModelValidationError) as context:
+            RefinementParameter(
+                id="p_bad_refine",
+                path=ParameterPath("phase", "phase1", ("crystal_structure", "cell", "a")),
+                value=5.431,
+                refine="yes",
+            )
+
+        self.assertEqual(context.exception.code, "invalid_type")
+
     def test_magnetic_structure_requires_three_component_vectors(self) -> None:
         structure = MagneticStructure(propagation_vectors=[[0.0, 0.0, 0.5]])
 

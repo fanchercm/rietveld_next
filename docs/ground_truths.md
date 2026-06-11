@@ -56,6 +56,10 @@
   full `unit` metadata, accepts legacy `units` strings, validates prior metadata
   through the typed model, compares model graph changes by stable IDs, and
   includes a `1.0.x` project metadata migration harness.
+- M02 schema-backed validation rejects malformed schema patch versions, empty
+  unit or prior identifiers, non-positive SI unit scales, non-numeric prior
+  parameter values, and non-boolean refinement flags before accepting project
+  metadata as valid.
 
 ## Numerical Kernels
 

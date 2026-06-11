@@ -125,6 +125,9 @@ succeeds.
 The typed model emits full unit metadata under `unit`. The schema still accepts
 legacy `units` strings for `1.0.x` payloads; deserialization converts them to
 `UnitMetadata(symbol=<units>, quantity="unspecified")`.
+Schema validation rejects empty unit symbols or quantities, non-positive SI
+scales, empty prior distributions, and non-numeric prior parameter values before
+model deserialization.
 
 ## Migration Harness
 

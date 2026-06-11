@@ -580,6 +580,8 @@ class RefinementParameter:
         """Validate parameter value, bounds, and ownership."""
         validate_entity_id(self.id, "parameter.id")
         _finite_number(self.value, "parameter.value")
+        if not isinstance(self.refine, bool):
+            raise ModelValidationError("invalid_type", "Parameter refine flag must be a boolean.", "parameter.refine")
         if self.standard_uncertainty is not None:
             _finite_number(self.standard_uncertainty, "parameter.standard_uncertainty")
             if self.standard_uncertainty < 0:

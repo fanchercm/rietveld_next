@@ -194,6 +194,44 @@ class ProjectSchemaValidationTests(unittest.TestCase):
         self.assertEqual(context.exception.issues[0].path, "$.schema_version")
         self.assertEqual(context.exception.issues[0].keyword, "pattern")
 
+    def test_invalid_unit_metadata_fails_schema_validation(self) -> None:
+        data = build_realistic_project().to_schema_dict()
+        data["parameters"][0]["unit"]["symbol"] = ""
+
+        with self.assertRaises(SchemaValidationError) as context:
+            validate_project_mapping(data)
+
+        self.assertEqual(context.exception.issues[0].path, "$.parameters[0].unit.symbol")
+        self.assertEqual(context.exception.issues[0].keyword, "minLength")
+
+        data = build_realistic_project().to_schema_dict()
+        data["parameters"][0]["unit"]["scale_to_si"] = 0.0
+
+        with self.assertRaises(SchemaValidationError) as scale_context:
+            validate_project_mapping(data)
+
+        self.assertEqual(scale_context.exception.issues[0].path, "$.parameters[0].unit.scale_to_si")
+        self.assertEqual(scale_context.exception.issues[0].keyword, "exclusiveMinimum")
+
+    def test_invalid_prior_metadata_fails_schema_validation(self) -> None:
+        data = build_realistic_project().to_schema_dict()
+        data["parameters"][0]["prior"]["distribution"] = ""
+
+        with self.assertRaises(SchemaValidationError) as context:
+            validate_project_mapping(data)
+
+        self.assertEqual(context.exception.issues[0].path, "$.parameters[0].prior.distribution")
+        self.assertEqual(context.exception.issues[0].keyword, "minLength")
+
+        data = build_realistic_project().to_schema_dict()
+        data["parameters"][0]["prior"]["parameters"]["sigma"] = "wide"
+
+        with self.assertRaises(SchemaValidationError) as parameter_context:
+            validate_project_mapping(data)
+
+        self.assertEqual(parameter_context.exception.issues[0].path, "$.parameters[0].prior.parameters.sigma")
+        self.assertEqual(parameter_context.exception.issues[0].keyword, "type")
+
     def test_invalid_json_fails_before_model_deserialization(self) -> None:
         with self.assertRaises(SchemaValidationError) as context:
             validate_project_json("{not-json")

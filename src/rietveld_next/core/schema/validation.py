@@ -180,9 +180,24 @@ def _validate_node(
         if re.search(pattern, value) is None:
             issues.append(SchemaValidationIssue(path, f"String does not match pattern {pattern!r}.", "pattern"))
 
+    if isinstance(value, str) and "minLength" in schema and len(value) < schema["minLength"]:
+        issues.append(SchemaValidationIssue(path, f"Expected at least {schema['minLength']} characters.", "minLength"))
+
     if isinstance(value, str) and schema.get("format") == "date-time":
         if not _is_datetime(value):
             issues.append(SchemaValidationIssue(path, "Expected an RFC 3339-like date-time string.", "format"))
+
+    if isinstance(value, int | float) and not isinstance(value, bool):
+        if "exclusiveMinimum" in schema and value <= schema["exclusiveMinimum"]:
+            issues.append(
+                SchemaValidationIssue(
+                    path,
+                    f"Expected a value greater than {schema['exclusiveMinimum']!r}.",
+                    "exclusiveMinimum",
+                )
+            )
+        if "minimum" in schema and value < schema["minimum"]:
+            issues.append(SchemaValidationIssue(path, f"Expected a value at least {schema['minimum']!r}.", "minimum"))
 
     if isinstance(value, dict):
         _validate_object(value, schema, root_schema, path, issues)
@@ -207,6 +222,21 @@ def _validate_object(
         for field_name in sorted(properties):
             if field_name in value:
                 _validate_node(value[field_name], properties[field_name], root_schema, f"{path}.{field_name}", issues)
+
+    additional = schema.get("additionalProperties", True)
+    if additional is not True and isinstance(properties, dict):
+        known_properties = set(properties)
+        for field_name in sorted(set(value) - known_properties):
+            if additional is False:
+                issues.append(
+                    SchemaValidationIssue(
+                        f"{path}.{field_name}",
+                        "Additional properties are not allowed.",
+                        "additionalProperties",
+                    )
+                )
+            elif isinstance(additional, dict):
+                _validate_node(value[field_name], additional, root_schema, f"{path}.{field_name}", issues)
 
 
 def _validate_array(

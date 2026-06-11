@@ -390,16 +390,19 @@
             ],
             "properties": {
                 "symbol": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "quantity": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "scale_to_si": {
                     "type": [
                         "number",
                         "null"
-                    ]
+                    ],
+                    "exclusiveMinimum": 0
                 }
             }
         },
@@ -410,10 +413,14 @@
             ],
             "properties": {
                 "distribution": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "parameters": {
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
                 }
             }
         },
