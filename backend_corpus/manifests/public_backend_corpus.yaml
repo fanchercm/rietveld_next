@@ -1,0 +1,60 @@
+name: rietveld_public_backend_corpus
+version: 0.1.0
+created_for: MS01 backend testing
+description: >
+  Public diffraction structures and data files downloaded for backend validation,
+  smoke tests, and benchmark development. Large or unstable external datasets
+  should remain opt-in and be referenced by URL plus checksum rather than always
+  vendored into the source repository.
+source_notes:
+  gsasii_tutorials:
+    repository: https://github.com/AdvancedPhotonSource/GSAS-II-tutorials
+    simulation_data_page: https://advancedphotonsource.github.io/GSAS-II-tutorials/Simulation/data/
+    tof_cw_joint_data_page: https://advancedphotonsource.github.io/GSAS-II-tutorials/TOF-CW%20Joint%20Refinement/data/
+    notes: >
+      Files are from public GSAS-II tutorial data. These are suitable for CIF import,
+      instrument parameter parsing, CW profile IO, TOF profile IO, and joint X-ray/neutron
+      backend tests.
+  aps_11bm_standards:
+    page: https://wiki-ext.aps.anl.gov/ug11bm/index.php/Standards_Data
+    notes: >
+      Public metadata page was inspected. Several historical download links returned 404
+      or transient fetch errors as of corpus assembly, so the current package includes
+      the GSAS-II tutorial NAC/11BM file instead of mirroring the standards corpus.
+files:
+  gsasii_simulation:
+    - path: gsasii/simulation/CuO.cif
+      use: CIF parser smoke test; monoclinic CuO structure
+    - path: gsasii/simulation/CuCr2O4.cif
+      use: CIF parser and reflection-generation test; orthorhombic spinel-related structure
+    - path: gsasii/simulation/BT1.prm
+      use: GSAS-style CW instrument parameter parsing smoke test
+  gsasii_tof_cw_joint:
+    - path: gsasii/tof_cw_joint/NAC.cif
+      use: Joint X-ray/neutron phase model; cubic NAC structure
+    - path: gsasii/tof_cw_joint/CaF2.cif
+      use: Joint refinement impurity/reference phase; fluorite structure
+    - path: gsasii/tof_cw_joint/11BM_NAC.fxye
+      use: Synchrotron CW XRD histogram import and residual tests
+    - path: gsasii/tof_cw_joint/11bm_gsas.prm
+      use: GSAS instrument parameter import for 11-BM NAC data
+    - path: gsasii/tof_cw_joint/PG3_22048.gsa
+      use: POWGEN TOF neutron histogram import
+    - path: gsasii/tof_cw_joint/PG3_22049.gsa
+      use: POWGEN TOF neutron histogram import
+    - path: gsasii/tof_cw_joint/POWGEN_1066.instprm
+      use: GSAS-II POWGEN TOF instrument parameter parsing
+    - path: gsasii/tof_cw_joint/POWGEN_2665.instprm
+      use: GSAS-II POWGEN TOF instrument parameter parsing
+    - path: gsasii/tof_cw_joint/NAC-2015A.EXP
+      use: Legacy GSAS project/reference parsing and interoperability tests
+missing_or_deferred:
+  - file: gsasii/tof_cw_joint/NX on NAC.gpx
+    reason: binary GPX could not be fetched via available download path in this session; not required for backend IO smoke tests because source CIF/profile/instrument files are included.
+  - collection: APS 11-BM standards LaB6/Si/Al2O3/CeO2 files
+    reason: public standards page was reachable, but several linked files returned 404 or fetch errors; include as opt-in downloader targets later after current URLs are confirmed.
+recommended_repo_policy:
+  - Commit small CIFs and tiny synthetic fixtures only if licenses are confirmed.
+  - Keep larger profile datasets in an external/public-corpus package or opt-in downloader.
+  - Store URL, retrieval date, SHA256, file size, and source notes for every external file.
+  - Do not run full corpus validation in normal CI.

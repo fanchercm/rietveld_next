@@ -12,22 +12,26 @@ rietveld-next/src/
 
 Examples:
 
-- Rust core crate: `src/core/rn-core-rs/`
-- Python SDK: `src/core/rn-sdk-python/`
-- Diffraction kernels: `src/diffraction/`
-- X-ray models: `src/xray/`
-- Neutron models: `src/neutron/`
-- TOF models: `src/tof/`
-- EDXRD models: `src/edxrd/`
-- Optimization code: `src/optimization/`
-- Workflow code: `src/workflows/`
-- AI tools and agents: `src/ai/`
-- HPC adapters: `src/hpc/`
-- Desktop application source: `src/desktop/`
-- Web application source: `src/web/`
+- Rust core crate: `src/rietveld_next/core/rn-core-rs/`
+- Python SDK: `src/rietveld_next/core/rn-sdk-python/`
+- Diffraction kernels: `src/rietveld_next/diffraction/`
+- X-ray models: `src/rietveld_next/xray/`
+- Neutron models: `src/rietveld_next/neutron/`
+- TOF models: `src/rietveld_next/tof/`
+- EDXRD models: `src/rietveld_next/edxrd/`
+- Optimization code: `src/rietveld_next/optimization/`
+- Workflow code: `src/rietveld_next/workflows/`
+- AI tools and agents: `src/rietveld_next/ai/`
+- HPC adapters: `src/rietveld_next/hpc/`
+- Desktop application source: `src/rietveld_next/desktop/`
+- Web application source: `src/rietveld_next/web/`
 
-Top-level directories such as `docs/`, `benchmarks/`, `examples/`, and `tests/` remain outside `src/`.
+Top-level support directories such as `docs/`, `backlog/`, `github/`, `prompts/`, `schemas/`, `scaffold/`, `validation/`, and `backend_corpus/` remain outside `src/`.
+
+`backend_corpus/` is reserved for public backend test fixtures, corpus manifests,
+and corpus acquisition scripts. It must not contain importable implementation
+packages or runtime source code.
 
 ## Codex instruction
 
-Before creating files for any issue or milestone, Codex should resolve the destination package under `src/` and avoid creating top-level source packages such as `core/`, `diffraction/`, `optimization/`, `desktop/`, or `web/`.
+Before creating files for any issue or milestone, Codex should resolve the destination package under `src/rietveld_next/` and avoid creating top-level source packages such as `core/`, `diffraction/`, `optimization/`, `desktop/`, or `web/`.
