@@ -95,7 +95,24 @@ Behavior:
 
 - Runs a deterministic bounded quadratic objective.
 - Reports runtime, optimizer iterations, function evaluations, final objective,
-  convergence status, and parameter-error metrics.
+  convergence status, parameter-error metrics, an unbounded LM-compatible
+  quadratic case, and a structured invalid-initial-model failure case.
 - Uses the shared `BenchmarkResult` record.
 - Remains opt-in; it is covered by a small smoke test but is not an expensive
   benchmark workload.
+
+## Optimizer Follow-Up Benchmarks
+
+Additional Batch C smoke hooks are available in
+`src/rietveld_next/benchmarks/optimizer.py`:
+
+```python
+run_sparse_jacobian_assembly_benchmark(dimensions=4)
+run_automatic_differentiation_benchmark(dimensions=2)
+run_optimizer_scaling_benchmark(max_dimensions=4)
+run_global_multistart_benchmark(dimensions=2, start_count=3)
+```
+
+The automatic-differentiation benchmark uses optional JAX `jacfwd` when JAX is
+available with float64 enabled. If JAX is unavailable, it returns a structured
+skipped result rather than falling back silently to finite differences.

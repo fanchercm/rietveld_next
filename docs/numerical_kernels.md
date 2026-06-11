@@ -197,6 +197,20 @@ These helpers produce structured objective evaluations for generic optimizers.
 They do not hard-code diffraction model assumptions. Robust least-squares loss
 options currently include `linear`, `huber`, and `soft_l1`.
 
+## Jacobian And Uncertainty Helpers
+
+Location:
+
+- `src/rietveld_next/optimization/jacobian.py`
+- `src/rietveld_next/optimization/uncertainty.py`
+
+The Jacobian helpers provide deterministic sparse coordinate-list storage,
+finite-difference fallback derivatives, analytic scale/background derivative
+columns, and gradient-check diagnostics. The uncertainty helpers provide small
+covariance/correlation diagnostics for synthetic least-squares systems and
+return structured singular/ill-conditioned statuses rather than unsupported
+uncertainties.
+
 ## Precision And Validation Limits
 
 These kernels use Python `float` arithmetic. Tests cover known analytic

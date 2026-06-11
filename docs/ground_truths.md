@@ -123,6 +123,20 @@
 - The local optimizer benchmark hook lives in
   `src/rietveld_next/benchmarks/optimizer.py` and reports convergence metrics
   through the shared benchmark result record.
+- Sparse Jacobian, finite-difference fallback, analytic scale/background
+  derivatives, and gradient-check utilities live in
+  `src/rietveld_next/optimization/jacobian.py`.
+- Rich covariance and correlation diagnostics live in
+  `src/rietveld_next/optimization/uncertainty.py` and withhold uncertainty
+  matrices for singular or ill-conditioned cases.
+- Deterministic differential-evolution, simulated-annealing, and multi-start
+  infrastructure lives in `src/rietveld_next/optimization/global_search.py`.
+  Bayesian optimization and MCMC uncertainty remain structured placeholders and
+  do not fabricate numerical results.
+- Batch C follow-up benchmark hooks now include sparse Jacobian assembly,
+  optional JAX automatic differentiation, optimizer scaling, and global
+  multi-start smoke benchmarks. The JAX AD benchmark returns a structured
+  skipped result when JAX or float64 support is unavailable.
 
 ## Batch E Foundations
 

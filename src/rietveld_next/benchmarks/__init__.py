@@ -8,7 +8,13 @@ from rietveld_next.benchmarks.datasets import (
     profile_dataset_presets,
 )
 from rietveld_next.benchmarks.jax_gaussian import run_jax_gaussian_microbenchmark
-from rietveld_next.benchmarks.optimizer import run_local_optimizer_benchmark
+from rietveld_next.benchmarks.optimizer import (
+    run_automatic_differentiation_benchmark,
+    run_global_multistart_benchmark,
+    run_local_optimizer_benchmark,
+    run_optimizer_scaling_benchmark,
+    run_sparse_jacobian_assembly_benchmark,
+)
 from rietveld_next.benchmarks.results import (
     BENCHMARK_RESULT_SCHEMA_VERSION,
     BenchmarkResult,
@@ -44,8 +50,12 @@ __all__ = [
     "generate_synthetic_gaussian_profile_dataset",
     "parse_benchmark_id",
     "profile_dataset_presets",
+    "run_automatic_differentiation_benchmark",
+    "run_global_multistart_benchmark",
     "run_jax_gaussian_microbenchmark",
     "run_local_optimizer_benchmark",
+    "run_optimizer_scaling_benchmark",
+    "run_sparse_jacobian_assembly_benchmark",
     "skipped_benchmark",
     "validate_benchmark_result_dict",
 ]
