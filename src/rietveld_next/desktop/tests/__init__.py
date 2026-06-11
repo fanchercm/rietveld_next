@@ -1,0 +1,1 @@
+"""Desktop view-model tests."""

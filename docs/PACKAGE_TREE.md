@@ -1,68 +1,70 @@
-# Clean Batch Agent Prompt Package Tree
+# Rietveld Next Package Tree
 
-This package keeps all batch-agent prompt Markdown files directly under `prompts/`.
+This document is the canonical package-tree reference for agents and
+contributors. The root-level `PACKAGE_TREE.md` path is intentionally not used.
 
-Canonical package-tree location:
-
-```text
-docs/PACKAGE_TREE.md
-```
-
-Canonical prompt location:
+## Top-Level Layout
 
 ```text
-prompts/*.md
-```
-
-There is intentionally no `prompts/batch_agents/` directory.
-
-## File structure
-
-```text
-rietveld_next_batch_agent_prompts_clean_top/
+rietveld_next/
+├── AGENTS.md
 ├── README.md
 ├── MANIFEST.json
-├── VERIFY_00_10_PRESENT.txt
+├── architecture/
+├── backend_corpus/
+├── backlog/
 ├── docs/
-│   └── PACKAGE_TREE.md
-└── prompts/
-    ├── README.md
-    ├── 00_universal_agent.md
-    ├── 01_batch_coordinator.md
-    ├── 02_architecture_boundary.md
-    ├── 03_core_data_model.md
-    ├── 04_schema_serialization.md
-    ├── 05_numerical_kernel.md
-    ├── 06_profile_function.md
-    ├── 07_optimization.md
-    ├── 08_jax_backend.md
-    ├── 09_rust_backend_benchmark.md
-    ├── 10_rust_vs_jax_benchmark.md
-    ├── 11_xray_physics.md
-    ├── 12_neutron_physics.md
-    ├── 13_tof.md
-    ├── 14_magnetic.md
-    ├── 15_edxrd.md
-    ├── 16_workflow.md
-    ├── 17_ai_agent_integration.md
-    ├── 18_ux.md
-    ├── 19_visualization.md
-    ├── 20_hpc.md
-    ├── 21_storage_io.md
-    ├── 22_testing_validation.md
-    ├── 23_documentation.md
-    ├── 24_dependency_review.md
-    ├── 25_merge_review.md
-    ├── 26_conflict_resolution.md
-    ├── 27_benchmark_batch.md
-    ├── 28_physics_batch.md
-    └── 29_optimization_batch.md
+├── github/
+├── prompts/
+├── scaffold/
+├── schemas/
+├── src/
+└── validation/
 ```
 
-## Guardrails encoded by this layout
+## Directory Responsibilities
 
-- Batch-agent prompts are first-class prompt files under `prompts/`.
-- Documentation is under `docs/`.
-- The package tree is not stored at the repository root.
-- Agents should read `docs/PACKAGE_TREE.md` as the canonical file-structure reference.
-- Implementation source code for the main Rietveld Next repository still belongs under `src/`; this prompt package does not contain implementation source.
+- `src/` contains all implementation source and package-local tests.
+- `src/rietveld_next/core/model/` contains typed core project entities.
+- `src/rietveld_next/core/schema/` contains schema-backed project
+  serialization helpers.
+- `src/rietveld_next/core/architecture/` contains source-layout and dependency
+  boundary checks.
+- `src/rietveld_next/diffraction/` contains dependency-free diffraction
+  reference kernels.
+- `src/rietveld_next/xray/` contains X-ray physics reference data and helpers.
+- `src/rietveld_next/neutron/` contains neutron physics reference data and
+  helpers.
+- `src/rietveld_next/optimization/` contains dependency-free optimization
+  reference interfaces.
+- `src/rietveld_next/workflows/` contains replayable workflow primitives.
+- `src/rietveld_next/ai/` contains deterministic AI tool-boundary primitives.
+- `src/rietveld_next/hpc/` contains scheduler abstraction primitives.
+- `src/rietveld_next/desktop/` contains framework-neutral UI view models.
+- `src/rietveld_next/visualization/` contains display-oriented data
+  transforms.
+- `src/rietveld_next/benchmarks/` contains opt-in benchmark infrastructure and
+  smoke fixtures.
+- `docs/` contains developer and user documentation, including this canonical
+  package tree.
+- `architecture/` contains architecture notes and guardrail documents.
+- `schemas/` contains JSON Schema files for persistent project metadata.
+- `backlog/` contains canonical issue and milestone files.
+- `github/` contains GitHub import payloads generated from the backlog.
+- `prompts/` contains program, milestone, issue, workstream, and batch-agent
+  prompts.
+- `backend_corpus/` contains public backend validation corpus manifests and
+  download scripts. It is not an implementation package.
+- `validation/` contains validation planning documents.
+- `scaffold/` contains scaffold notes and non-runtime setup artifacts.
+
+## Guardrails
+
+- Do not create implementation source outside `src/`.
+- Do not create top-level implementation or test directories such as `core/`,
+  `diffraction/`, `optimization/`, `benchmarks/`, or `tests/`.
+- Keep tests package-local under `src/rietveld_next/.../tests/` unless a future
+  documented build-system decision changes the test layout.
+- Keep batch-agent prompts directly under `prompts/`; there is intentionally no
+  `prompts/batch_agents/` directory.
+- Use `docs/PACKAGE_TREE.md` as the only canonical package-tree path.
