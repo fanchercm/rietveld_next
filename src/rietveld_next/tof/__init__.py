@@ -1,5 +1,11 @@
 """Time-of-flight neutron diffraction helpers."""
 
 from rietveld_next.tof.axis import TimeOfFlightHistogramAxis
+from rietveld_next.tof.bank import TimeOfFlightDetectorBank
+from rietveld_next.tof.calibration import TimeOfFlightCalibrationParameters
 
-__all__ = ["TimeOfFlightHistogramAxis"]
+__all__ = [
+    "TimeOfFlightCalibrationParameters",
+    "TimeOfFlightDetectorBank",
+    "TimeOfFlightHistogramAxis",
+]

@@ -86,6 +86,65 @@ class EnergyHistogramAxis:
         edges = tuple(offset + gain * (channel_start + index) for index in range(channel_count + 1))
         return cls(edges, channel_start=channel_start)
 
+    @classmethod
+    def from_polynomial_calibration(
+        cls,
+        *,
+        channel_count: int,
+        coefficients_keV_by_channel_power: Sequence[float],
+        channel_start: int = 0,
+    ) -> EnergyHistogramAxis:
+        """Build an energy axis from a channel-to-energy polynomial.
+
+        Coefficients are ordered by ascending channel power:
+
+        ```text
+        E_edge(channel) = c0 + c1 * channel + c2 * channel**2 + ...
+        ```
+
+        The coefficient at index ``i`` has units of ``keV / channel**i``.
+        Histogram edges are evaluated at integer detector-channel boundaries
+        from ``channel_start`` through ``channel_start + channel_count``.
+
+        Args:
+            channel_count: Number of histogram bins.
+            coefficients_keV_by_channel_power: Polynomial coefficients ordered
+                by ascending channel power. At least an intercept and first
+                order coefficient are required.
+            channel_start: Detector channel index for the first bin.
+
+        Returns:
+            Energy histogram axis with ``channel_count + 1`` edges.
+
+        Raises:
+            ValueError: If calibration values are invalid or produce
+                non-positive or non-monotonic energy edges.
+
+        Example:
+            >>> EnergyHistogramAxis.from_polynomial_calibration(
+            ...     channel_count=2,
+            ...     coefficients_keV_by_channel_power=(5.0, 0.5, 0.25),
+            ... ).bin_edges_keV
+            (5.0, 5.75, 7.0)
+        """
+
+        _validate_channel_count(channel_count)
+        _validate_channel_start(channel_start)
+        coefficients = _finite_float_tuple(
+            coefficients_keV_by_channel_power,
+            "coefficients_keV_by_channel_power",
+        )
+        if len(coefficients) < 2:
+            raise ValueError(
+                "coefficients_keV_by_channel_power must contain at least two coefficients."
+            )
+
+        edges = tuple(
+            _evaluate_channel_polynomial_keV(coefficients, channel_start + index)
+            for index in range(channel_count + 1)
+        )
+        return cls(edges, channel_start=channel_start)
+
     @property
     def centers_keV(self) -> tuple[float, ...]:
         """Return bin centers in keV."""
@@ -131,3 +190,24 @@ def _require_strictly_increasing(values: tuple[float, ...], name: str) -> None:
     for index, (left, right) in enumerate(zip(values, values[1:])):
         if right <= left:
             raise ValueError(f"{name} must be strictly increasing at index {index + 1}.")
+
+
+def _validate_channel_count(channel_count: int) -> None:
+    if isinstance(channel_count, bool) or not isinstance(channel_count, int):
+        raise ValueError("channel_count must be an integer.")
+    if channel_count <= 0:
+        raise ValueError("channel_count must be positive.")
+
+
+def _validate_channel_start(channel_start: int) -> None:
+    if isinstance(channel_start, bool) or not isinstance(channel_start, int):
+        raise ValueError("channel_start must be an integer channel index.")
+    if channel_start < 0:
+        raise ValueError("channel_start must be non-negative.")
+
+
+def _evaluate_channel_polynomial_keV(coefficients: tuple[float, ...], channel: int) -> float:
+    energy = 0.0
+    for coefficient in reversed(coefficients):
+        energy = energy * channel + coefficient
+    return energy

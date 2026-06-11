@@ -38,6 +38,16 @@ class EnergyHistogramAxisTests(unittest.TestCase):
         self.assertEqual(axis.bin_edges_keV, (6.0, 6.5, 7.0, 7.5))
         self.assertEqual(axis.centers_keV, (6.25, 6.75, 7.25))
 
+    def test_axis_from_polynomial_calibration_uses_edge_convention(self) -> None:
+        axis = EnergyHistogramAxis.from_polynomial_calibration(
+            channel_count=3,
+            coefficients_keV_by_channel_power=(5.0, 0.5, 0.25),
+            channel_start=2,
+        )
+
+        self.assertEqual(axis.bin_edges_keV, (7.0, 8.75, 11.0, 13.75))
+        self.assertEqual(axis.widths_keV, (1.75, 2.25, 2.75))
+
     def test_axis_rejects_non_monotonic_energy_edges(self) -> None:
         with self.assertRaisesRegex(ValueError, "strictly increasing"):
             EnergyHistogramAxis((20.0, 19.0))
@@ -52,6 +62,20 @@ class EnergyHistogramAxisTests(unittest.TestCase):
                 channel_count=2,
                 offset_keV=10.0,
                 gain_keV_per_channel=0.0,
+            )
+
+    def test_polynomial_calibration_rejects_missing_slope(self) -> None:
+        with self.assertRaisesRegex(ValueError, "at least two coefficients"):
+            EnergyHistogramAxis.from_polynomial_calibration(
+                channel_count=2,
+                coefficients_keV_by_channel_power=(10.0,),
+            )
+
+    def test_polynomial_calibration_rejects_non_monotonic_edges(self) -> None:
+        with self.assertRaisesRegex(ValueError, "strictly increasing"):
+            EnergyHistogramAxis.from_polynomial_calibration(
+                channel_count=2,
+                coefficients_keV_by_channel_power=(10.0, -1.0),
             )
 
 

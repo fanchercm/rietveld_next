@@ -32,11 +32,44 @@ class MagneticMomentTests(unittest.TestCase):
                 "site_id": "fe1",
                 "components_bohr_magneton": [0.0, 0.0, 4.1],
                 "coordinate_frame": "crystal_fractional",
+                "magnitude_bohr_magneton": 4.1,
             }
         )
 
         self.assertEqual(moment.site_id, "fe1")
         self.assertEqual(moment.components_bohr_magneton, (0.0, 0.0, 4.1))
+
+    def test_moment_validate_magnitude_accepts_explicit_bounds(self) -> None:
+        moment = MagneticMoment("mn1", (1.0, 2.0, 2.0))
+
+        self.assertIsNone(
+            moment.validate_magnitude(
+                min_bohr_magneton=2.5,
+                max_bohr_magneton=3.5,
+            )
+        )
+
+    def test_moment_validate_magnitude_rejects_out_of_bounds_value(self) -> None:
+        moment = MagneticMoment("mn1", (1.0, 2.0, 2.0))
+
+        with self.assertRaisesRegex(ValueError, "exceeds the maximum"):
+            moment.validate_magnitude(max_bohr_magneton=2.9)
+
+    def test_moment_validate_magnitude_rejects_invalid_bounds(self) -> None:
+        moment = MagneticMoment("mn1", (1.0, 2.0, 2.0))
+
+        with self.assertRaisesRegex(ValueError, "greater than or equal"):
+            moment.validate_magnitude(min_bohr_magneton=4.0, max_bohr_magneton=3.0)
+
+    def test_moment_from_dict_rejects_inconsistent_magnitude(self) -> None:
+        with self.assertRaisesRegex(ValueError, "Euclidean norm"):
+            MagneticMoment.from_dict(
+                {
+                    "site_id": "fe1",
+                    "components_bohr_magneton": [0.0, 0.0, 4.1],
+                    "magnitude_bohr_magneton": 4.2,
+                }
+            )
 
     def test_moment_rejects_wrong_vector_length(self) -> None:
         with self.assertRaisesRegex(ValueError, "exactly three"):

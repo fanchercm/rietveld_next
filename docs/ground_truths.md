@@ -185,8 +185,12 @@
   DIFC/DIFA/zero values with explicit microsecond and angstrom units plus
   optional positive d-spacing validity bounds.
 - EDXRD histogram-axis helpers live in `src/rietveld_next/edxrd/` and store
-  strictly increasing positive energy bin edges in keV; the initial calibration
-  helper supports a linear channel-to-energy edge model only.
+  strictly increasing positive energy bin edges in keV; calibration helpers
+  support linear and polynomial channel-to-energy edge models with polynomial
+  coefficients ordered by ascending channel power.
+- EDXRD fixed-angle Bragg helpers live in `src/rietveld_next/edxrd/bragg.py`
+  and convert energy in keV to d-spacing in angstroms, or the inverse, from a
+  fixed two-theta angle in degrees using `hc = 12.398419843320026 keV A`.
 - Magnetic moment entities live in `src/rietveld_next/neutron/magnetic/` and
   record three components in Bohr magnetons plus an explicit coordinate frame.
 - Magnetic propagation vector entities live in
@@ -203,6 +207,13 @@
   package files unless `overwrite=True` is explicit.
 - Storage package integrity checks are read-only and report missing or corrupt
   `project.json`/`manifest.json` metadata with stable issue codes.
+- Storage provenance logs are append-only JSONL records with caller-supplied
+  deterministic event IDs and timestamps.
+- Storage data URI resolution supports package-relative paths, `package://`
+  URIs, and local `file://` URIs; package-relative targets cannot escape the
+  package root.
+- Storage file manifests record package-relative paths, byte sizes, and SHA-256
+  digests for deterministic verification.
 - Unit test conventions are documented in
   [unit_test_conventions.md](unit_test_conventions.md); package-local tests
   remain under `src/rietveld_next/**/tests/` to satisfy the current source
