@@ -43,6 +43,9 @@
   metadata, and the ADR workflow in `docs/workspace_build_conventions.md`,
   `docs/plugin_capability_model.md`, `docs/adr_workflow.md`, and
   `architecture/0000-adr-template.md`.
+- M01 completion evidence for closing issues #1-15 is recorded in
+  [m01_completion_report.md](m01_completion_report.md), which maps each issue to
+  committed code, docs, and validation evidence.
 
 ## Numerical Kernels
 
