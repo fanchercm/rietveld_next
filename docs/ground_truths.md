@@ -150,6 +150,15 @@
   optional JAX automatic differentiation, optimizer scaling, and global
   multi-start smoke benchmarks. The JAX AD benchmark returns a structured
   skipped result when JAX or float64 support is unavailable.
+- Workflow, AI, HPC, and physics proxy benchmark hooks live under
+  `src/rietveld_next/benchmarks/`. They are small opt-in smoke workloads that
+  record assumptions and issue numbers in `BenchmarkResult` metadata; they do
+  not submit real jobs, call an LLM, or claim scientific validation.
+- Storage, visualization-decimation, and residual-diagnostic benchmark hooks
+  are also synthetic smoke workloads under `src/rietveld_next/benchmarks/`.
+  Optional Zarr, Parquet, covariance, dashboard, and CI benchmark issues remain
+  open until those specific workflows are implemented.
+
 ## Structural IO
 
 - Startup structural records live in `src/rietveld_next/structure/` and carry

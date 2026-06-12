@@ -25,16 +25,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 2,
@@ -63,16 +54,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 3,
@@ -101,16 +83,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 4,
@@ -139,16 +112,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 5,
@@ -177,16 +141,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 6,
@@ -215,16 +170,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 7,
@@ -253,16 +199,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 8,
@@ -291,16 +228,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 9,
@@ -329,16 +257,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 10,
@@ -367,16 +286,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 11,
@@ -405,16 +315,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 12,
@@ -443,16 +344,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 13,
@@ -481,16 +373,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 14,
@@ -519,16 +402,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 15,
@@ -557,16 +431,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m01_completion_report.md",
-      "src/rietveld_next/core/architecture/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture"
+    ]
   },
   {
     "number": 16,
@@ -598,17 +463,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 17,
@@ -640,17 +495,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 18,
@@ -682,17 +527,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 19,
@@ -724,17 +559,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 20,
@@ -766,17 +591,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 21,
@@ -808,17 +623,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 22,
@@ -850,17 +655,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 23,
@@ -892,17 +687,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 24,
@@ -934,17 +719,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 25,
@@ -976,17 +751,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 26,
@@ -1018,17 +783,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 27,
@@ -1060,17 +815,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 28,
@@ -1102,17 +847,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 29,
@@ -1144,17 +879,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 30,
@@ -1186,17 +911,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 31,
@@ -1228,17 +943,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 32,
@@ -1270,17 +975,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 33,
@@ -1312,17 +1007,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 34,
@@ -1354,17 +1039,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 35,
@@ -1396,17 +1071,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m02_completion_report.md",
-      "src/rietveld_next/core/model/",
-      "src/rietveld_next/core/schema/",
-      "schemas/project.schema.json"
-    ],
-    "closure_validation": "PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core"
+    ]
   },
   {
     "number": 36,
@@ -1438,16 +1103,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 37,
@@ -1479,16 +1135,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 38,
@@ -1520,16 +1167,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 39,
@@ -1561,16 +1199,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 40,
@@ -1602,16 +1231,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 41,
@@ -1643,16 +1263,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 42,
@@ -1684,16 +1295,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 43,
@@ -1725,16 +1327,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 44,
@@ -1766,16 +1359,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 45,
@@ -1807,16 +1391,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 46,
@@ -1848,16 +1423,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 47,
@@ -1889,16 +1455,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 48,
@@ -1930,16 +1487,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 49,
@@ -1971,16 +1519,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 50,
@@ -2012,16 +1551,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/storage/",
-      "src/rietveld_next/storage/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 51,
@@ -2055,18 +1585,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 52,
@@ -2100,18 +1619,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 53,
@@ -2145,18 +1653,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 54,
@@ -2190,18 +1687,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 55,
@@ -2235,18 +1721,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 56,
@@ -2280,18 +1755,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 57,
@@ -2325,18 +1789,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 58,
@@ -2370,18 +1823,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 59,
@@ -2415,18 +1857,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 60,
@@ -2460,18 +1891,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 61,
@@ -2505,18 +1925,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 62,
@@ -2550,18 +1959,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 63,
@@ -2595,18 +1993,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 64,
@@ -2640,18 +2027,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 65,
@@ -2685,18 +2061,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 66,
@@ -2730,18 +2095,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 67,
@@ -2775,18 +2129,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 68,
@@ -2820,18 +2163,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 69,
@@ -2865,18 +2197,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 70,
@@ -2910,18 +2231,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 71,
@@ -3061,18 +2371,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 75,
@@ -3107,18 +2406,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 76,
@@ -3153,18 +2441,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 77,
@@ -3199,18 +2476,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 78,
@@ -3245,18 +2511,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 79,
@@ -3291,18 +2546,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 80,
@@ -3337,18 +2581,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 81,
@@ -3557,17 +2790,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/structural_io.md",
-      "src/rietveld_next/structure/",
-      "src/rietveld_next/structure/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/structure -p test*.py"
+    ]
   },
   {
     "number": 87,
@@ -3601,17 +2824,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/structural_io.md",
-      "src/rietveld_next/structure/",
-      "src/rietveld_next/structure/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/structure -p test*.py"
+    ]
   },
   {
     "number": 88,
@@ -3645,17 +2858,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/structural_io.md",
-      "src/rietveld_next/structure/",
-      "src/rietveld_next/structure/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/structure -p test*.py"
+    ]
   },
   {
     "number": 89,
@@ -3689,17 +2892,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/structural_io.md",
-      "src/rietveld_next/structure/",
-      "src/rietveld_next/structure/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/structure -p test*.py"
+    ]
   },
   {
     "number": 90,
@@ -3733,18 +2926,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/numerical_kernels.md",
-      "src/rietveld_next/diffraction/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/diffraction/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 91,
@@ -3778,18 +2960,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/numerical_kernels.md",
-      "src/rietveld_next/diffraction/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/diffraction/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 92,
@@ -3823,18 +2994,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/numerical_kernels.md",
-      "src/rietveld_next/diffraction/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/diffraction/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 93,
@@ -3868,18 +3028,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/numerical_kernels.md",
-      "src/rietveld_next/diffraction/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/diffraction/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 94,
@@ -4322,18 +3471,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/ground_truths.md",
-      "src/rietveld_next/xray/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/xray/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 107,
@@ -4368,18 +3506,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/ground_truths.md",
-      "src/rietveld_next/xray/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/xray/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 108,
@@ -4414,18 +3541,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/ground_truths.md",
-      "src/rietveld_next/xray/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/xray/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 109,
@@ -4705,18 +3821,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/ground_truths.md",
-      "src/rietveld_next/xray/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/xray/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 117,
@@ -4751,18 +3856,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/ground_truths.md",
-      "src/rietveld_next/xray/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/xray/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 118,
@@ -4797,18 +3891,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/ground_truths.md",
-      "src/rietveld_next/xray/",
-      "src/rietveld_next/neutron/",
-      "src/rietveld_next/xray/tests/",
-      "src/rietveld_next/neutron/tests/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 119,
@@ -5088,17 +4171,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 127,
@@ -5133,17 +4206,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 128,
@@ -5178,17 +4241,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 129,
@@ -5643,17 +4696,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 142,
@@ -5688,17 +4731,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 143,
@@ -5943,17 +4976,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 150,
@@ -6093,17 +5116,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 154,
@@ -6138,17 +5151,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 155,
@@ -6183,17 +5186,7 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/batch_d_foundation.md",
-      "src/rietveld_next/tof/",
-      "src/rietveld_next/edxrd/",
-      "src/rietveld_next/neutron/magnetic/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 156,
@@ -10089,18 +9082,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 249,
@@ -10131,18 +9113,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 250,
@@ -10173,18 +9144,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 251,
@@ -10215,18 +9175,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 252,
@@ -10257,18 +9206,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 253,
@@ -10299,18 +9237,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 254,
@@ -10341,18 +9268,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 255,
@@ -10383,18 +9299,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 256,
@@ -10425,18 +9330,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 257,
@@ -10467,18 +9361,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 258,
@@ -10509,18 +9392,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 259,
@@ -10551,18 +9423,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 260,
@@ -10593,18 +9454,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 261,
@@ -10635,18 +9485,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 262,
@@ -10677,18 +9516,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 263,
@@ -10719,18 +9547,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 264,
@@ -10761,18 +9578,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 265,
@@ -10803,18 +9609,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 266,
@@ -10845,18 +9640,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 267,
@@ -10887,18 +9671,7 @@
       "Automated tests or validation checks cover the primary success path and at least one failure or edge case.",
       "The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.",
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/m34_completion_report.md",
-      "docs/validation_baseline.md",
-      "src/rietveld_next/validation/",
-      "schemas/golden_dataset.schema.json",
-      "schemas/validation_report.schema.json"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 268,
@@ -11587,17 +10360,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 289,
@@ -11628,17 +10391,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 290,
@@ -11670,17 +10423,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 291,
@@ -11711,17 +10454,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 292,
@@ -11785,17 +10518,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 294,
@@ -11860,17 +10583,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 296,
@@ -11901,17 +10614,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 297,
@@ -11942,17 +10645,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 298,
@@ -12047,18 +10740,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 301,
@@ -12090,18 +10772,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 302,
@@ -12132,18 +10803,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 303,
@@ -12175,18 +10835,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 304,
@@ -12218,18 +10867,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 305,
@@ -12259,17 +10897,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 306,
@@ -12363,17 +10991,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 309,
@@ -12434,17 +11052,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 311,
@@ -12474,17 +11082,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 312,
@@ -12514,17 +11112,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 313,
@@ -12586,17 +11174,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 315,
@@ -12690,17 +11268,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 318,
@@ -12729,17 +11297,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 319,
@@ -12801,17 +11359,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 321,
@@ -12873,17 +11421,7 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ],
-    "status": "closed",
-    "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
-    "closure_evidence": [
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/benchmarks/",
-      "src/rietveld_next/benchmarks/tests/",
-      "docs/ground_truths.md"
-    ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    ]
   },
   {
     "number": 323,

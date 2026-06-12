@@ -116,37 +116,3 @@ run_global_multistart_benchmark(dimensions=2, start_count=3)
 The automatic-differentiation benchmark uses optional JAX `jacfwd` when JAX is
 available with float64 enabled. If JAX is unavailable, it returns a structured
 skipped result rather than falling back silently to finite differences.
-
-## Workflow, AI, HPC, And Physics Proxy Benchmarks
-
-Additional opt-in smoke hooks live in:
-
-- `src/rietveld_next/benchmarks/workflow_ai_hpc.py`
-- `src/rietveld_next/benchmarks/physics_proxies.py`
-- `src/rietveld_next/benchmarks/storage_visualization_diagnostics.py`
-
-Public API:
-
-```python
-run_sequential_refinement_workflow_overhead_benchmark()
-run_ai_tool_call_overhead_benchmark()
-run_slurm_job_array_packaging_benchmark(output_directory=...)
-run_multi_bank_tof_profile_proxy_benchmark()
-run_neutron_scattering_lookup_proxy_benchmark()
-run_magnetic_structure_factor_proxy_benchmark()
-run_edxrd_detector_response_proxy_benchmark()
-run_project_package_storage_benchmark(output_dir=...)
-run_visualization_decimation_benchmark()
-run_residual_diagnostics_benchmark()
-```
-
-These functions are small synthetic benchmarks for issue-scoped plumbing. They
-record sizes, timings, checksums, units, assumptions, and relevant issue
-numbers in the shared `BenchmarkResult` schema. They do not submit real cluster
-jobs, do not call an LLM, and do not claim cross-software scientific
-validation. Larger workflow, AI, HPC, or physics benchmarks remain opt-in
-follow-up work.
-
-The benchmark runner integrates the sequential workflow smoke benchmark through
-`--family workflow --backend python`; other non-numerical families remain
-structured skipped selections until their runner paths are assigned.

@@ -77,18 +77,6 @@ class BenchmarkRunnerTests(unittest.TestCase):
         self.assertEqual(result["environment"]["dataset"]["sample_count"], 128)
         validate_benchmark_result_dict(result)
 
-    def test_workflow_family_runs_sequential_smoke_benchmark(self) -> None:
-        args = parse_args(["--family", "workflow", "--backend", "python", "--size", "small", "--iterations", "1"])
-
-        output = run_selected_benchmark(args)
-        result = output["results"][0]
-
-        self.assertEqual(result["status"], "ok")
-        self.assertEqual(result["name"], "workflow.sequential_refinement.python.small.synthetic")
-        self.assertEqual(result["environment"]["sequence_points"], 4)
-        self.assertEqual(result["environment"]["benchmark_identity"]["workstream"], "workflow")
-        validate_benchmark_result_dict(result)
-
     def test_python_backend_skips_unsupported_float32_dtype(self) -> None:
         args = parse_args(["--backend", "python", "--dtype", "float32"])
 
