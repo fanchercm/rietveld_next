@@ -164,6 +164,13 @@
   provenance and extension-contract placeholder only; basis-vector matrices are
   not interpreted or validated against BasIreps, SARAh, ISODISTORT, or
   FullProf outputs.
+- M25 joint magnetic-refinement helpers live in
+  `src/rietveld_next/neutron/magnetic/joint.py`. They provide deterministic
+  nuclear-plus-magnetic relative-intensity toggles, propagation-vector
+  reflection flagging, a synthetic Mn-like tutorial fixture, Markdown report
+  sections, and staged parameter-group recipes. The fixture uses relative
+  intensities and explicit finite bounds; it is not validated magnetic
+  structure-factor physics or material-specific high-fidelity data.
 - Optimization diagnostics now include labeled covariance and correlation
   result records in `src/rietveld_next/optimization/diagnostics.py`. The dense
   covariance helper uses `residual_variance * inv(J^T J)` for small synthetic
@@ -343,6 +350,22 @@
   profile half-width; `assemble_multibank_objective()` concatenates masked
   bank residual blocks in caller order and records labels such as `tof:bank-a`
   in objective diagnostics.
+- M22 TOF validation and workflow helpers live in
+  `src/rietveld_next/tof/validation.py`.
+- `run_tof_synthetic_benchmark()` is a deterministic lightweight smoke
+  workload that records residual count, objective value, residual checksum, and
+  bank labels; it does not make wall-clock performance claims.
+- `tof_calibration_wizard_spec()` maps calibration workflow steps to concrete
+  TOF APIs for axis loading, bank definition, DIFC/DIFA/zero calibration,
+  peak-center preview, and objective assembly.
+- `tof_diagnostic_plot_data()` serializes one bank objective block into TOF,
+  observed, calculated, difference, objective-residual, and unmasked-bin
+  vectors with explicit microsecond and intensity units.
+- `event_mode_provenance_placeholder()` records unsupported TOF event-mode
+  provenance with `supported=False`; it is not an event-data reader.
+- `gsasii_tof_comparison_fixture()` is a synthetic GSAS-II-labeled
+  DIFC/DIFA/zero peak-center fixture with documented microsecond tolerances
+  and limitations, not a cross-software validation result.
 - EDXRD histogram-axis helpers live in `src/rietveld_next/edxrd/` and store
   strictly increasing positive energy bin edges in keV; calibration helpers
   support linear and polynomial channel-to-energy edge models with polynomial

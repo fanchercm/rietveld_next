@@ -5571,6 +5571,9 @@ Deliver a granular, testable increment for TOF: Implement multi-bank objective a
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M22 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5587,18 +5590,32 @@ Deliver a granular, testable increment for TOF: Implement TOF synthetic benchmar
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement TOF synthetic benchmark` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement TOF synthetic benchmark` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/validation.py`
+- `src/rietveld_next/tof/tests/test_validation.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #136: Implement TOF calibration wizard spec
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M22 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5615,18 +5632,32 @@ Deliver a granular, testable increment for TOF: Implement TOF calibration wizard
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement TOF calibration wizard spec` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement TOF calibration wizard spec` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/validation.py`
+- `src/rietveld_next/tof/tests/test_validation.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #137: Implement TOF diagnostic plot data
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M22 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5643,18 +5674,32 @@ Deliver a granular, testable increment for TOF: Implement TOF diagnostic plot da
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement TOF diagnostic plot data` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement TOF diagnostic plot data` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/validation.py`
+- `src/rietveld_next/tof/tests/test_validation.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #138: Implement event-mode provenance placeholder
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M22 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5671,18 +5716,32 @@ Deliver a granular, testable increment for TOF: Implement event-mode provenance 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement event-mode provenance placeholder` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement event-mode provenance placeholder` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/validation.py`
+- `src/rietveld_next/tof/tests/test_validation.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #139: Implement GSAS-II TOF comparison fixture
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M22 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5699,13 +5758,24 @@ Deliver a granular, testable increment for TOF: Implement GSAS-II TOF comparison
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement GSAS-II TOF comparison fixture` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement GSAS-II TOF comparison fixture` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/validation.py`
+- `src/rietveld_next/tof/tests/test_validation.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #140: Implement TOF bank mask handling
 
@@ -6007,6 +6077,9 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement repres
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M25 joint-refinement agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6023,18 +6096,31 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement nuclea
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement nuclear-plus-magnetic phase coupling` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement nuclear-plus-magnetic phase coupling` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/joint.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_joint.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 ### Issue #148: Implement magnetic reflection flagging
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M25 joint-refinement agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6051,14 +6137,24 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement magnet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement magnetic reflection flagging` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement magnetic reflection flagging` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/joint.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_joint.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 ### Issue #149: Implement moment magnitude validation
 
 - **Category:** Magnetic Refinement
@@ -6105,6 +6201,9 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement moment
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M25 joint-refinement agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6121,18 +6220,31 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement magnet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement magnetic refinement tutorial dataset stub` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement magnetic refinement tutorial dataset stub` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/joint.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_joint.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 ### Issue #151: Implement magnetic report section generator
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M25 joint-refinement agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6149,18 +6261,31 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement magnet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement magnetic report section generator` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement magnetic report section generator` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/joint.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_joint.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 ### Issue #152: Implement magnetic parameter group recipes
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M25 joint-refinement agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6177,14 +6302,24 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement magnet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement magnetic parameter group recipes` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement magnetic parameter group recipes` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/joint.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_joint.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 
 ## EDXRD
 

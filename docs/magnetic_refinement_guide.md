@@ -9,15 +9,19 @@ This guide records the current magnetic refinement metadata model.
 The current foundation includes magnetic moment records, propagation vectors,
 magnetic form-factor lookup helpers, mCIF scalar import reports, magnetic
 symmetry constraint records, representation-analysis import placeholders, and
-project-level magnetic-structure metadata. Vectors carry explicit component
-shape validation, import helpers report unsupported fields, and form-factor
-records carry provenance.
+project-level magnetic-structure metadata. M25 adds deterministic
+nuclear-plus-magnetic startup coupling, magnetic reflection flagging, a
+synthetic tutorial dataset, report-section generation, and staged magnetic
+parameter recipes. Vectors carry explicit component shape validation, import
+helpers report unsupported fields, and form-factor records carry provenance.
 
 ## Non-Goals
 
 Complete loop-aware mCIF import, numerical representation-analysis basis-vector
 interpretation, complete magnetic form-factor coverage, and validated magnetic
-structure factors are not complete.
+structure factors are not complete. The M25 tutorial dataset uses relative
+synthetic intensities and does not validate material-specific magnetic
+structure-factor physics.
 
 ## Magnetic Form Factors
 
@@ -97,6 +101,62 @@ constrained_component = multiplier * reference_component
 Invalid components, non-finite multipliers, empty parameter IDs, and unsupported
 units raise `ValueError`.
 
+## Joint Nuclear-Magnetic Startup Helpers
+
+Location: `src/rietveld_next/neutron/magnetic/joint.py`
+
+Functions:
+
+```python
+NuclearMagneticPhaseCoupling(...)
+flag_magnetic_reflections(reflections, propagation_vectors)
+create_magnetic_refinement_tutorial_dataset()
+generate_magnetic_report_section(dataset)
+build_magnetic_parameter_group_recipes(phase_id, site_ids)
+```
+
+`NuclearMagneticPhaseCoupling` stores contribution toggles and non-negative
+relative scales for one phase. It accepts nuclear and magnetic relative
+intensity vectors of equal length and returns separated or summed
+contributions. Invalid units, non-finite scales, negative intensities, and
+mismatched vector lengths raise `ValueError`.
+
+Reflection flagging classifies reciprocal-lattice-unit coordinates as
+`nuclear`, `magnetic_satellite`, `mixed_nuclear_magnetic`, or `unindexed`.
+Integer Miller indices are treated as nuclear. Offsets that match `+k` or `-k`
+within the explicit `tolerance_rlu` are treated as magnetic satellites. A zero
+propagation vector at integer `hkl` is reported as mixed. This is a deterministic
+indexing helper, not a magnetic extinction-rule engine.
+
+The tutorial fixture is returned by:
+
+```python
+dataset = create_magnetic_refinement_tutorial_dataset()
+dataset.calculated_intensity
+```
+
+The fixture uses a collinear Mn-like synthetic phase, propagation vector
+`(0.5, 0.0, 0.0)` in reciprocal lattice units, relative nuclear and magnetic
+intensity arrays, and explicit notes that the values are not cross-software
+validation data.
+
+The report generator returns a Markdown section with separated nuclear,
+magnetic, and total relative intensity sums, reflection-flag counts, staged
+parameter recipes, and limitations. It is deterministic and suitable for
+workflow reports that need to disclose what was toggled or held fixed.
+
+`build_magnetic_parameter_group_recipes` emits three startup stages:
+
+1. Refine magnetic scale with the nuclear baseline fixed.
+2. Refine longitudinal `mz` moment components.
+3. Release transverse `mx` and `my` components after scale and primary axis
+   are stable.
+
+Moment-component parameter IDs use the same canonical magnetic-structure paths
+as the symmetry helpers. Recipe bounds are finite and explicit: the default
+component bound is `[-10, 10]` Bohr magnetons and the startup magnetic-scale
+guard bound is `[0, 1e6]` in relative intensity units.
+
 ## Representation-Analysis Placeholder
 
 Location: `src/rietveld_next/neutron/magnetic/imports.py`
@@ -118,10 +178,11 @@ labels, basis vectors, site mapping, normalization convention, and provenance.
 
 Record propagation vectors as three-component vectors and magnetic moments with
 units and coordinate frames. Use magnetic form-factor lookups only for supported
-startup ions, keep mCIF import reports explicit about unsupported fields, and
-keep validation reports explicit about whether magnetic quantities are
-metadata-only, rounded table evaluations, placeholders, or compared against
-reference software.
+startup ions, keep mCIF import reports explicit about unsupported fields, use
+joint-refinement helpers to keep nuclear and magnetic contributions reported
+separately, and keep validation reports explicit about whether magnetic
+quantities are metadata-only, rounded table evaluations, synthetic tutorial
+fixtures, placeholders, or compared against reference software.
 
 ## Related Files
 

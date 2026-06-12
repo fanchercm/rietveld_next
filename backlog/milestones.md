@@ -847,6 +847,9 @@ Implement bank-specific backgrounds, profile parameters, back-to-back exponentia
 
 ## M22 TOF validation diagnostics and workflow specs
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex M22 agent
 - Phase: Physics calculation
 - Priority: P2
 - Issues: #135, #136, #137, #138, #139
@@ -863,17 +866,27 @@ Add TOF benchmarks, calibration workflow specification, diagnostics, event-mode 
 - GSAS-II TOF comparison fixture
 
 ### Acceptance criteria
-- [ ] TOF benchmark is reproducible and not run in expensive mode by default.
-- [ ] Calibration wizard spec maps GUI steps to API calls.
-- [ ] Comparison fixture documents expected tolerances and limitations.
+- [x] TOF benchmark is reproducible and not run in expensive mode by default.
+- [x] Calibration wizard spec maps GUI steps to API calls.
+- [x] Comparison fixture documents expected tolerances and limitations.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
+### Closure evidence
+- `src/rietveld_next/tof/validation.py`
+- `src/rietveld_next/tof/tests/test_validation.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ## M23 Magnetic entities and magnetic scattering foundation
 
@@ -958,6 +971,9 @@ Create mCIF import skeleton, magnetic symmetry constraint API, and representatio
 
 ## M25 Magnetic joint-refinement validation and recipes
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex M25 joint-refinement agent
 - Phase: Physics calculation
 - Priority: P2
 - Issues: #147, #148, #149, #150, #151, #152
@@ -975,17 +991,25 @@ Implement nuclear-plus-magnetic coupling, magnetic reflection handling, validati
 - magnetic parameter group recipes
 
 ### Acceptance criteria
-- [ ] Magnetic and nuclear contributions can be toggled and reported separately.
-- [ ] Moment magnitude validation produces scientific warnings.
-- [ ] Recipe docs explain safe staged magnetic refinement.
+- [x] Magnetic and nuclear contributions can be toggled and reported separately.
+- [x] Moment magnitude validation produces scientific warnings.
+- [x] Recipe docs explain safe staged magnetic refinement.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/joint.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_joint.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 
 ## M26 EDXRD axis and calibration foundation
 

@@ -11,14 +11,17 @@ The current implementation provides TOF histogram axes, detector-bank metadata,
 calibration parameter containers, DIFC-DIFA-zero peak-position evaluation,
 bank-local histogram-bin masks for residual calculations, bank-specific
 background/profile records, discretized back-to-back exponential profile
-evaluation, reflection windowing, and labeled multi-bank objective assembly. It
-supports typed deterministic records and synthetic-profile validation, not
-facility-grade TOF refinement validation.
+evaluation, reflection windowing, labeled multi-bank objective assembly,
+validation smoke fixtures, diagnostic plot payloads, calibration wizard step
+metadata, event-mode provenance placeholders, and synthetic GSAS-II peak-center
+comparison fixtures. It supports typed deterministic records and
+synthetic-profile validation, not facility-grade TOF refinement validation.
 
 ## Non-Goals
 
-Facility-grade GSAS-II TOF comparison fixtures, event-mode provenance, and
-workflow diagnostics remain future work.
+Facility-grade GSAS-II TOF comparison against external reference files,
+event-mode reduction, and instrument-specific workflow diagnostics remain
+future work.
 
 ## Example
 
@@ -36,6 +39,11 @@ from rietveld_next.tof import (
     TimeOfFlightHistogramAxis,
     TimeOfFlightReflection,
     assemble_multibank_objective,
+    event_mode_provenance_placeholder,
+    gsasii_tof_comparison_fixture,
+    run_tof_synthetic_benchmark,
+    tof_calibration_wizard_spec,
+    tof_diagnostic_plot_data,
 )
 
 calibration = TimeOfFlightCalibrationParameters(
@@ -84,6 +92,12 @@ block = TimeOfFlightBankObjectiveBlock(
     reflections=(TimeOfFlightReflection(d_spacing_angstrom=1.5, intensity=10.0),),
 )
 objective = assemble_multibank_objective((block,), parameters=())
+diagnostics = tof_diagnostic_plot_data(block)
+benchmark = run_tof_synthetic_benchmark()
+wizard_steps = tof_calibration_wizard_spec("bank-a", (1.5,))
+event_placeholder = event_mode_provenance_placeholder("bank-a", "events.nxs")
+comparison_fixture = gsasii_tof_comparison_fixture(calibration, (1.5,))
+comparison = comparison_fixture.compare(calibration.peak_positions_microseconds((1.5,)))
 ```
 
 The peak-position convention is `tof_microseconds = DIFA * d^2 + DIFC * d +
@@ -107,6 +121,33 @@ order, applies each bank's mask through `TimeOfFlightDetectorBank`, and reports
 diagnostic residual-block labels such as `tof:bank-a`. It does not currently
 optimize or mutate shared phase parameters; callers pass the associated
 parameter vector for objective reporting.
+
+## M22 Validation and Workflow Helpers
+
+`run_tof_synthetic_benchmark()` evaluates a deterministic two-bank smoke
+workload by default. The result records the workload specification, residual
+count, objective value, residual checksum, and bank labels. It is intended for
+normal CI and does not assert wall-clock timing.
+
+`tof_calibration_wizard_spec()` returns GUI/workflow steps mapped to concrete
+API calls: axis loading, bank definition, DIFC/DIFA/zero calibration creation,
+peak-center preview, and objective assembly. The spec records required inputs,
+outputs, units, and validation notes so UI layers do not invent hidden
+calibration behavior.
+
+`tof_diagnostic_plot_data()` converts one `TimeOfFlightBankObjectiveBlock` into
+serializable plot vectors for TOF centers, observed intensities, calculated
+intensities, unweighted differences, objective residuals, and unmasked bin
+indices. The payload preserves microsecond and intensity units.
+
+`event_mode_provenance_placeholder()` records event-source provenance while
+explicitly setting `supported=False`. It is a schema-stable placeholder for
+future event-mode reduction, not an event-data reader.
+
+`gsasii_tof_comparison_fixture()` creates a synthetic GSAS-II-labeled
+DIFC/DIFA/zero peak-center fixture with microsecond tolerances and documented
+limitations. It compares peak centers only and does not claim cross-software
+validation against GSAS-II output files.
 
 ## Related Files
 
