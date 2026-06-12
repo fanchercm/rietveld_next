@@ -45,10 +45,13 @@ rietveld_next/
   transforms.
 - `src/rietveld_next/benchmarks/` contains opt-in benchmark infrastructure and
   smoke fixtures.
+- `src/rietveld_next/validation/` contains lightweight validation baseline
+  helpers and package-local smoke tests.
 - `docs/` contains developer and user documentation, including this canonical
   package tree.
 - `architecture/` contains architecture notes and guardrail documents.
-- `schemas/` contains JSON Schema files for persistent project metadata.
+- `schemas/` contains JSON Schema files for persistent project metadata and
+  validation artifacts.
 - `backlog/` contains canonical issue and milestone files.
 - `github/` contains GitHub import payloads generated from the backlog.
 - `prompts/` contains program, milestone, issue, workstream, and batch-agent
