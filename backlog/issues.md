@@ -5361,6 +5361,9 @@ Deliver a granular, testable increment for TOF: Implement DIFC-DIFA-zero peak po
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M21 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5377,18 +5380,32 @@ Deliver a granular, testable increment for TOF: Implement bank-specific backgrou
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement bank-specific background model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement bank-specific background model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/profile.py`
+- `src/rietveld_next/tof/tests/test_profile.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #131: Implement bank-specific profile parameter model
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M21 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5405,18 +5422,32 @@ Deliver a granular, testable increment for TOF: Implement bank-specific profile 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement bank-specific profile parameter model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement bank-specific profile parameter model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/profile.py`
+- `src/rietveld_next/tof/tests/test_profile.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #132: Implement back-to-back exponential profile
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M21 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5433,18 +5464,32 @@ Deliver a granular, testable increment for TOF: Implement back-to-back exponenti
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement back-to-back exponential profile` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement back-to-back exponential profile` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/profile.py`
+- `src/rietveld_next/tof/tests/test_profile.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #133: Implement TOF reflection windowing
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M21 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5461,18 +5506,32 @@ Deliver a granular, testable increment for TOF: Implement TOF reflection windowi
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement TOF reflection windowing` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement TOF reflection windowing` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/profile.py`
+- `src/rietveld_next/tof/tests/test_profile.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #134: Implement multi-bank objective assembly
 
 - **Category:** TOF
 - **Phase:** TOF
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M21 agent
 - **Priority:** P1
 - **Labels:** tof, tof, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5489,13 +5548,24 @@ Deliver a granular, testable increment for TOF: Implement multi-bank objective a
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement multi-bank objective assembly` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement multi-bank objective assembly` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/tof/profile.py`
+- `src/rietveld_next/tof/tests/test_profile.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 ### Issue #135: Implement TOF synthetic benchmark
 
@@ -5811,6 +5881,9 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement magnet
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M24 magnetic symmetry/import agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5827,18 +5900,32 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement mCIF i
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement mCIF import skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement mCIF import skeleton` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/imports.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_imports.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 
 ### Issue #145: Implement magnetic symmetry constraint API
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M24 magnetic symmetry/import agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5855,18 +5942,32 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement magnet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement magnetic symmetry constraint API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement magnetic symmetry constraint API` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/symmetry.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_symmetry.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 
 ### Issue #146: Implement representation-analysis import placeholder
 
 - **Category:** Magnetic Refinement
 - **Phase:** Magnetic
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M24 magnetic symmetry/import agent
 - **Priority:** P2
 - **Labels:** magnetic-refinement, magnetic, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -5883,13 +5984,24 @@ Deliver a granular, testable increment for Magnetic Refinement: Implement repres
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement representation-analysis import placeholder` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement representation-analysis import placeholder` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/imports.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_imports.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 
 ### Issue #147: Implement nuclear-plus-magnetic phase coupling
 
@@ -6416,6 +6528,9 @@ Deliver a granular, testable increment for EDXRD: Implement dead-time correction
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M28 EDXRD high-pressure agent
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6432,18 +6547,32 @@ Deliver a granular, testable increment for EDXRD: Implement high-pressure marker
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement high-pressure marker entity` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement high-pressure marker entity` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/edxrd/high_pressure.py`
+- `src/rietveld_next/edxrd/tests/test_high_pressure.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'`
 
 ### Issue #162: Implement equation-of-state hook
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M28 EDXRD high-pressure agent
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6460,18 +6589,32 @@ Deliver a granular, testable increment for EDXRD: Implement equation-of-state ho
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement equation-of-state hook` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement equation-of-state hook` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/edxrd/high_pressure.py`
+- `src/rietveld_next/edxrd/tests/test_high_pressure.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'`
 
 ### Issue #163: Implement EDXRD synthetic benchmark
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M28 EDXRD high-pressure agent
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6488,13 +6631,24 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD synthetic benc
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement EDXRD synthetic benchmark` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement EDXRD synthetic benchmark` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/edxrd/synthetic_benchmark.py`
+- `src/rietveld_next/edxrd/tests/test_synthetic_benchmark.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'`
 
 ### Issue #164: Implement EDXRD calibration workflow
 
@@ -6543,6 +6697,9 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD calibration wo
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M28 EDXRD high-pressure agent
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6559,13 +6716,24 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD residual diagn
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement EDXRD residual diagnostics` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement EDXRD residual diagnostics` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/edxrd/diagnostics.py`
+- `src/rietveld_next/edxrd/tests/test_diagnostics.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'`
 
 ### Issue #166: Implement EDXRD import template
 
@@ -6614,6 +6782,9 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD import templat
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex M28 EDXRD high-pressure agent
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6630,14 +6801,24 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD documentation 
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement EDXRD documentation example` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement EDXRD documentation example` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `docs/edxrd_guide.md`
+- `src/rietveld_next/edxrd/synthetic_benchmark.py`
+- `src/rietveld_next/edxrd/tests/test_synthetic_benchmark.py`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'`
 
 ## Sequential and Parametric Workflows
 

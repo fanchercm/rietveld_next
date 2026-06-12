@@ -5603,7 +5603,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M21 agent",
+    "closure_evidence": [
+      "src/rietveld_next/tof/profile.py",
+      "src/rietveld_next/tof/tests/test_profile.py",
+      "docs/tof_refinement_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'"
   },
   {
     "number": 131,
@@ -5638,7 +5648,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M21 agent",
+    "closure_evidence": [
+      "src/rietveld_next/tof/profile.py",
+      "src/rietveld_next/tof/tests/test_profile.py",
+      "docs/tof_refinement_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'"
   },
   {
     "number": 132,
@@ -5673,7 +5693,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M21 agent",
+    "closure_evidence": [
+      "src/rietveld_next/tof/profile.py",
+      "src/rietveld_next/tof/tests/test_profile.py",
+      "docs/tof_refinement_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'"
   },
   {
     "number": 133,
@@ -5708,7 +5738,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M21 agent",
+    "closure_evidence": [
+      "src/rietveld_next/tof/profile.py",
+      "src/rietveld_next/tof/tests/test_profile.py",
+      "docs/tof_refinement_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'"
   },
   {
     "number": 134,
@@ -5743,7 +5783,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M21 agent",
+    "closure_evidence": [
+      "src/rietveld_next/tof/profile.py",
+      "src/rietveld_next/tof/tests/test_profile.py",
+      "docs/tof_refinement_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'"
   },
   {
     "number": 135,
@@ -6131,7 +6181,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M24 magnetic symmetry/import agent",
+    "closure_evidence": [
+      "docs/magnetic_refinement_guide.md",
+      "docs/ground_truths.md",
+      "src/rietveld_next/neutron/magnetic/imports.py",
+      "src/rietveld_next/neutron/magnetic/tests/test_imports.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'"
   },
   {
     "number": 145,
@@ -6166,7 +6226,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M24 magnetic symmetry/import agent",
+    "closure_evidence": [
+      "docs/magnetic_refinement_guide.md",
+      "docs/ground_truths.md",
+      "src/rietveld_next/neutron/magnetic/symmetry.py",
+      "src/rietveld_next/neutron/magnetic/tests/test_symmetry.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'"
   },
   {
     "number": 146,
@@ -6201,7 +6271,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M24 magnetic symmetry/import agent",
+    "closure_evidence": [
+      "docs/magnetic_refinement_guide.md",
+      "docs/ground_truths.md",
+      "src/rietveld_next/neutron/magnetic/imports.py",
+      "src/rietveld_next/neutron/magnetic/tests/test_imports.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'"
   },
   {
     "number": 147,
@@ -6811,7 +6891,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M28 EDXRD high-pressure agent",
+    "closure_evidence": [
+      "src/rietveld_next/edxrd/high_pressure.py",
+      "src/rietveld_next/edxrd/tests/test_high_pressure.py",
+      "docs/edxrd_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'"
   },
   {
     "number": 162,
@@ -6846,7 +6936,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M28 EDXRD high-pressure agent",
+    "closure_evidence": [
+      "src/rietveld_next/edxrd/high_pressure.py",
+      "src/rietveld_next/edxrd/tests/test_high_pressure.py",
+      "docs/edxrd_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'"
   },
   {
     "number": 163,
@@ -6881,7 +6981,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M28 EDXRD high-pressure agent",
+    "closure_evidence": [
+      "src/rietveld_next/edxrd/synthetic_benchmark.py",
+      "src/rietveld_next/edxrd/tests/test_synthetic_benchmark.py",
+      "docs/edxrd_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'"
   },
   {
     "number": 164,
@@ -6960,7 +7070,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M28 EDXRD high-pressure agent",
+    "closure_evidence": [
+      "src/rietveld_next/edxrd/diagnostics.py",
+      "src/rietveld_next/edxrd/tests/test_diagnostics.py",
+      "docs/edxrd_guide.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'"
   },
   {
     "number": 166,
@@ -7039,7 +7159,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex M28 EDXRD high-pressure agent",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/synthetic_benchmark.py",
+      "src/rietveld_next/edxrd/tests/test_synthetic_benchmark.py",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'"
   },
   {
     "number": 168,

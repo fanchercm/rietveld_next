@@ -109,6 +109,17 @@
   escape-peak hooks with provenance, and record dead-time metadata without
   applying a numerical dead-time correction. The tail and escape hooks are
   synthetic startup fixtures and are not detector-validated response physics.
+- EDXRD M28 high-pressure helpers live under `src/rietveld_next/edxrd/`.
+  `HighPressureMarker` records pressure metadata in GPa with pressure-standard,
+  calibrant, uncertainty, temperature, and provenance fields;
+  `BirchMurnaghanEquationOfState` and `EquationOfStateHook` provide a
+  deterministic third-order Birch-Murnaghan plus isotropic d-spacing scaling
+  fixture; `compute_edxrd_residual_diagnostics()` reports
+  `observed - calculated` residual summaries; and
+  `run_edxrd_synthetic_benchmark()` / `write_edxrd_synthetic_benchmark_result()`
+  provide a lightweight CPU-only synthetic benchmark. These APIs are synthetic
+  validation fixtures and do not constitute material-specific high-pressure
+  refinement validation or cross-software agreement.
 - X-ray M16 helpers include a deterministic zero-shift calibration workflow in
   `src/rietveld_next/xray/calibration.py` and a synchrotron beamline metadata
   template in `src/rietveld_next/xray/beamline.py`. These provide synthetic
@@ -144,6 +155,15 @@
   magnetic form-factor lookup evaluates rounded coefficients as a function of
   `|Q|` in inverse angstroms and is not a complete production magnetic
   scattering table.
+- M24 magnetic import and symmetry helpers live in
+  `src/rietveld_next/neutron/magnetic/`. The mCIF importer is a scalar-field
+  skeleton that records supported fields and reports unsupported tags/loops; it
+  does not reconstruct magnetic structures from loop data. Magnetic symmetry
+  constraints are symbolic Bohr-magneton component relations that convert to
+  the shared core `Constraint` model. Representation-analysis import is a
+  provenance and extension-contract placeholder only; basis-vector matrices are
+  not interpreted or validated against BasIreps, SARAh, ISODISTORT, or
+  FullProf outputs.
 - Optimization diagnostics now include labeled covariance and correlation
   result records in `src/rietveld_next/optimization/diagnostics.py`. The dense
   covariance helper uses `residual_variance * inv(J^T J)` for small synthetic
@@ -308,6 +328,21 @@
   `TimeOfFlightDetectorBank.masked_bin_indices`; masks are sorted for
   deterministic serialization and are applied after the standard
   `observed - calculated` residual calculation.
+- M21 TOF bank-profile helpers live in `src/rietveld_next/tof/profile.py`.
+  `TimeOfFlightBankBackground` evaluates bank-local polynomial backgrounds on
+  `(tof_microseconds - origin_microseconds) / scale_microseconds` with
+  coefficients in ascending power order.
+- `TimeOfFlightBankProfileParameters` stores bank-local back-to-back
+  exponential parameters: `alpha_inverse_microsecond`,
+  `beta_inverse_microsecond`, and `gaussian_fwhm_microseconds`; all are
+  positive and serialized with explicit microsecond units.
+- `back_to_back_exponential_profile()` evaluates a deterministic discretized
+  Gaussian-core, two-sided exponential profile and normalizes to unit discrete
+  area when bin widths are supplied.
+- TOF reflection windows are deterministic bin-index tuples derived from the
+  profile half-width; `assemble_multibank_objective()` concatenates masked
+  bank residual blocks in caller order and records labels such as `tof:bank-a`
+  in objective diagnostics.
 - EDXRD histogram-axis helpers live in `src/rietveld_next/edxrd/` and store
   strictly increasing positive energy bin edges in keV; calibration helpers
   support linear and polynomial channel-to-energy edge models with polynomial

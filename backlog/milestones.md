@@ -805,6 +805,9 @@ Implement TOF histogram axis, detector bank model, calibration parameter set, DI
 
 ## M21 TOF bank profile and multi-bank objective
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex M21 agent
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #130, #131, #132, #133, #134
@@ -821,16 +824,25 @@ Implement bank-specific backgrounds, profile parameters, back-to-back exponentia
 - multi-bank objective assembly
 
 ### Acceptance criteria
-- [ ] Each bank can refine local profile/background parameters while sharing phase parameters.
-- [ ] Back-to-back exponential tests verify asymmetry and normalization behavior.
-- [ ] Multi-bank objective returns labeled residual blocks.
+- [x] Each bank can refine local profile/background parameters while sharing phase parameters.
+- [x] Back-to-back exponential tests verify asymmetry and normalization behavior.
+- [x] Multi-bank objective returns labeled residual blocks.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `src/rietveld_next/tof/profile.py`
+- `src/rietveld_next/tof/tests/test_profile.py`
+- `docs/tof_refinement_guide.md`
+- `docs/ground_truths.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/tof -p 'test_*.py'`
 
 
 ## M22 TOF validation diagnostics and workflow specs
@@ -904,6 +916,9 @@ Introduce magnetic moment, propagation-vector, and magnetic form-factor entities
 
 ## M24 Magnetic symmetry and import foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex M24 magnetic symmetry/import agent
 - Phase: Physics calculation
 - Priority: P2
 - Issues: #144, #145, #146
@@ -918,16 +933,27 @@ Create mCIF import skeleton, magnetic symmetry constraint API, and representatio
 - representation-analysis import placeholder
 
 ### Acceptance criteria
-- [ ] mCIF import clearly reports supported and unsupported fields.
-- [ ] Magnetic symmetry constraints are represented in the parameter graph.
-- [ ] Representation-analysis placeholder includes documented extension contract.
+- [x] mCIF import clearly reports supported and unsupported fields.
+- [x] Magnetic symmetry constraints are represented in the parameter graph.
+- [x] Representation-analysis placeholder includes documented extension contract.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/magnetic_refinement_guide.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/neutron/magnetic/imports.py`
+- `src/rietveld_next/neutron/magnetic/symmetry.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_imports.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_symmetry.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/neutron/magnetic -p 'test_*.py'`
 
 
 ## M25 Magnetic joint-refinement validation and recipes
@@ -1045,6 +1071,9 @@ Implement the EDXRD detector response API, Gaussian response kernel, tail/escape
 
 ## M28 EDXRD high-pressure validation and documentation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex M28 EDXRD high-pressure agent
 - Phase: Physics calculation
 - Priority: P2
 - Issues: #161, #162, #163, #165, #167
@@ -1061,17 +1090,29 @@ Add high-pressure entities, equation-of-state hook, synthetic benchmark, residua
 - EDXRD documentation example
 
 ### Acceptance criteria
-- [ ] High-pressure marker metadata is represented in the project model.
-- [ ] EDXRD benchmark writes reproducible results.
-- [ ] Documentation walks through calibration and refinement assumptions.
+- [x] High-pressure marker metadata is represented in the project model.
+- [x] EDXRD benchmark writes reproducible results.
+- [x] Documentation walks through calibration and refinement assumptions.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `src/rietveld_next/edxrd/high_pressure.py`
+- `src/rietveld_next/edxrd/diagnostics.py`
+- `src/rietveld_next/edxrd/synthetic_benchmark.py`
+- `src/rietveld_next/edxrd/tests/test_high_pressure.py`
+- `src/rietveld_next/edxrd/tests/test_diagnostics.py`
+- `src/rietveld_next/edxrd/tests/test_synthetic_benchmark.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/edxrd -p 'test_*.py'`
 
 ## M29 Sequential and parametric workflow foundation
 
