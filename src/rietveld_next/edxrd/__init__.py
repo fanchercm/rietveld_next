@@ -19,15 +19,31 @@ from rietveld_next.edxrd.import_template import (
     EDXRD_IMPORT_TEMPLATE_SCHEMA_VERSION,
     default_edxrd_import_template,
 )
+from rietveld_next.edxrd.response import (
+    DeadTimeMetadata,
+    DetectorResponseModel,
+    DetectorResponseResult,
+    EDXRDResponsePeak,
+    EscapePeakHook,
+    GaussianDetectorResponse,
+    LowEnergyTailHook,
+)
 
 __all__ = [
+    "DeadTimeMetadata",
+    "DetectorResponseModel",
+    "DetectorResponseResult",
     "EDXRDCalibrationPoint",
     "EDXRDCalibrationResult",
     "EDXRDImportedSpectrum",
     "EDXRDImportTemplate",
     "EDXRD_IMPORT_TEMPLATE_SCHEMA_VERSION",
+    "EDXRDResponsePeak",
     "EnergyHistogramAxis",
+    "EscapePeakHook",
+    "GaussianDetectorResponse",
     "HC_KEV_ANGSTROM",
+    "LowEnergyTailHook",
     "calibration_points_from_fixed_angle_standard",
     "default_edxrd_import_template",
     "fit_edxrd_channel_energy_calibration",

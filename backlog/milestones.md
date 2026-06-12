@@ -640,6 +640,9 @@ Implement lab and synchrotron CW X-ray instrument models and basic calibration/m
 
 ## M17 Fundamental-parameters and detector hook foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P2
 - Issues: #110, #111, #112, #113, #114
@@ -656,16 +659,25 @@ Create extensible APIs for fundamental-parameters, emission spectra, axial diver
 - 2D integration metadata link
 
 ### Acceptance criteria
-- [ ] Hooks are registered through the plugin/capability system.
-- [ ] Skeleton implementations are documented as incomplete physics models.
-- [ ] Tests verify that instrument hooks compose with the profile evaluation path.
+- [x] Hooks are registered through the plugin/capability system.
+- [x] Skeleton implementations are documented as incomplete physics models.
+- [x] Tests verify that instrument hooks compose with the profile evaluation path.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/xray_neutron_physics.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/xray/fundamental_parameters.py`
+- `src/rietveld_next/xray/tests/test_fundamental_parameters.py`
+
+### Closure validation
+- `env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/xray/tests`
 
 
 ## M18 CW neutron instrument and correction physics
@@ -711,6 +723,9 @@ Implement CW neutron instrument modeling, isotope scattering lookup, absorption 
 
 ## M19 Neutron data integration and joint weighting
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #121, #122, #123, #124, #125
@@ -727,20 +742,31 @@ Implement neutron-specific background, joint weighting, Mantid import, and uncer
 - neutron uncertainty model checks
 
 ### Acceptance criteria
-- [ ] Mantid reduced-data import handles at least one documented example shape.
-- [ ] Joint weighting records likelihood/weighting assumptions.
-- [ ] Validation example can be run from documentation.
+- [x] Mantid reduced-data import handles at least one documented example shape.
+- [x] Joint weighting records likelihood/weighting assumptions.
+- [x] Validation example can be run from documentation.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/xray_neutron_physics.md`
+- `src/rietveld_next/neutron/`
+- `src/rietveld_next/neutron/tests/test_m19_data_integration.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
 
 
 ## M20 TOF data model, calibration, and masks
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #126, #127, #128, #129, #140
@@ -757,16 +783,24 @@ Implement TOF histogram axis, detector bank model, calibration parameter set, DI
 - TOF bank mask handling
 
 ### Acceptance criteria
-- [ ] Multi-bank projects can represent independent bank calibration parameters.
-- [ ] Peak-position tests cover at least two banks.
-- [ ] Bank masks propagate into residual calculation.
+- [x] Multi-bank projects can represent independent bank calibration parameters.
+- [x] Peak-position tests cover at least two banks.
+- [x] Bank masks propagate into residual calculation.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/tof_refinement_guide.md`
+- `src/rietveld_next/tof/`
+- `src/rietveld_next/tof/tests/`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
 
 
 ## M21 TOF bank profile and multi-bank objective
@@ -831,6 +865,9 @@ Add TOF benchmarks, calibration workflow specification, diagnostics, event-mode 
 
 ## M23 Magnetic entities and magnetic scattering foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #141, #142, #143
@@ -845,16 +882,24 @@ Introduce magnetic moment, propagation-vector, and magnetic form-factor entities
 - magnetic form-factor table
 
 ### Acceptance criteria
-- [ ] Magnetic entities are serializable in the core model.
-- [ ] Magnetic form-factor lookup includes provenance metadata.
-- [ ] Basic validation catches invalid moment definitions.
+- [x] Magnetic entities are serializable in the core model.
+- [x] Magnetic form-factor lookup includes provenance metadata.
+- [x] Basic validation catches invalid moment definitions.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/magnetic_refinement_guide.md`
+- `src/rietveld_next/neutron/magnetic/form_factors.py`
+- `src/rietveld_next/neutron/magnetic/tests/test_form_factors.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
 
 
 ## M24 Magnetic symmetry and import foundation
@@ -959,6 +1004,9 @@ Implement energy-axis histograms, channel-to-energy calibration, fixed-angle Bra
 
 ## M27 EDXRD detector response and correction hooks
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P2
 - Issues: #156, #157, #158, #159, #160
@@ -975,16 +1023,24 @@ Implement the EDXRD detector response API, Gaussian response kernel, tail/escape
 - dead-time correction metadata
 
 ### Acceptance criteria
-- [ ] Detector response kernels are separable from crystallographic peak generation.
-- [ ] Correction hooks are optional and provenance-recorded.
-- [ ] Tests document current physical limitations.
+- [x] Detector response kernels are separable from crystallographic peak generation.
+- [x] Correction hooks are optional and provenance-recorded.
+- [x] Tests document current physical limitations.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/edxrd_guide.md`
+- `src/rietveld_next/edxrd/response.py`
+- `src/rietveld_next/edxrd/tests/test_response.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
 
 
 ## M28 EDXRD high-pressure validation and documentation

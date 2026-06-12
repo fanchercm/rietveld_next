@@ -52,6 +52,48 @@ class TimeOfFlightCalibrationParametersTests(unittest.TestCase):
 
         self.assertEqual(restored, parameters)
 
+    def test_peak_position_model_covers_two_banks(self) -> None:
+        bank_a = TimeOfFlightCalibrationParameters(
+            18000.0,
+            difa_microseconds_per_angstrom_squared=-2.0,
+            zero_microseconds=4.5,
+            bank_id="bank-a",
+            d_spacing_range_angstrom=(0.5, 3.0),
+        )
+        bank_b = TimeOfFlightCalibrationParameters(
+            12000.0,
+            difa_microseconds_per_angstrom_squared=1.25,
+            zero_microseconds=-3.0,
+            bank_id="bank-b",
+            d_spacing_range_angstrom=(0.5, 3.0),
+        )
+
+        self.assertAlmostEqual(bank_a.peak_position_microseconds(1.5), 27000.0)
+        self.assertAlmostEqual(bank_b.peak_position_microseconds(1.5), 17999.8125)
+        self.assertEqual(
+            bank_a.peak_positions_microseconds((1.0, 2.0)),
+            (18002.5, 35996.5),
+        )
+
+    def test_peak_position_rejects_out_of_range_d_spacing(self) -> None:
+        parameters = TimeOfFlightCalibrationParameters(
+            18000.0,
+            d_spacing_range_angstrom=(1.0, 2.0),
+        )
+
+        with self.assertRaisesRegex(ValueError, "within calibrated range"):
+            parameters.peak_position_microseconds(0.9)
+
+    def test_peak_position_rejects_non_positive_result(self) -> None:
+        parameters = TimeOfFlightCalibrationParameters(
+            1.0,
+            difa_microseconds_per_angstrom_squared=-100.0,
+            zero_microseconds=1.0,
+        )
+
+        with self.assertRaisesRegex(ValueError, "non-positive peak position"):
+            parameters.peak_position_microseconds(1.0)
+
     def test_calibration_rejects_non_positive_difc(self) -> None:
         with self.assertRaisesRegex(ValueError, "difc_microseconds_per_angstrom must be positive"):
             TimeOfFlightCalibrationParameters(0.0)

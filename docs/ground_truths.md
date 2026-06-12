@@ -102,11 +102,26 @@
 - X-ray instrument helpers now include metadata-only lab and synchrotron CW
   instrument records in `src/rietveld_next/xray/`; they validate wavelength
   metadata but do not implement fundamental-parameters profile physics.
+- EDXRD M27 detector response helpers live in
+  `src/rietveld_next/edxrd/response.py`. They accept energy-domain stick peaks
+  separated from crystallographic peak generation, integrate a Gaussian core
+  analytically over keV histogram bins, expose optional low-energy tail and
+  escape-peak hooks with provenance, and record dead-time metadata without
+  applying a numerical dead-time correction. The tail and escape hooks are
+  synthetic startup fixtures and are not detector-validated response physics.
 - X-ray M16 helpers include a deterministic zero-shift calibration workflow in
   `src/rietveld_next/xray/calibration.py` and a synchrotron beamline metadata
   template in `src/rietveld_next/xray/beamline.py`. These provide synthetic
   calibration/template plumbing and diagnostics, not a complete least-squares
   instrument profile model.
+- X-ray M17 helpers live in
+  `src/rietveld_next/xray/fundamental_parameters.py` and provide documented
+  skeletons for emission spectra, fundamental-parameters profile composition,
+  axial-divergence hooks, detector-resolution hooks, and 2D integration
+  metadata links. The profile evaluator composes hook FWHM contributions with
+  the existing Gaussian profile kernel for deterministic tests; it is not a
+  validated Cheary-Coelho fundamental-parameters convolution or detector
+  response model.
 - Neutron helpers now include a metadata-only CW neutron instrument model and
   a wavelength-dependent absorption hook skeleton in `src/rietveld_next/neutron/`.
   The absorption API is not a validated sample-geometry correction.
@@ -116,6 +131,19 @@
   geometry and simple primary-extinction implementations are deterministic
   fixtures; validated sample-shape/path-length and full extinction physics
   remain future work.
+- Neutron M19 data-integration helpers live under
+  `src/rietveld_next/neutron/` and cover linear container-background
+  interpolation, a dependency-free Mantid reduced-workspace mapping adapter,
+  independent-Gaussian joint weighting records, structured reduced-data
+  uncertainty checks, and a runnable synthetic D2O-like nuclear neutron
+  validation example. These are deterministic API fixtures and do not claim
+  cross-software neutron structure-factor validation.
+- Magnetic neutron helpers now include magnetic moment records, propagation
+  vectors, and a small provenance-labeled Brown `<j0>` form-factor subset for
+  `Mn2+`, `Fe2+`, and `Ni2+` in `src/rietveld_next/neutron/magnetic/`. The
+  magnetic form-factor lookup evaluates rounded coefficients as a function of
+  `|Q|` in inverse angstroms and is not a complete production magnetic
+  scattering table.
 - Optimization diagnostics now include labeled covariance and correlation
   result records in `src/rietveld_next/optimization/diagnostics.py`. The dense
   covariance helper uses `residual_variance * inv(J^T J)` for small synthetic
@@ -272,6 +300,14 @@
 - TOF calibration parameter sets live in `src/rietveld_next/tof/` and store
   DIFC/DIFA/zero values with explicit microsecond and angstrom units plus
   optional positive d-spacing validity bounds.
+- TOF DIFC-DIFA-zero peak centers use
+  `tof_microseconds = DIFA * d_spacing_angstrom^2 + DIFC * d_spacing_angstrom
+  + zero`, validate positive angstrom d-spacings, enforce optional inclusive
+  d-spacing calibration bounds, and reject non-positive TOF centers.
+- TOF detector-bank masks are zero-based histogram-bin exclusions stored on
+  `TimeOfFlightDetectorBank.masked_bin_indices`; masks are sorted for
+  deterministic serialization and are applied after the standard
+  `observed - calculated` residual calculation.
 - EDXRD histogram-axis helpers live in `src/rietveld_next/edxrd/` and store
   strictly increasing positive energy bin edges in keV; calibration helpers
   support linear and polynomial channel-to-energy edge models with polynomial

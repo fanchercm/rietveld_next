@@ -785,7 +785,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/fundamental_parameters.py",
+      "src/rietveld_next/xray/tests/test_fundamental_parameters.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M18",
@@ -869,7 +878,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/test_m19_data_integration.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M20",
@@ -906,7 +924,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/tof_refinement_guide.md",
+      "src/rietveld_next/tof/",
+      "src/rietveld_next/tof/tests/"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M21",
@@ -1016,7 +1043,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/magnetic_refinement_guide.md",
+      "src/rietveld_next/neutron/magnetic/form_factors.py",
+      "src/rietveld_next/neutron/magnetic/tests/test_form_factors.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M24",
@@ -1175,7 +1211,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/response.py",
+      "src/rietveld_next/edxrd/tests/test_response.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M28",

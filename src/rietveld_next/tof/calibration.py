@@ -1,9 +1,4 @@
-"""TOF calibration parameter sets.
-
-The initial calibration entity records the conventional DIFC/DIFA/zero
-parameters and their units. It intentionally stores parameters only; peak
-position evaluation belongs to the TOF peak-position model.
-"""
+"""TOF calibration parameter sets and peak-position evaluation."""
 
 from __future__ import annotations
 
@@ -36,6 +31,8 @@ class TimeOfFlightCalibrationParameters:
         >>> params = TimeOfFlightCalibrationParameters(18000.0, zero_microseconds=2.5)
         >>> params.parameter_vector()
         (18000.0, 0.0, 2.5)
+        >>> params.peak_position_microseconds(1.25)
+        22502.5
     """
 
     difc_microseconds_per_angstrom: float
@@ -118,6 +115,63 @@ class TimeOfFlightCalibrationParameters:
             self.zero_microseconds,
         )
 
+    def peak_position_microseconds(self, d_spacing_angstrom: float) -> float:
+        """Return the TOF peak center for one d-spacing.
+
+        The deterministic DIFC-DIFA-zero model is:
+
+        ```text
+        tof_microseconds = DIFA * d^2 + DIFC * d + zero
+        ```
+
+        Args:
+            d_spacing_angstrom: Positive d-spacing in angstrom.
+
+        Returns:
+            Peak center in microseconds.
+
+        Raises:
+            ValueError: If the d-spacing is non-finite, non-positive, outside
+                the optional calibrated d-spacing range, or produces a
+                non-positive TOF.
+        """
+
+        d_spacing = _positive_d_spacing(d_spacing_angstrom, "d_spacing_angstrom")
+        self._validate_d_spacing_range(d_spacing)
+        tof = (
+            self.difa_microseconds_per_angstrom_squared * d_spacing * d_spacing
+            + self.difc_microseconds_per_angstrom * d_spacing
+            + self.zero_microseconds
+        )
+        if tof <= 0.0:
+            raise ValueError(
+                "DIFC-DIFA-zero calibration produced a non-positive peak position "
+                f"for d_spacing_angstrom={d_spacing!r}."
+            )
+        return tof
+
+    def peak_positions_microseconds(self, d_spacings_angstrom: Sequence[float]) -> tuple[float, ...]:
+        """Return TOF peak centers for d-spacings in deterministic input order.
+
+        Args:
+            d_spacings_angstrom: Positive d-spacings in angstrom.
+
+        Returns:
+            Peak centers in microseconds.
+
+        Raises:
+            ValueError: If any d-spacing is invalid or outside calibrated bounds.
+        """
+
+        if isinstance(d_spacings_angstrom, str) or not isinstance(d_spacings_angstrom, Sequence):
+            raise ValueError("d_spacings_angstrom must be a sequence of finite positive numbers.")
+        return tuple(
+            self.peak_position_microseconds(
+                _positive_d_spacing(d_spacing, f"d_spacings_angstrom[{index}]")
+            )
+            for index, d_spacing in enumerate(d_spacings_angstrom)
+        )
+
     def to_dict(self) -> dict[str, object]:
         """Return a deterministic JSON-compatible representation."""
 
@@ -140,6 +194,16 @@ class TimeOfFlightCalibrationParameters:
         if self.source is not None:
             payload["source"] = self.source
         return payload
+
+    def _validate_d_spacing_range(self, d_spacing_angstrom: float) -> None:
+        if self.d_spacing_range_angstrom is None:
+            return
+        d_min, d_max = self.d_spacing_range_angstrom
+        if d_spacing_angstrom < d_min or d_spacing_angstrom > d_max:
+            raise ValueError(
+                "d_spacing_angstrom must be within calibrated range "
+                f"[{d_min}, {d_max}] angstrom, got {d_spacing_angstrom!r}."
+            )
 
 
 def _optional_d_spacing_range(values: tuple[float, float] | None) -> tuple[float, float] | None:
@@ -165,6 +229,13 @@ def _finite_float(value: float, name: str) -> float:
     if isinstance(value, bool) or not isinstance(value, int | float) or not math.isfinite(value):
         raise ValueError(f"{name} must be a finite number, got {value!r}.")
     return float(value)
+
+
+def _positive_d_spacing(value: float, name: str) -> float:
+    number = _finite_float(value, name)
+    if number <= 0.0:
+        raise ValueError(f"{name} must be a positive angstrom value.")
+    return number
 
 
 def _optional_non_empty_string(value: str | None, name: str) -> str | None:

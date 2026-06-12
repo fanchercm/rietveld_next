@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 import math
 
+from rietveld_next.optimization import residual_vector
 from rietveld_next.tof.calibration import TimeOfFlightCalibrationParameters
 
 
@@ -23,6 +24,8 @@ class TimeOfFlightDetectorBank:
         sample_to_detector_m: Optional representative sample-to-detector
             distance in meters.
         calibration: Optional TOF calibration parameters for this bank.
+        masked_bin_indices: Optional zero-based histogram-bin indices excluded
+            from bank residual calculations.
 
     Raises:
         ValueError: If required identifiers, counts, geometry, or calibration
@@ -40,6 +43,7 @@ class TimeOfFlightDetectorBank:
     name: str | None = None
     sample_to_detector_m: float | None = None
     calibration: TimeOfFlightCalibrationParameters | None = None
+    masked_bin_indices: tuple[int, ...] = ()
 
     def __post_init__(self) -> None:
         """Validate detector-bank identity, geometry, and calibration link."""
@@ -62,11 +66,13 @@ class TimeOfFlightDetectorBank:
             and self.calibration.bank_id != bank_id
         ):
             raise ValueError("calibration bank_id must match detector bank_id.")
+        masked_bin_indices = _masked_bin_indices(self.masked_bin_indices)
 
         object.__setattr__(self, "bank_id", bank_id)
         object.__setattr__(self, "name", name)
         object.__setattr__(self, "two_theta_degrees", two_theta)
         object.__setattr__(self, "sample_to_detector_m", distance)
+        object.__setattr__(self, "masked_bin_indices", masked_bin_indices)
 
     @classmethod
     def from_dict(cls, data: Mapping[str, object]) -> TimeOfFlightDetectorBank:
@@ -103,6 +109,7 @@ class TimeOfFlightDetectorBank:
             name=data.get("name"),  # type: ignore[arg-type]
             sample_to_detector_m=data.get("sample_to_detector_m"),  # type: ignore[arg-type]
             calibration=calibration,
+            masked_bin_indices=data.get("masked_bin_indices", ()),  # type: ignore[arg-type]
         )
 
     def to_dict(self) -> dict[str, object]:
@@ -124,7 +131,72 @@ class TimeOfFlightDetectorBank:
             payload["sample_to_detector_m"] = self.sample_to_detector_m
         if self.calibration is not None:
             payload["calibration"] = self.calibration.to_dict()
+        if self.masked_bin_indices:
+            payload["masked_bin_indices"] = list(self.masked_bin_indices)
         return payload
+
+    def unmasked_bin_indices(self, bin_count: int) -> tuple[int, ...]:
+        """Return unmasked zero-based bin indices for a bank histogram.
+
+        Args:
+            bin_count: Number of histogram bins in the bank profile.
+
+        Returns:
+            Tuple of indices not listed in ``masked_bin_indices``.
+
+        Raises:
+            ValueError: If ``bin_count`` is invalid or any mask index is outside
+                the histogram length.
+        """
+
+        count = _non_negative_int(bin_count, "bin_count")
+        masked = _validated_mask_for_bin_count(self.masked_bin_indices, count)
+        return tuple(index for index in range(count) if index not in masked)
+
+    def apply_bin_mask(self, values: Sequence[float]) -> tuple[float, ...]:
+        """Return sequence values with masked histogram bins removed.
+
+        Args:
+            values: Finite values in histogram-bin order.
+
+        Returns:
+            Values whose indices are not masked.
+
+        Raises:
+            ValueError: If values are invalid or a mask index is outside the
+                value length.
+        """
+
+        finite_values = _finite_float_tuple(values, "values")
+        return tuple(finite_values[index] for index in self.unmasked_bin_indices(len(finite_values)))
+
+    def masked_residual_vector(
+        self,
+        observed: Sequence[float],
+        calculated: Sequence[float],
+        sigma: Sequence[float] | None = None,
+    ) -> list[float]:
+        """Compute residuals after propagating this bank's bin mask.
+
+        The residual convention is inherited from
+        :func:`rietveld_next.optimization.residual_vector`: observed minus
+        calculated, optionally divided by positive standard uncertainty.
+
+        Args:
+            observed: Observed intensities in bank histogram-bin order.
+            calculated: Calculated intensities in matching order.
+            sigma: Optional positive standard uncertainties in matching order.
+
+        Returns:
+            Residual values for unmasked bins only.
+
+        Raises:
+            ValueError: If residual inputs are invalid or a mask index is outside
+                the residual length.
+        """
+
+        residuals = residual_vector(observed, calculated, sigma)
+        return list(self.apply_bin_mask(residuals))
 
 
 def _required_non_empty_string(value: str, name: str) -> str:
@@ -154,3 +226,44 @@ def _optional_positive_float(value: float | None, name: str) -> float | None:
     if number <= 0.0:
         raise ValueError(f"{name} must be positive when supplied.")
     return number
+
+
+def _non_negative_int(value: int, name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"{name} must be an integer.")
+    if value < 0:
+        raise ValueError(f"{name} must be non-negative.")
+    return value
+
+
+def _masked_bin_indices(values: Sequence[int]) -> tuple[int, ...]:
+    if isinstance(values, str) or not isinstance(values, Sequence):
+        raise ValueError("masked_bin_indices must be a sequence of zero-based integer indices.")
+    indices = []
+    seen = set()
+    for index, value in enumerate(values):
+        if isinstance(value, bool) or not isinstance(value, int):
+            raise ValueError(f"masked_bin_indices[{index}] must be an integer.")
+        if value < 0:
+            raise ValueError(f"masked_bin_indices[{index}] must be non-negative.")
+        if value in seen:
+            raise ValueError(f"masked_bin_indices must not contain duplicate index {value}.")
+        seen.add(value)
+        indices.append(value)
+    return tuple(sorted(indices))
+
+
+def _validated_mask_for_bin_count(masked_bin_indices: tuple[int, ...], bin_count: int) -> set[int]:
+    out_of_range = [index for index in masked_bin_indices if index >= bin_count]
+    if out_of_range:
+        raise ValueError(
+            "masked_bin_indices must be less than bin_count; "
+            f"got {out_of_range[0]} for bin_count {bin_count}."
+        )
+    return set(masked_bin_indices)
+
+
+def _finite_float_tuple(values: Sequence[float], name: str) -> tuple[float, ...]:
+    if isinstance(values, str) or not isinstance(values, Sequence):
+        raise ValueError(f"{name} must be a sequence of finite numbers.")
+    return tuple(_finite_float(value, f"{name}[{index}]") for index, value in enumerate(values))

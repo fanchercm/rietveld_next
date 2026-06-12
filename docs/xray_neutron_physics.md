@@ -78,6 +78,53 @@ The synchrotron beamline template records facility, beamline, detector, optional
 monochromator/default wavelength metadata, and required beamline log fields. It
 returns actionable missing-field diagnostics for import/preflight checks.
 
+## X-ray Fundamental-Parameters Skeletons
+
+Location: `src/rietveld_next/xray/fundamental_parameters.py`
+
+Records and functions:
+
+```python
+EmissionLine(label, wavelength_angstrom, relative_intensity=1.0)
+EmissionSpectrum(lines, reference_label=None)
+ConstantAxialDivergence(fwhm_degrees)
+ConstantDetectorResolution(fwhm_degrees)
+TwoDimensionalIntegrationMetadata(...)
+FundamentalParametersProfileModel(...)
+evaluate_axial_divergence_fwhm(hook, two_theta_degrees)
+evaluate_detector_resolution_fwhm(hook, two_theta_degrees)
+xray_fundamental_parameters_capabilities()
+```
+
+The fundamental-parameters API is currently a documented composition skeleton.
+It records emission-spectrum wavelengths in angstroms, hook FWHM contributions
+in degrees two-theta, and 2D integration provenance links from source image URI
+to integrated 1D profile URI. The profile evaluator delegates to the existing
+Gaussian profile kernel and combines base, axial-divergence, and
+detector-resolution FWHM terms in quadrature.
+
+Validation:
+
+- Emission-line wavelengths must be positive finite angstrom values.
+- Relative line intensities must be finite and non-negative, with positive
+  total spectrum intensity.
+- Hook outputs must be finite non-negative FWHM values in degrees two-theta.
+- Two-theta hook evaluation is restricted to `0 < two_theta < 180` degrees.
+- 2D integration azimuth ranges must be ordered, bounded by `[-360, 360]`
+  degrees, and span no more than 360 degrees.
+
+Limitations:
+
+- These APIs do not implement a validated Cheary-Coelho
+  fundamental-parameters convolution.
+- The constant axial-divergence and detector-resolution hooks are deterministic
+  plumbing fixtures, not calibrated instrument-response models.
+- The 2D integration metadata link records provenance only; it does not perform
+  image integration.
+- Capability declarations are exposed through
+  `xray_fundamental_parameters_capabilities()` using the shared
+  `PluginCapability` metadata model.
+
 ## X-ray Form Factors And Corrections
 
 Locations:
@@ -164,6 +211,63 @@ the nuclear-amplitude helper and profile kernels. The constant geometry hook and
 simple primary-extinction formula are deterministic validation fixtures only;
 validated sample-shape, path-length, secondary-extinction, and instrument-
 specific correction physics remain future work.
+
+## Neutron Data Integration And Joint Weighting
+
+Locations:
+
+- `src/rietveld_next/neutron/background.py`
+- `src/rietveld_next/neutron/mantid.py`
+- `src/rietveld_next/neutron/weighting.py`
+- `src/rietveld_next/neutron/uncertainty.py`
+- `src/rietveld_next/neutron/validation_examples.py`
+
+Records and functions:
+
+```python
+ContainerBackgroundModel(...)
+import_mantid_reduced_data({"X": [...], "Y": [...], "E": [...]})
+MantidReducedDataset(...)
+NeutronDatasetWeighting(...)
+JointNeutronWeightingModel(...)
+check_neutron_uncertainties(...)
+run_nuclear_neutron_validation_example()
+```
+
+`ContainerBackgroundModel` stores a non-negative additive container
+background table and evaluates it by linear interpolation. Axis values are
+strictly increasing and the default axis unit is `degrees_two_theta`; intensity
+values and the default uncertainty unit are `counts`.
+
+The Mantid adapter is dependency-free and accepts one documented reduced
+workspace shape: `X` is either length `N` point centers or length `N + 1` bin
+edges, while `Y` and optional `E` are length `N`. Bin-edge `X` arrays are
+converted to centers before storage. The adapter records the shape assumption
+in `MantidReducedDataset.to_dict()["metadata"]`.
+
+Joint weighting uses `observed - calculated` residuals. The current supported
+likelihood is `independent_gaussian`; weighting is either `inverse_variance`
+with positive standard uncertainties or `unit` weighting for synthetic
+monitor-normalized fixtures. `NeutronDatasetWeighting.to_dict()` records the
+likelihood, weighting scheme, variance scale, relative dataset weight, and
+auditable assumption notes.
+
+Uncertainty checks return structured `ok`, `warning`, or `error` results.
+Mismatched lengths and non-positive standard uncertainties are errors; values
+below a configured relative floor are warnings so callers can decide whether to
+raise, down-weight, or request user review.
+
+Run the nuclear neutron validation example from a checkout with:
+
+```bash
+PYTHONPATH=src python3 -m rietveld_next.neutron.validation_examples
+```
+
+The example verifies a synthetic D2O-like bound coherent scattering-length sum
+`2 * b(2H) + b(nat O) = 19.145 fm` using the package lookup table. It is a
+deterministic API validation example, not a cross-software structure-factor
+validation benchmark. The same limitation is recorded in
+[ground_truths.md](ground_truths.md).
 
 ## Validation Limits
 

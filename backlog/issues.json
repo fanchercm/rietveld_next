@@ -4714,7 +4714,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/fundamental_parameters.py",
+      "src/rietveld_next/xray/tests/test_fundamental_parameters.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 111,
@@ -4749,7 +4758,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/fundamental_parameters.py",
+      "src/rietveld_next/xray/tests/test_fundamental_parameters.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 112,
@@ -4784,7 +4802,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/fundamental_parameters.py",
+      "src/rietveld_next/xray/tests/test_fundamental_parameters.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 113,
@@ -4819,7 +4846,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/fundamental_parameters.py",
+      "src/rietveld_next/xray/tests/test_fundamental_parameters.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 114,
@@ -4854,7 +4890,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/fundamental_parameters.py",
+      "src/rietveld_next/xray/tests/test_fundamental_parameters.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 115,
@@ -5159,7 +5204,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/test_m19_data_integration.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 122,
@@ -5194,7 +5248,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/test_m19_data_integration.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 123,
@@ -5229,7 +5292,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/test_m19_data_integration.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 124,
@@ -5264,7 +5336,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/test_m19_data_integration.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 125,
@@ -5299,7 +5380,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/test_m19_data_integration.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 126,
@@ -5469,7 +5559,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/tof_refinement_guide.md",
+      "src/rietveld_next/tof/",
+      "src/rietveld_next/tof/tests/"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 130,
@@ -5854,7 +5953,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/tof_refinement_guide.md",
+      "src/rietveld_next/tof/",
+      "src/rietveld_next/tof/tests/"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 141,
@@ -5979,7 +6087,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/magnetic_refinement_guide.md",
+      "src/rietveld_next/neutron/magnetic/form_factors.py",
+      "src/rietveld_next/neutron/magnetic/tests/test_form_factors.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 144,
@@ -6474,7 +6591,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/response.py",
+      "src/rietveld_next/edxrd/tests/test_response.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 157,
@@ -6509,7 +6635,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/response.py",
+      "src/rietveld_next/edxrd/tests/test_response.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 158,
@@ -6544,7 +6679,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/response.py",
+      "src/rietveld_next/edxrd/tests/test_response.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 159,
@@ -6579,7 +6723,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/response.py",
+      "src/rietveld_next/edxrd/tests/test_response.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 160,
@@ -6614,7 +6767,16 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/response.py",
+      "src/rietveld_next/edxrd/tests/test_response.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "number": 161,
