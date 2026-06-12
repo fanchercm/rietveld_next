@@ -12,22 +12,22 @@ source lives under `src/rietveld_next/validation/`; schemas live under
 | #249 Golden dataset format | `schemas/golden_dataset.schema.json` and `GoldenDataset` define the fixture record. |
 | #250 Synthetic dataset generator tests | `create_synthetic_profile_dataset()` is tested for determinism and invalid inputs. |
 | #251 Scientific validation report template | `ValidationReport` and `schemas/validation_report.schema.json` define pass/fail summaries and known limitations. |
-| #252 GSAS-II comparison test harness | `ComparisonHarness` supports dry-run external comparison metadata. |
+| #252 GSAS-II comparison test harness | `gsasii_comparison_harness()` supports explicit offline and configured dry-run modes. |
 | #253 FullProf comparison placeholder | `ComparisonHarness` records explicit placeholder reasons for unavailable FullProf fixtures. |
 | #254 TOPAS comparison placeholder | `ComparisonHarness` records explicit placeholder reasons for unavailable TOPAS fixtures. |
 | #255 Numerical tolerance policy | `TolerancePolicy` requires absolute/relative tolerances, units, and rationale. |
-| #256 Performance regression test harness | `docs/validation_baseline.md` documents opt-in performance gates and existing benchmark result schemas. |
+| #256 Performance regression test harness | `compare_performance_regression()` and `PerformanceRegressionThreshold` provide an opt-in timing comparator. |
 | #257 Cross-platform CI matrix | `validation_ci_matrix()` records default OS/Python targets. |
 | #258 Package import smoke tests | `package_import_smoke_test()` imports packages deterministically. |
 | #259 Source layout guard test | Existing architecture boundary tests remain part of the default validation command. |
 | #260 Schema compatibility tests | Core schema tests plus new validation schemas parse in normal validation. |
 | #261 Project round-trip tests | Existing project schema round-trip tests are included in the documented command. |
 | #262 Benchmark result schema tests | Existing benchmark result schema tests remain part of package-local tests. |
-| #263 UX visual regression setup | `docs/validation_baseline.md` defines lightweight UX regression setup policy without screenshot baselines in default CI. |
+| #263 UX visual regression setup | `VisualRegressionSnapshot` defines framework-neutral visual baseline metadata without screenshot files in default CI. |
 | #264 AI behavior regression tests | Existing AI package tests and the validation baseline document deterministic AI behavior expectations. |
-| #265 Security scanning workflow | `docs/validation_baseline.md` defines security scan policy pending finalized hosted CI dependencies. |
+| #265 Security scanning workflow | `SecurityScanPolicy` provides local dependency-free secret-pattern checks. |
 | #266 Documentation link checker | `check_markdown_links()` provides local Markdown link checks. |
-| #267 Release validation checklist | `ReleaseChecklist` and `docs/validation_baseline.md` define required release gates. |
+| #267 Release validation checklist | `standard_release_checklist()` and `ReleaseChecklist` define required release gates. |
 
 ## Validation Commands
 

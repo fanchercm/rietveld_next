@@ -53,7 +53,72 @@
     "cases": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "id",
+          "dataset_id",
+          "backend",
+          "expected",
+          "observed",
+          "passed",
+          "expensive",
+          "tolerance"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"
+          },
+          "dataset_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"
+          },
+          "backend": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected": {
+            "type": "number"
+          },
+          "observed": {
+            "type": "number"
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "expensive": {
+            "type": "boolean"
+          },
+          "tolerance": {
+            "type": "object",
+            "required": [
+              "absolute",
+              "relative",
+              "units",
+              "rationale"
+            ],
+            "properties": {
+              "absolute": {
+                "type": "number",
+                "minimum": 0
+              },
+              "relative": {
+                "type": "number",
+                "minimum": 0
+              },
+              "units": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
       }
     },
     "known_limitations": {
