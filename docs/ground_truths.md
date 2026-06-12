@@ -60,6 +60,12 @@
   unit or prior identifiers, non-positive SI unit scales, non-numeric prior
   parameter values, and non-boolean refinement flags before accepting project
   metadata as valid.
+- M34 validation baseline helpers live in `src/rietveld_next/validation/`.
+  They provide deterministic golden dataset records, validation report
+  summaries, external comparison placeholders, local Markdown link checks,
+  package import smoke tests, and release checklist metadata. Cross-software
+  GSAS-II, FullProf, and TOPAS comparisons remain placeholders until
+  redistributable fixtures and backend execution policies are approved.
 
 ## Numerical Kernels
 
