@@ -133,6 +133,18 @@
 - `coordinate_search_minimize` is a deterministic local optimizer for synthetic
   tests, smoke benchmarks, and adapter validation; it is not a production
   least-squares, trust-region, or Levenberg-Marquardt implementation.
+- `ConvergenceReport.to_dict()` includes `parameter_shifts`, computed as
+  final-minus-initial parameter values when rollback snapshots are present.
+- `restore_optimizer_snapshot()` restores a deep copy of a JSON-compatible
+  model state from an optimizer snapshot; parameter-only snapshots are not
+  treated as exact model rollback records.
+- Optional SciPy local optimizer adapters live in
+  `src/rietveld_next/optimization/adapters.py`. They return
+  `dependency_unavailable` when `scipy.optimize` is absent; their tests use a
+  SciPy-like test double and do not require SciPy in normal CI.
+- The Rust local optimizer boundary is currently a typed Python protocol and
+  JSON-compatible request record under `src/rietveld_next/optimization/`.
+  Future compiled Rust bindings must return the shared `ConvergenceReport`.
 - The local optimizer benchmark hook lives in
   `src/rietveld_next/benchmarks/optimizer.py` and reports convergence metrics
   through the shared benchmark result record.
@@ -150,6 +162,26 @@
   optional JAX automatic differentiation, optimizer scaling, and global
   multi-start smoke benchmarks. The JAX AD benchmark returns a structured
   skipped result when JAX or float64 support is unavailable.
+- Local optimizer adapters and rollback helpers now include optional SciPy
+  trust-region/Levenberg-Marquardt boundaries, a Rust optimizer request
+  protocol, exact model-state snapshot restoration, and deterministic
+  parameter-shift reporting.
+- Optimization analysis helpers in `src/rietveld_next/optimization/analysis.py`
+  compare optimizer results, recommend parameter freezes, detect
+  overparameterization, rank model-selection scores, and create deterministic
+  seed plans.
+- Diffraction model foundations in `src/rietveld_next/diffraction/models.py`
+  cover preferred orientation, size/strain broadening, polynomial and Chebyshev
+  backgrounds, reflection ticks, synthetic pattern assembly, reference dataset
+  registry records, phase scale/fraction summaries, occupancy checks, and ADP
+  validation warnings.
+- Documentation/governance guides for issues #268-#287 live in
+  `docs/user_guides.md` and `docs/governance_guides.md`.
+- Benchmark follow-up helpers in `src/rietveld_next/benchmarks/followups.py`
+  provide deterministic smoke records for ready benchmark issues, including
+  structured skipped results for unavailable optional backends.
+- Closure evidence for this non-blocking batch is recorded in
+  [nonblocking_batch_completion_report.md](nonblocking_batch_completion_report.md).
 
 - Workflow, AI, HPC, and physics proxy benchmark hooks live under
   `src/rietveld_next/benchmarks/`. They are small opt-in smoke workloads that

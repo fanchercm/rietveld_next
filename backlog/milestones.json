@@ -386,7 +386,19 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex batch closure audit",
+    "closure_evidence": [
+      "docs/optimization.md",
+      "docs/ground_truths.md",
+      "src/rietveld_next/optimization/adapters.py",
+      "src/rietveld_next/optimization/local.py",
+      "src/rietveld_next/optimization/tests/test_adapters.py",
+      "src/rietveld_next/optimization/tests/test_local.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/optimization -p 'test_*.py'"
   },
   {
     "id": "M09",
@@ -464,7 +476,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/nonblocking_batch_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "id": "M11",
@@ -496,7 +515,10 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution"
   },
   {
     "id": "M12",
@@ -621,7 +643,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/nonblocking_batch_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "id": "M15",
@@ -664,7 +693,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/nonblocking_batch_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "id": "M16",
@@ -1550,7 +1586,14 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/nonblocking_batch_completion_report.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "id": "M36",
@@ -1673,7 +1716,10 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution"
   },
   {
     "id": "M39",
@@ -1716,7 +1762,10 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution"
   },
   {
     "id": "M40",

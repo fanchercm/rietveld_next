@@ -6,9 +6,12 @@ import unittest
 
 from rietveld_next.optimization import (
     BoundTransform,
+    ConvergenceReport,
     LocalOptimizerOptions,
+    OptimizerSnapshot,
     coordinate_search_minimize,
     least_squares_evaluation,
+    restore_optimizer_snapshot,
 )
 
 
@@ -31,6 +34,8 @@ class LocalOptimizerTests(unittest.TestCase):
         self.assertAlmostEqual(report.parameters[0], 2.0, places=6)
         self.assertGreater(report.evaluations, 1)
         self.assertGreater(len(report.snapshots), 1)
+        self.assertAlmostEqual(report.parameter_shifts[0], 2.0, places=6)
+        self.assertIn("parameter_shifts", report.to_dict())
 
     def test_coordinate_search_reports_max_iterations(self) -> None:
         def objective(parameters: tuple[float, ...]):
@@ -74,6 +79,41 @@ class LocalOptimizerTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "bounds length"):
             coordinate_search_minimize(objective, [0.0, 1.0], bounds=[BoundTransform()])
+
+    def test_restore_optimizer_snapshot_returns_exact_copy(self) -> None:
+        state = {"phase": {"scale": 1.5}, "parameters": [{"name": "scale", "value": 1.5}]}
+        snapshot = OptimizerSnapshot(
+            iteration=3,
+            parameters=(1.5,),
+            objective_value=0.25,
+            snapshot_id="stable",
+            model_state=state,
+        )
+
+        restored = restore_optimizer_snapshot([snapshot], snapshot_id="stable")
+
+        self.assertEqual(restored, state)
+        restored["phase"]["scale"] = 9.0
+        self.assertEqual(snapshot.model_state["phase"]["scale"], 1.5)
+
+    def test_restore_optimizer_snapshot_rejects_parameter_only_snapshot(self) -> None:
+        snapshot = OptimizerSnapshot(iteration=0, parameters=(1.0,), objective_value=0.5)
+
+        with self.assertRaisesRegex(ValueError, "model_state"):
+            restore_optimizer_snapshot([snapshot], iteration=0)
+
+    def test_convergence_report_records_parameter_shifts_without_snapshots(self) -> None:
+        report = ConvergenceReport(
+            status="completed",
+            message="done",
+            converged=True,
+            iterations=0,
+            evaluations=1,
+            objective_value=0.0,
+            parameters=(2.0, 3.0),
+        )
+
+        self.assertEqual(report.parameter_shifts, (0.0, 0.0))
 
 
 if __name__ == "__main__":

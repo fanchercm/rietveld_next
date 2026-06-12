@@ -286,6 +286,9 @@ Implement covariance/correlation diagnostics and the first backend benchmark har
 
 ## M08 Local optimization adapters and rollback state
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Optimization
 - Priority: P0
 - Issues: #71, #72, #73, #74, #75
@@ -302,16 +305,27 @@ Implement local refinement infrastructure, including SciPy adapters, Rust optimi
 - rollback snapshots
 
 ### Acceptance criteria
-- [ ] A synthetic refinement runs through both local adapters where dependencies are available.
-- [ ] Convergence reports include objective, iterations, termination reason, and parameter shifts.
-- [ ] Rollback restores previous model state exactly.
+- [x] A synthetic refinement runs through both local adapters where dependencies are available.
+- [x] Convergence reports include objective, iterations, termination reason, and parameter shifts.
+- [x] Rollback restores previous model state exactly.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/optimization/adapters.py`
+- `src/rietveld_next/optimization/local.py`
+- `src/rietveld_next/optimization/tests/test_adapters.py`
+- `src/rietveld_next/optimization/tests/test_local.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/optimization -p 'test_*.py'`
 
 
 ## M09 Global and multi-start optimization foundation
@@ -355,6 +369,9 @@ Implement initial global-search infrastructure for rugged refinement problems an
 
 ## M10 Probabilistic uncertainty and model comparison foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Optimization
 - Priority: P1
 - Issues: #80, #81, #84, #85
@@ -370,20 +387,28 @@ Add uncertainty and model-comparison APIs needed for scientific validation, publ
 - reproducibility seed management
 
 ### Acceptance criteria
-- [ ] MCMC API can run a minimal synthetic posterior example or clearly skip when backend dependencies are absent.
-- [ ] Model-comparison outputs record objective, parameter count, likelihood assumptions, and warnings.
-- [ ] Seed handling is deterministic and documented.
+- [x] MCMC API can run a minimal synthetic posterior example or clearly skip when backend dependencies are absent.
+- [x] Model-comparison outputs record objective, parameter count, likelihood assumptions, and warnings.
+- [x] Seed handling is deterministic and documented.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M11 Optimizer safeguard heuristics
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Optimization
 - Priority: P1
 - Issues: #82, #83
@@ -397,17 +422,22 @@ Implement parameter-freezing and overparameterization diagnostics that protect a
 - overparameterization detector
 
 ### Acceptance criteria
-- [ ] Highly correlated or unstable parameters are flagged with explanations.
-- [ ] Heuristics produce recommendations rather than silently changing the model.
-- [ ] Diagnostics are covered by synthetic pathological cases.
+- [x] Highly correlated or unstable parameters are flagged with explanations.
+- [x] Heuristics produce recommendations rather than silently changing the model.
+- [x] Diagnostics are covered by synthetic pathological cases.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M12 Structural IO and symmetry baseline
 
@@ -490,6 +520,9 @@ Implement scattering tables and first-pass diffraction corrections needed by X-r
 
 ## M14 Orientation, microstructure, and background models
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #94, #95, #96, #97, #98
@@ -506,20 +539,28 @@ Implement first-generation preferred-orientation, size/strain broadening, and po
 - Chebyshev background model
 
 ### Acceptance criteria
-- [ ] Each model has parameter bounds and validation rules.
-- [ ] Background models can be refined independently from phase/profile parameters.
-- [ ] Size and strain contributions are separately testable on synthetic patterns.
+- [x] Each model has parameter bounds and validation rules.
+- [x] Background models can be refined independently from phase/profile parameters.
+- [x] Size and strain contributions are separately testable on synthetic patterns.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M15 Synthetic patterns, phase scales, and structural validation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #99, #100, #101, #102, #103, #104, #105
@@ -538,17 +579,22 @@ Create end-to-end synthetic pattern generation and phase quantification support 
 - ADP validation checks
 
 ### Acceptance criteria
-- [ ] Synthetic patterns include phase ticks and metadata.
-- [ ] Phase fraction calculation documents assumptions and normalization.
-- [ ] Occupancy and ADP validation produce structured warnings.
+- [x] Synthetic patterns include phase ticks and metadata.
+- [x] Phase fraction calculation documents assumptions and normalization.
+- [x] Occupancy and ADP validation produce structured warnings.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M16 Lab and synchrotron CW X-ray instrument baseline
 
@@ -1177,6 +1223,9 @@ Establish scientific validation, golden regression tests, CI gates, and numerica
 
 ## M35 Documentation and governance baseline
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Governance
 - Priority: P1
 - Issues: #268, #269, #270, #271, #272, #273, #274, #275, #276, #277, #278, #279, #280, #281, #282, #283, #284, #285, #286, #287
@@ -1194,17 +1243,22 @@ Create user, developer, theory, governance, citation, and reproducibility docume
 - citation guide
 
 ### Acceptance criteria
-- [ ] Docs build successfully.
-- [ ] Tutorials reference tested examples.
-- [ ] Governance and contribution policies are explicit.
+- [x] Docs build successfully.
+- [x] Tutorials reference tested examples.
+- [x] Governance and contribution policies are explicit.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M36 Benchmarking foundation and result infrastructure
 
@@ -1267,6 +1321,9 @@ Benchmark profile kernels, sparse Jacobians, AD, local optimizers, global optimi
 
 ## M38 Physics workflow benchmark suite
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Benchmarking
 - Priority: P1
 - Issues: #304, #305, #306, #307, #308, #309, #310, #311
@@ -1283,20 +1340,28 @@ Benchmark sequential, parametric, batch, TOF, neutron, magnetic, and EDXRD workf
 - EDXRD benchmark
 
 ### Acceptance criteria
-- [ ] Each benchmark documents scientific assumptions.
-- [ ] Workflow benchmarks produce result tables and diagnostics.
-- [ ] Benchmarks are usable for regression tracking.
+- [x] Each benchmark documents scientific assumptions.
+- [x] Workflow benchmarks produce result tables and diagnostics.
+- [x] Benchmarks are usable for regression tracking.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M39 Storage, diagnostics, visualization, AI, and HPC benchmark suite
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex non-blocking batch execution
 - Phase: Benchmarking
 - Priority: P2
 - Issues: #312, #313, #314, #315, #316, #317, #318, #319, #320
@@ -1313,17 +1378,22 @@ Benchmark storage backends, visualization payloads, diagnostics, AI-agent loops,
 - scheduler benchmark
 
 ### Acceptance criteria
-- [ ] Benchmarks produce comparable JSON artifacts.
-- [ ] Scheduler benchmarks can run locally with fake adapters.
-- [ ] AI benchmarks do not depend on nondeterministic LLM output for pass/fail.
+- [x] Benchmarks produce comparable JSON artifacts.
+- [x] Scheduler benchmarks can run locally with fake adapters.
+- [x] AI benchmarks do not depend on nondeterministic LLM output for pass/fail.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+### Closure evidence
+- `docs/nonblocking_batch_completion_report.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## M40 Benchmark regression, dashboard, and CI integration
 

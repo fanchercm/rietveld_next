@@ -1,5 +1,14 @@
 """Optimization and residual numerical kernels."""
 
+from rietveld_next.optimization.adapters import (
+    RustLocalOptimizerBackend,
+    RustLocalOptimizerRequest,
+    RustOptimizerBound,
+    ScipyOptimizerOptions,
+    run_rust_local_optimizer,
+    scipy_levenberg_marquardt_minimize,
+    scipy_trust_region_minimize,
+)
 from rietveld_next.optimization.diagnostics import (
     LabeledMatrix,
     correlation_matrix_from_covariance,
@@ -33,6 +42,7 @@ from rietveld_next.optimization.local import (
     LocalOptimizerOptions,
     OptimizerSnapshot,
     coordinate_search_minimize,
+    restore_optimizer_snapshot,
 )
 from rietveld_next.optimization.objectives import (
     ObjectiveEvaluation,
@@ -80,6 +90,10 @@ __all__ = [
     "OptimizerSnapshot",
     "ParameterScale",
     "PlaceholderReport",
+    "RustLocalOptimizerBackend",
+    "RustLocalOptimizerRequest",
+    "RustOptimizerBound",
+    "ScipyOptimizerOptions",
     "SimulatedAnnealingOptions",
     "SparseJacobian",
     "SparseJacobianEntry",
@@ -104,8 +118,12 @@ __all__ = [
     "poisson_deviance_evaluation",
     "polynomial_background_residual_jacobian",
     "residual_vector",
+    "restore_optimizer_snapshot",
+    "run_rust_local_optimizer",
     "scale_residual_derivative",
     "scale_parameters",
+    "scipy_levenberg_marquardt_minimize",
+    "scipy_trust_region_minimize",
     "simulated_annealing_minimize",
     "unscale_parameters",
 ]

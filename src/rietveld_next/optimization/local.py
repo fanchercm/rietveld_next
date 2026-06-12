@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
+from copy import deepcopy
 from dataclasses import dataclass, field
 import math
 from typing import Any
@@ -19,11 +20,42 @@ class OptimizerSnapshot:
         iteration: Iteration number.
         parameters: Best parameters at the snapshot.
         objective_value: Best objective value at the snapshot.
+        snapshot_id: Optional stable snapshot identifier.
+        model_state: Optional JSON-compatible model state for exact rollback.
     """
 
     iteration: int
     parameters: tuple[float, ...]
     objective_value: float
+    snapshot_id: str = ""
+    model_state: Mapping[str, Any] | None = None
+
+    def __post_init__(self) -> None:
+        """Validate snapshot fields."""
+        if isinstance(self.iteration, bool) or not isinstance(self.iteration, int) or self.iteration < 0:
+            raise ValueError("iteration must be a non-negative integer.")
+        object.__setattr__(self, "parameters", tuple(_finite_sequence(self.parameters, "parameters")))
+        object.__setattr__(self, "objective_value", _finite_float(self.objective_value, "objective_value"))
+        if not isinstance(self.snapshot_id, str):
+            raise ValueError("snapshot_id must be a string.")
+        if self.model_state is not None:
+            if not isinstance(self.model_state, Mapping):
+                raise ValueError("model_state must be a mapping when provided.")
+            _json_compatible(self.model_state, "model_state")
+            object.__setattr__(self, "model_state", deepcopy(dict(self.model_state)))
+
+    def to_dict(self) -> dict[str, Any]:
+        """Return a deterministic JSON-compatible mapping."""
+        payload: dict[str, Any] = {
+            "iteration": self.iteration,
+            "parameters": list(self.parameters),
+            "objective_value": self.objective_value,
+        }
+        if self.snapshot_id:
+            payload["snapshot_id"] = self.snapshot_id
+        if self.model_state is not None:
+            payload["model_state"] = deepcopy(dict(self.model_state))
+        return payload
 
 
 @dataclass(frozen=True)
@@ -74,6 +106,16 @@ class ConvergenceReport:
     snapshots: tuple[OptimizerSnapshot, ...] = ()
     diagnostics: dict[str, Any] = field(default_factory=dict)
 
+    @property
+    def parameter_shifts(self) -> tuple[float, ...]:
+        """Return final-minus-initial parameter shifts when snapshots exist."""
+        if not self.snapshots:
+            return tuple(0.0 for _ in self.parameters)
+        initial = self.snapshots[0].parameters
+        if len(initial) != len(self.parameters):
+            return ()
+        return tuple(final - start for final, start in zip(self.parameters, initial, strict=True))
+
     def to_dict(self) -> dict[str, Any]:
         """Return a deterministic JSON-compatible mapping."""
         return {
@@ -84,16 +126,53 @@ class ConvergenceReport:
             "evaluations": self.evaluations,
             "objective_value": self.objective_value,
             "parameters": list(self.parameters),
-            "snapshots": [
-                {
-                    "iteration": snapshot.iteration,
-                    "parameters": list(snapshot.parameters),
-                    "objective_value": snapshot.objective_value,
-                }
-                for snapshot in self.snapshots
-            ],
+            "parameter_shifts": list(self.parameter_shifts),
+            "snapshots": [snapshot.to_dict() for snapshot in self.snapshots],
             "diagnostics": dict(sorted(self.diagnostics.items())),
         }
+
+
+def restore_optimizer_snapshot(
+    snapshots: Sequence[OptimizerSnapshot],
+    *,
+    snapshot_id: str | None = None,
+    iteration: int | None = None,
+) -> dict[str, Any]:
+    """Return an exact model-state copy from optimizer rollback snapshots.
+
+    Args:
+        snapshots: Snapshot sequence to search.
+        snapshot_id: Stable snapshot identifier to restore.
+        iteration: Iteration number to restore when ``snapshot_id`` is not
+            supplied.
+
+    Returns:
+        Deep copy of the stored model state.
+
+    Raises:
+        ValueError: If the selector is invalid, missing, or the selected
+            snapshot does not contain model state.
+    """
+    if (snapshot_id is None) == (iteration is None):
+        raise ValueError("Provide exactly one of snapshot_id or iteration.")
+    if snapshot_id is not None and (not isinstance(snapshot_id, str) or not snapshot_id):
+        raise ValueError("snapshot_id must be a non-empty string.")
+    if iteration is not None and (isinstance(iteration, bool) or not isinstance(iteration, int) or iteration < 0):
+        raise ValueError("iteration must be a non-negative integer.")
+    if isinstance(snapshots, str) or not isinstance(snapshots, Sequence):
+        raise ValueError("snapshots must be a sequence of OptimizerSnapshot values.")
+    for snapshot in snapshots:
+        if not isinstance(snapshot, OptimizerSnapshot):
+            raise ValueError("snapshots must contain OptimizerSnapshot values.")
+        if snapshot_id is not None and snapshot.snapshot_id != snapshot_id:
+            continue
+        if iteration is not None and snapshot.iteration != iteration:
+            continue
+        if snapshot.model_state is None:
+            raise ValueError("Selected snapshot does not contain model_state.")
+        return deepcopy(dict(snapshot.model_state))
+    selector = f"snapshot_id={snapshot_id!r}" if snapshot_id is not None else f"iteration={iteration!r}"
+    raise ValueError(f"No optimizer snapshot found for {selector}.")
 
 
 def coordinate_search_minimize(
@@ -282,3 +361,21 @@ def _positive_float(value: float, name: str) -> float:
     if number <= 0.0:
         raise ValueError(f"{name} must be positive, got {number!r}.")
     return number
+
+
+def _json_compatible(value: Any, name: str) -> None:
+    if value is None or isinstance(value, str | int | float | bool):
+        if isinstance(value, float) and not math.isfinite(value):
+            raise ValueError(f"{name} must be JSON-compatible.")
+        return
+    if isinstance(value, Mapping):
+        for key, nested in value.items():
+            if not isinstance(key, str):
+                raise ValueError(f"{name} keys must be strings.")
+            _json_compatible(nested, f"{name}.{key}")
+        return
+    if isinstance(value, Sequence) and not isinstance(value, str):
+        for index, nested in enumerate(value):
+            _json_compatible(nested, f"{name}[{index}]")
+        return
+    raise ValueError(f"{name} must be JSON-compatible.")

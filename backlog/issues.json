@@ -2956,7 +2956,19 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/local.py",
+      "src/rietveld_next/optimization/adapters.py",
+      "src/rietveld_next/optimization/tests/test_local.py",
+      "src/rietveld_next/optimization/tests/test_adapters.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 72,
@@ -2991,7 +3003,19 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/local.py",
+      "src/rietveld_next/optimization/adapters.py",
+      "src/rietveld_next/optimization/tests/test_local.py",
+      "src/rietveld_next/optimization/tests/test_adapters.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 73,
@@ -3026,7 +3050,19 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/local.py",
+      "src/rietveld_next/optimization/adapters.py",
+      "src/rietveld_next/optimization/tests/test_local.py",
+      "src/rietveld_next/optimization/tests/test_adapters.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 74,
@@ -3064,15 +3100,16 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/local.py",
+      "src/rietveld_next/optimization/adapters.py",
+      "src/rietveld_next/optimization/tests/test_local.py",
+      "src/rietveld_next/optimization/tests/test_adapters.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 75,
@@ -3110,15 +3147,16 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/local.py",
+      "src/rietveld_next/optimization/adapters.py",
+      "src/rietveld_next/optimization/tests/test_local.py",
+      "src/rietveld_next/optimization/tests/test_adapters.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 76,
@@ -3156,15 +3194,14 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/global_search.py",
+      "src/rietveld_next/optimization/tests/test_global_search.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 77,
@@ -3202,15 +3239,14 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/global_search.py",
+      "src/rietveld_next/optimization/tests/test_global_search.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 78,
@@ -3248,15 +3284,14 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/global_search.py",
+      "src/rietveld_next/optimization/tests/test_global_search.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 79,
@@ -3294,15 +3329,14 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/global_search.py",
+      "src/rietveld_next/optimization/tests/test_global_search.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 80,
@@ -3340,15 +3374,14 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex batch closure audit",
+    "closed_by": "Codex non-blocking batch execution",
     "closure_evidence": [
+      "src/rietveld_next/optimization/analysis.py",
+      "src/rietveld_next/optimization/tests/test_analysis.py",
       "docs/optimization.md",
-      "docs/numerical_kernels.md",
-      "docs/backend_benchmarks.md",
-      "src/rietveld_next/optimization/",
-      "src/rietveld_next/benchmarks/"
+      "docs/ground_truths.md"
     ],
-    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py"
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 81,
@@ -3383,7 +3416,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/analysis.py",
+      "src/rietveld_next/optimization/tests/test_analysis.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 82,
@@ -3418,7 +3461,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/analysis.py",
+      "src/rietveld_next/optimization/tests/test_analysis.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 83,
@@ -3453,7 +3506,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/analysis.py",
+      "src/rietveld_next/optimization/tests/test_analysis.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 84,
@@ -3488,7 +3551,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/analysis.py",
+      "src/rietveld_next/optimization/tests/test_analysis.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 85,
@@ -3523,7 +3596,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/optimization/analysis.py",
+      "src/rietveld_next/optimization/tests/test_analysis.py",
+      "docs/optimization.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 86,
@@ -3913,7 +3996,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 95,
@@ -3947,7 +4040,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 96,
@@ -3981,7 +4084,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 97,
@@ -4015,7 +4128,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 98,
@@ -4049,7 +4172,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 99,
@@ -4083,7 +4216,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 100,
@@ -4117,7 +4260,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 101,
@@ -4151,7 +4304,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 102,
@@ -4185,7 +4348,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 103,
@@ -4219,7 +4392,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 104,
@@ -4253,7 +4436,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 105,
@@ -4287,7 +4480,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.",
       "Units, parameter bounds, and invalid-input behavior are explicitly handled."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/diffraction/models.py",
+      "src/rietveld_next/diffraction/tests/test_models.py",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 106,
@@ -10931,7 +11134,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 269,
@@ -10964,7 +11177,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 270,
@@ -10997,7 +11220,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 271,
@@ -11030,7 +11263,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 272,
@@ -11063,7 +11306,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 273,
@@ -11096,7 +11349,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 274,
@@ -11129,7 +11392,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 275,
@@ -11162,7 +11435,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 276,
@@ -11195,7 +11478,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 277,
@@ -11228,7 +11521,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 278,
@@ -11261,7 +11564,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 279,
@@ -11294,7 +11607,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 280,
@@ -11327,7 +11650,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 281,
@@ -11360,7 +11693,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 282,
@@ -11393,7 +11736,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 283,
@@ -11426,7 +11779,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 284,
@@ -11459,7 +11822,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 285,
@@ -11492,7 +11865,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 286,
@@ -11525,7 +11908,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 287,
@@ -11558,7 +11951,17 @@
       "CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.",
       "Documentation includes purpose, scope, non-goals, examples, and links to related files.",
       "The document is written so a new contributor or Codex agent can act on it without additional context."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/user_guides.md",
+      "docs/governance_guides.md",
+      "docs/nonblocking_batch_completion_report.md",
+      "docs/ground_truths.md"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 288,
@@ -11753,7 +12156,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 293,
@@ -12301,7 +12712,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 307,
@@ -12333,7 +12752,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 308,
@@ -12405,7 +12832,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 310,
@@ -12556,7 +12991,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 314,
@@ -12628,7 +13071,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 316,
@@ -12660,7 +13111,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 317,
@@ -12771,7 +13230,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 320,
@@ -12843,7 +13310,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 322,
@@ -12949,7 +13424,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 325,
@@ -13012,7 +13495,15 @@
       "All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.",
       "Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.",
       "Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "src/rietveld_next/benchmarks/followups.py",
+      "src/rietveld_next/benchmarks/tests/test_followups.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },
   {
     "number": 327,

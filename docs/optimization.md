@@ -76,6 +76,7 @@ LocalOptimizerOptions(max_iterations=100, initial_step=1.0, tolerance=1e-6)
 coordinate_search_minimize(objective, initial_parameters, bounds=None, options=None)
 ConvergenceReport
 OptimizerSnapshot
+restore_optimizer_snapshot(snapshots, snapshot_id=..., iteration=...)
 ```
 
 The local optimizer is deterministic coordinate search in physical parameter
@@ -90,12 +91,48 @@ Returned convergence reports include:
 - iterations and objective evaluations
 - final objective value
 - final parameter vector
+- final-minus-initial parameter shifts when snapshots are available
 - rollback snapshots
 - diagnostic metadata
 
 Failure modes are structured. Invalid initial objective evaluations return
 `status="invalid_initial_model"`. Exhausted iterations return
 `status="max_iterations"`.
+
+Rollback snapshots always carry iteration, parameter vector, and objective
+value. They can also carry a JSON-compatible model state and snapshot id.
+`restore_optimizer_snapshot()` returns a deep copy of the selected model state
+so rollback callers can restore a previous state exactly without mutating the
+stored snapshot.
+
+## Local Optimizer Adapters
+
+Location: `src/rietveld_next/optimization/adapters.py`
+
+Public API:
+
+```python
+ScipyOptimizerOptions(max_evaluations=100, tolerance=1e-8)
+scipy_trust_region_minimize(objective, initial_parameters, bounds=None, ...)
+scipy_levenberg_marquardt_minimize(objective, initial_parameters, ...)
+RustOptimizerBound(lower=None, upper=None)
+RustLocalOptimizerRequest(objective_name, initial_parameters, ...)
+RustLocalOptimizerBackend
+run_rust_local_optimizer(backend, request)
+```
+
+The SciPy adapters are optional-dependency boundaries. If `scipy.optimize` is
+not importable, they return a structured `dependency_unavailable`
+`ConvergenceReport` and do not claim convergence. When SciPy is present,
+`scipy_trust_region_minimize()` calls `scipy.optimize.minimize` with
+`method="trust-constr"` and explicit bounds, while
+`scipy_levenberg_marquardt_minimize()` calls `scipy.optimize.least_squares`
+with `method="lm"` and no bounds.
+
+The Rust adapter API is a typed Python protocol plus a JSON-compatible request
+record. It defines the boundary expected from future Rust bindings, validates
+objective names, initial parameters, bounds, and options, and requires backends
+to return the same `ConvergenceReport` used by Python optimizers.
 
 ## Diagnostics
 
@@ -201,6 +238,9 @@ objectives or fabricate samples.
 ## Validation Limits
 
 Tests use analytic and synthetic functions only. No cross-software refinement
-validation is claimed. SciPy trust-region, Levenberg-Marquardt, Rust optimizer
-traits, JAX automatic differentiation, and production covariance estimation
-remain follow-up work.
+validation is claimed. The SciPy adapter tests use a tiny SciPy-like test
+double plus dependency-unavailable checks, so normal CI does not require SciPy.
+The Rust optimizer contract is validated at the Python protocol boundary only;
+no compiled Rust optimizer is present in this repository snapshot. JAX
+automatic differentiation and production covariance estimation remain follow-up
+work.

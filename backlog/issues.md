@@ -2851,6 +2851,9 @@ Deliver a granular, testable increment for Numerical Engine: Implement profile b
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex batch closure audit
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -2867,18 +2870,32 @@ Deliver a granular, testable increment for Optimization: Implement SciPy trust-r
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement SciPy trust-region adapter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement SciPy trust-region adapter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/optimization/adapters.py`
+- `src/rietveld_next/optimization/tests/test_adapters.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/optimization -p 'test_*.py'`
 
 ### Issue #72: Implement SciPy Levenberg-Marquardt adapter
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex batch closure audit
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -2895,18 +2912,32 @@ Deliver a granular, testable increment for Optimization: Implement SciPy Levenbe
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement SciPy Levenberg-Marquardt adapter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement SciPy Levenberg-Marquardt adapter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/optimization/adapters.py`
+- `src/rietveld_next/optimization/tests/test_adapters.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/optimization -p 'test_*.py'`
 
 ### Issue #73: Implement Rust local optimizer trait
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex batch closure audit
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -2923,13 +2954,24 @@ Deliver a granular, testable increment for Optimization: Implement Rust local op
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Rust local optimizer trait` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement Rust local optimizer trait` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+- `src/rietveld_next/optimization/adapters.py`
+- `src/rietveld_next/optimization/tests/test_adapters.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next/optimization -p 'test_*.py'`
 
 ### Issue #74: Implement convergence report object
 
@@ -3236,6 +3278,9 @@ Deliver a granular, testable increment for Optimization: Implement MCMC uncertai
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -3252,18 +3297,32 @@ Deliver a granular, testable increment for Optimization: Implement optimizer res
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement optimizer result comparison utilities` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement optimizer result comparison utilities` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/optimization/analysis.py`
+- `src/rietveld_next/optimization/tests/test_analysis.py`
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #82: Implement parameter-freezing heuristics
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -3280,18 +3339,32 @@ Deliver a granular, testable increment for Optimization: Implement parameter-fre
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement parameter-freezing heuristics` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement parameter-freezing heuristics` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/optimization/analysis.py`
+- `src/rietveld_next/optimization/tests/test_analysis.py`
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #83: Implement overparameterization detector
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -3308,18 +3381,32 @@ Deliver a granular, testable increment for Optimization: Implement overparameter
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement overparameterization detector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement overparameterization detector` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/optimization/analysis.py`
+- `src/rietveld_next/optimization/tests/test_analysis.py`
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #84: Implement model selection scoring interface
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -3336,18 +3423,32 @@ Deliver a granular, testable increment for Optimization: Implement model selecti
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement model selection scoring interface` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement model selection scoring interface` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/optimization/analysis.py`
+- `src/rietveld_next/optimization/tests/test_analysis.py`
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #85: Implement optimizer reproducibility seed management
 
 - **Category:** Optimization
 - **Phase:** Engine
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P0
 - **Labels:** optimization, engine, p0, codex-ready, implementation
 - **Dependencies:** ##1, ##16, ##61
@@ -3364,14 +3465,24 @@ Deliver a granular, testable increment for Optimization: Implement optimizer rep
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement optimizer reproducibility seed management` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement optimizer reproducibility seed management` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `src/rietveld_next/optimization/analysis.py`
+- `src/rietveld_next/optimization/tests/test_analysis.py`
+- `docs/optimization.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## Diffraction Models
 
@@ -3719,6 +3830,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement Lorentz
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3735,18 +3849,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement preferr
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement preferred orientation model v0` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement preferred orientation model v0` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #95: Implement isotropic size broadening
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3763,18 +3891,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement isotrop
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement isotropic size broadening` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement isotropic size broadening` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #96: Implement isotropic strain broadening
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3791,18 +3933,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement isotrop
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement isotropic strain broadening` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement isotropic strain broadening` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #97: Implement background polynomial model
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3819,18 +3975,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement backgro
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement background polynomial model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement background polynomial model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #98: Implement Chebyshev background model
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3847,18 +4017,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement Chebysh
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement Chebyshev background model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement Chebyshev background model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #99: Implement reflection tick generation
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3875,18 +4059,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement reflect
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement reflection tick generation` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement reflection tick generation` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #100: Implement synthetic pattern generator
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3903,18 +4101,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement synthet
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement synthetic pattern generator` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement synthetic pattern generator` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #101: Implement standard reference dataset registry
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3931,18 +4143,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement standar
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement standard reference dataset registry` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement standard reference dataset registry` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #102: Implement phase scale model
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3959,18 +4185,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement phase s
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement phase scale model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement phase scale model` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #103: Implement phase fraction calculation
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -3987,18 +4227,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement phase f
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement phase fraction calculation` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement phase fraction calculation` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #104: Implement atom occupancy constraints
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4015,18 +4269,32 @@ Deliver a granular, testable increment for Diffraction Models: Implement atom oc
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement atom occupancy constraints` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement atom occupancy constraints` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #105: Implement ADP validation checks
 
 - **Category:** Diffraction Models
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4043,14 +4311,24 @@ Deliver a granular, testable increment for Diffraction Models: Implement ADP val
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement ADP validation checks` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement ADP validation checks` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
 
+**Closure evidence**
+
+- `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/tests/test_models.py`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## X-ray and Synchrotron
 
@@ -10113,6 +10391,9 @@ Deliver a granular, testable increment for Testing and Validation: Add release v
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10129,18 +10410,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write a
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write architecture overview` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write architecture overview` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #269: Write src layout developer guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10157,18 +10452,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write s
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write src layout developer guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write src layout developer guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #270: Write data model guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10185,18 +10494,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write d
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write data model guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write data model guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #271: Write numerical engine theory guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10213,18 +10536,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write n
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write numerical engine theory guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write numerical engine theory guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #272: Write optimization guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10241,18 +10578,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write o
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write optimization guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write optimization guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #273: Write TOF refinement guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10269,18 +10620,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write T
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write TOF refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write TOF refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #274: Write neutron refinement guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10297,18 +10662,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write n
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write neutron refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write neutron refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #275: Write magnetic refinement guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10325,18 +10704,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write m
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write magnetic refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write magnetic refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #276: Write EDXRD guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10353,18 +10746,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write E
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write EDXRD guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write EDXRD guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #277: Write AI refinement guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10381,18 +10788,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write A
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write AI refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write AI refinement guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #278: Write HPC deployment guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10409,18 +10830,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write H
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write HPC deployment guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write HPC deployment guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #279: Write plugin developer guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10437,18 +10872,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write p
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write plugin developer guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write plugin developer guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #280: Write benchmark guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10465,18 +10914,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write b
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write benchmark guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write benchmark guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #281: Write validation guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10493,18 +10956,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write v
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write validation guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write validation guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #282: Write contribution guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10521,18 +10998,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write c
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write contribution guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write contribution guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #283: Write code of conduct
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10549,18 +11040,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write c
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write code of conduct` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write code of conduct` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #284: Write governance charter
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10577,18 +11082,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write g
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write governance charter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write governance charter` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #285: Write license and citation guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10605,18 +11124,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write l
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write license and citation guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write license and citation guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #286: Write release process guide
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10633,18 +11166,32 @@ Deliver a granular, testable increment for Documentation and Governance: Write r
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write release process guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write release process guide` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
+
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #287: Write roadmap document
 
 - **Category:** Documentation and Governance
 - **Phase:** Governance
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** documentation-and-governance, governance, p1, codex-ready, documentation
 - **Dependencies:** ##1
@@ -10661,14 +11208,24 @@ Deliver a granular, testable increment for Documentation and Governance: Write r
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Write roadmap document` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Documentation includes purpose, scope, non-goals, examples, and links to related files.
-- [ ] The document is written so a new contributor or Codex agent can act on it without additional context.
+- [x] Implementation or document for `Write roadmap document` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Documentation includes purpose, scope, non-goals, examples, and links to related files.
+- [x] The document is written so a new contributor or Codex agent can act on it without additional context.
 
+**Closure evidence**
+
+- `docs/user_guides.md`
+- `docs/governance_guides.md`
+- `docs/nonblocking_batch_completion_report.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ## Benchmarking
 
@@ -10841,6 +11398,9 @@ Implement deterministic synthetic data generation for profile-evaluation benchma
 
 - **Category:** Benchmarking
 - **Phase:** Numerical Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P0
 - **Labels:** benchmarking, codex-ready, diffraction, performance, rust
 - **Dependencies:** #291
@@ -10857,12 +11417,21 @@ Implement the safe Rust Gaussian profile-sum benchmark kernel and timing harness
 
 **Acceptance criteria**
 
-- [ ] Kernel validates input lengths.
-- [ ] Kernel uses `f64` and avoids avoidable allocations inside the peak loop.
-- [ ] Benchmark reports median, min, max, iterations, input sizes, dtype, and checksum.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Kernel validates input lengths.
+- [x] Kernel uses `f64` and avoids avoidable allocations inside the peak loop.
+- [x] Benchmark reports median, min, max, iterations, input sizes, dtype, and checksum.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #293: Implement JAX Gaussian profile microbenchmark
 
@@ -11364,6 +11933,9 @@ Benchmark sequential refinement throughput over a synthetic time/temperature ser
 
 - **Category:** Benchmarking
 - **Phase:** Workflow Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P2
 - **Labels:** benchmarking, codex-ready, parametric, performance, workflow
 - **Dependencies:** #305
@@ -11380,17 +11952,29 @@ Benchmark parametric refinement where selected parameters are modeled as functio
 
 **Acceptance criteria**
 
-- [ ] Benchmark reports runtime and parameter-function error.
-- [ ] Parametric and sequential results are compared on a common synthetic dataset.
-- [ ] External variables and function forms are recorded in result metadata.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark reports runtime and parameter-function error.
+- [x] Parametric and sequential results are compared on a common synthetic dataset.
+- [x] External variables and function forms are recorded in result metadata.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #307: Implement batch throughput benchmark
 
 - **Category:** Benchmarking
 - **Phase:** Workflow Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** batch, benchmarking, codex-ready, performance, throughput
 - **Dependencies:** #290
@@ -11407,12 +11991,21 @@ Benchmark high-throughput independent refinement execution on local multicore ha
 
 **Acceptance criteria**
 
-- [ ] Benchmark reports refinements per second, total wall time, success/failure counts, and worker count.
-- [ ] Small CI case runs quickly.
-- [ ] Larger cases are opt-in with explicit CLI flags.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark reports refinements per second, total wall time, success/failure counts, and worker count.
+- [x] Small CI case runs quickly.
+- [x] Larger cases are opt-in with explicit CLI flags.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #308: Implement multi-bank TOF profile benchmark
 
@@ -11459,6 +12052,9 @@ Benchmark profile evaluation for synthetic multi-bank TOF neutron histograms wit
 
 - **Category:** Benchmarking
 - **Phase:** TOF Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P2
 - **Labels:** benchmarking, codex-ready, optimization, performance, tof
 - **Dependencies:** #308
@@ -11475,12 +12071,21 @@ Benchmark refinement of simplified TOF calibration parameters on synthetic multi
 
 **Acceptance criteria**
 
-- [ ] Benchmark recovers calibration parameters within defined tolerance on small fixture.
-- [ ] Output includes convergence status and parameter errors by bank.
-- [ ] Large fixture is opt-in only.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark recovers calibration parameters within defined tolerance on small fixture.
+- [x] Output includes convergence status and parameter errors by bank.
+- [x] Large fixture is opt-in only.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #310: Implement neutron scattering factor table lookup benchmark
 
@@ -11609,6 +12214,9 @@ Benchmark energy-dispersive detector response functions including Gaussian respo
 
 - **Category:** Benchmarking
 - **Phase:** EDXRD Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P2
 - **Labels:** benchmarking, calibration, codex-ready, edxrd, performance
 - **Dependencies:** #312
@@ -11625,12 +12233,21 @@ Benchmark fitting or applying channel-to-energy calibration on synthetic EDXRD s
 
 **Acceptance criteria**
 
-- [ ] Benchmark reports calibration coefficient errors.
-- [ ] Output records polynomial order and standard peaks.
-- [ ] Normal CI runs only a small fixture.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark reports calibration coefficient errors.
+- [x] Output records polynomial order and standard peaks.
+- [x] Normal CI runs only a small fixture.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #314: Benchmark storage write/read for project packages
 
@@ -11677,6 +12294,9 @@ Benchmark writing and reading representative project packages including JSON met
 
 - **Category:** Benchmarking
 - **Phase:** Storage Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P2
 - **Labels:** benchmarking, codex-ready, performance, storage, zarr
 - **Dependencies:** #314
@@ -11693,17 +12313,29 @@ Benchmark chunked profile-array IO for large sequential datasets using Zarr when
 
 **Acceptance criteria**
 
-- [ ] Benchmark records chunk shape, compression, array size, read/write runtime, and skipped reason if unavailable.
-- [ ] Normal CI skips or runs only a tiny case.
-- [ ] Documentation explains local filesystem versus object-store interpretation.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark records chunk shape, compression, array size, read/write runtime, and skipped reason if unavailable.
+- [x] Normal CI skips or runs only a tiny case.
+- [x] Documentation explains local filesystem versus object-store interpretation.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #316: Benchmark Parquet result-table IO
 
 - **Category:** Benchmarking
 - **Phase:** Storage Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P2
 - **Labels:** benchmarking, codex-ready, parquet, performance, storage
 - **Dependencies:** #314
@@ -11720,12 +12352,21 @@ Benchmark Parquet/Arrow result-table writes and reads for high-throughput refine
 
 **Acceptance criteria**
 
-- [ ] Benchmark records row count, column count, file size, read runtime, and write runtime.
-- [ ] Optional dependencies are skipped gracefully.
-- [ ] Schema is compatible with benchmark result metadata.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark records row count, column count, file size, read runtime, and write runtime.
+- [x] Optional dependencies are skipped gracefully.
+- [x] Schema is compatible with benchmark result metadata.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #317: Benchmark visualization data decimation
 
@@ -11813,6 +12454,9 @@ Benchmark computation of residual diagnostics including binned residuals, outlie
 
 - **Category:** Benchmarking
 - **Phase:** Diagnostics Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** benchmarking, codex-ready, diagnostics, linear-algebra, performance
 - **Dependencies:** #300
@@ -11829,12 +12473,21 @@ Benchmark covariance and correlation computation from representative Jacobian or
 
 **Acceptance criteria**
 
-- [ ] Benchmark reports matrix dimensions, sparsity, condition estimate where available, runtime, and numerical status.
-- [ ] Singular or ill-conditioned cases return structured status rather than crashing.
-- [ ] Small fixture validates symmetry and diagonal behavior.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark reports matrix dimensions, sparsity, condition estimate where available, runtime, and numerical status.
+- [x] Singular or ill-conditioned cases return structured status rather than crashing.
+- [x] Small fixture validates symmetry and diagonal behavior.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #320: Benchmark AI tool-call overhead
 
@@ -11881,6 +12534,9 @@ Benchmark deterministic AI/refinement tool-call overhead excluding LLM latency t
 
 - **Category:** Benchmarking
 - **Phase:** AI Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P2
 - **Labels:** ai, benchmarking, codex-ready, performance, provenance
 - **Dependencies:** #320
@@ -11897,12 +12553,21 @@ Benchmark replay of an agent-generated action log and validation of provenance r
 
 **Acceptance criteria**
 
-- [ ] Benchmark reports number of actions replayed, validation time, and replay success/failure count.
-- [ ] Replay is deterministic for the fixture.
-- [ ] Invalid action logs produce structured errors.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark reports number of actions replayed, validation time, and replay success/failure count.
+- [x] Replay is deterministic for the fixture.
+- [x] Invalid action logs produce structured errors.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #322: Benchmark Slurm job-array packaging overhead
 
@@ -11976,6 +12641,9 @@ Benchmark local scheduler overhead for many small refinement-like tasks using Ra
 
 - **Category:** Benchmarking
 - **Phase:** Benchmark Infrastructure
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** benchmarking, ci, codex-ready, performance, regression
 - **Dependencies:** #289, #290
@@ -11992,12 +12660,21 @@ Add a mechanism to store and compare benchmark baselines without making normal C
 
 **Acceptance criteria**
 
-- [ ] Utility compares current results to baseline and reports percentage changes.
-- [ ] Default behavior warns rather than fails unless explicitly configured.
-- [ ] Baseline files include environment metadata and benchmark version.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Utility compares current results to baseline and reports percentage changes.
+- [x] Default behavior warns rather than fails unless explicitly configured.
+- [x] Baseline files include environment metadata and benchmark version.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #325: Add benchmark dashboard artifact generation
 
@@ -12030,6 +12707,9 @@ Generate static dashboard artifacts from benchmark result histories for develope
 
 - **Category:** Benchmarking
 - **Phase:** Benchmark Infrastructure
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** benchmarking, codex-ready, docs, performance
 - **Dependencies:** #288
@@ -12046,12 +12726,21 @@ Create a documentation hub explaining all benchmark families, how to run them, h
 
 **Acceptance criteria**
 
-- [ ] Documentation includes commands for quick, medium, and opt-in large runs.
-- [ ] Documentation explains JAX compile time, GPU caveats, Rust serial/parallel variants, and CI skip policy.
-- [ ] Documentation links to result schema and benchmark taxonomy.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Documentation includes commands for quick, medium, and opt-in large runs.
+- [x] Documentation explains JAX compile time, GPU caveats, Rust serial/parallel variants, and CI skip policy.
+- [x] Documentation links to result schema and benchmark taxonomy.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `src/rietveld_next/benchmarks/followups.py`
+- `src/rietveld_next/benchmarks/tests/test_followups.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
 
 ### Issue #327: Create benchmark validation CI workflow
 
