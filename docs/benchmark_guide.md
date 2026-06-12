@@ -21,6 +21,13 @@ GPU, cluster, or facility workloads in default unit tests.
 Return a structured skipped result when an optional backend such as JAX is not
 available, and include environment metadata for reproducibility.
 
+Numerical profile examples can be selected through the runner:
+
+```bash
+PYTHONPATH=src python3 -m rietveld_next.benchmarks.runner --kernel pseudo_voigt_profile --size small
+PYTHONPATH=src python3 -m rietveld_next.benchmarks.runner --kernel profile_windowing --size small
+```
+
 ## Related Files
 
 - [backend_benchmarks.md](backend_benchmarks.md)

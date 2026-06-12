@@ -102,9 +102,20 @@
 - X-ray instrument helpers now include metadata-only lab and synchrotron CW
   instrument records in `src/rietveld_next/xray/`; they validate wavelength
   metadata but do not implement fundamental-parameters profile physics.
+- X-ray M16 helpers include a deterministic zero-shift calibration workflow in
+  `src/rietveld_next/xray/calibration.py` and a synchrotron beamline metadata
+  template in `src/rietveld_next/xray/beamline.py`. These provide synthetic
+  calibration/template plumbing and diagnostics, not a complete least-squares
+  instrument profile model.
 - Neutron helpers now include a metadata-only CW neutron instrument model and
   a wavelength-dependent absorption hook skeleton in `src/rietveld_next/neutron/`.
   The absorption API is not a validated sample-geometry correction.
+- Neutron M18 correction helpers now include optional sample-geometry and
+  extinction hook interfaces in `src/rietveld_next/neutron/corrections.py`,
+  wired into `ContinuousWaveNeutronInstrument.scale_intensity()`. The constant
+  geometry and simple primary-extinction implementations are deterministic
+  fixtures; validated sample-shape/path-length and full extinction physics
+  remain future work.
 - Optimization diagnostics now include labeled covariance and correlation
   result records in `src/rietveld_next/optimization/diagnostics.py`. The dense
   covariance helper uses `residual_variance * inv(J^T J)` for small synthetic
@@ -117,6 +128,13 @@
   Gaussian profile dataset generator, a dependency-free result schema helper,
   and a runner CLI skeleton under `src/rietveld_next/benchmarks/`. Large
   benchmark presets remain opt-in.
+- M36/M37 profile benchmark hooks now include Rust/JAX Gaussian comparison
+  plumbing, a pseudo-Voigt profile microbenchmark, and a finite-window Gaussian
+  profile benchmark in `src/rietveld_next/benchmarks/profiles.py`. The
+  Rust/JAX hook skips unless a Rust profile vector and JAX runtime are both
+  available. The windowing benchmark reports explicit truncation tolerance and
+  uses a Gaussian profile because pseudo-Voigt Lorentzian tails are nonzero
+  outside finite windows.
 
 ## Optimization
 
@@ -261,6 +279,11 @@
 - EDXRD fixed-angle Bragg helpers live in `src/rietveld_next/edxrd/bragg.py`
   and convert energy in keV to d-spacing in angstroms, or the inverse, from a
   fixed two-theta angle in degrees using `hc = 12.398419843320026 keV A`.
+- EDXRD calibration workflow and import-template helpers live in
+  `src/rietveld_next/edxrd/`; the workflow fits unweighted channel-to-energy
+  polynomials from standard peaks, records residuals in keV and deterministic
+  provenance, and the import template validates `channel`/`counts` spectra plus
+  fixed-angle standard rows with `d_spacing_angstrom`.
 - Magnetic moment entities live in `src/rietveld_next/neutron/magnetic/` and
   record three components in Bohr magnetons plus an explicit coordinate frame.
 - Magnetic propagation vector entities live in

@@ -52,6 +52,32 @@ instrument setup. They validate wavelength metadata in angstroms and keep
 synchrotron beamline fields separate from lab-source fields. These records do
 not implement a fundamental-parameters instrument profile.
 
+## X-ray Zero-Shift Calibration And Beamline Templates
+
+Locations:
+
+- `src/rietveld_next/xray/calibration.py`
+- `src/rietveld_next/xray/beamline.py`
+
+Records and functions:
+
+```python
+ZeroShiftCalibrationPoint(...)
+calibrate_zero_shift(points, wavelength_angstrom=...)
+SynchrotronBeamlineTemplate(...)
+default_synchrotron_beamline_template(...)
+```
+
+The zero-shift workflow estimates a constant observed-minus-calculated
+two-theta offset from reference d-spacings using Bragg's law. It reports the
+weighted shift, weighted RMS residual, point count, wavelength, residuals, and
+units. This is a deterministic calibration fixture, not a complete
+least-squares instrument refinement.
+
+The synchrotron beamline template records facility, beamline, detector, optional
+monochromator/default wavelength metadata, and required beamline log fields. It
+returns actionable missing-field diagnostics for import/preflight checks.
+
 ## X-ray Form Factors And Corrections
 
 Locations:
@@ -105,12 +131,13 @@ The returned records include the provenance label `NIST Center for Neutron
 Research bound coherent scattering length tables`. This implementation is not
 yet a complete isotope table and should fail clearly for unsupported keys.
 
-## Neutron Instrument And Absorption Hooks
+## Neutron Instrument And Correction Hooks
 
 Locations:
 
 - `src/rietveld_next/neutron/instrument.py`
 - `src/rietveld_next/neutron/absorption.py`
+- `src/rietveld_next/neutron/corrections.py`
 
 Records and functions:
 
@@ -119,6 +146,10 @@ NeutronScatterer(isotope, occupancy=1.0, multiplicity=1)
 ContinuousWaveNeutronInstrument(...)
 ConstantNeutronAbsorption(transmission)
 LinearWavelengthNeutronAbsorption(...)
+ConstantSampleGeometryCorrection(...)
+SimplePrimaryExtinctionCorrection(...)
+evaluate_sample_geometry_correction(...)
+evaluate_extinction_correction(...)
 ```
 
 The CW neutron instrument model records wavelength metadata and scatterers that
@@ -126,6 +157,13 @@ resolve through the neutron scattering-length table, not X-ray form factors.
 The absorption API is a small hook/skeleton for wavelength-dependent
 coefficients. It is intentionally not a validated full sample-geometry
 absorption correction.
+
+Sample-geometry and extinction APIs are optional correction hooks attached to
+the CW neutron instrument. They multiply synthetic intensities independently of
+the nuclear-amplitude helper and profile kernels. The constant geometry hook and
+simple primary-extinction formula are deterministic validation fixtures only;
+validated sample-shape, path-length, secondary-extinction, and instrument-
+specific correction physics remain future work.
 
 ## Validation Limits
 

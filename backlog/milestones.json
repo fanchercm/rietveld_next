@@ -739,7 +739,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/xray/",
+      "src/rietveld_next/xray/tests/"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M17",
@@ -814,7 +823,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/xray_neutron_physics.md",
+      "src/rietveld_next/neutron/",
+      "src/rietveld_next/neutron/tests/"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M19",
@@ -1110,7 +1128,16 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/edxrd_guide.md",
+      "src/rietveld_next/edxrd/",
+      "src/rietveld_next/edxrd/tests/"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M27",
@@ -1674,7 +1701,17 @@
       "Public APIs, schemas, and generated artifacts are documented.",
       "Unit, integration, or validation tests relevant to the milestone pass in CI.",
       "Codex-facing notes include commands to reproduce validation or benchmark results."
-    ]
+    ],
+    "status": "closed",
+    "closed_at": "2026-06-12",
+    "closed_by": "Codex non-blocking batch execution",
+    "closure_evidence": [
+      "docs/backend_benchmarks.md",
+      "docs/benchmark_guide.md",
+      "src/rietveld_next/benchmarks/profiles.py",
+      "src/rietveld_next/benchmarks/tests/test_profiles.py"
+    ],
+    "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'"
   },
   {
     "id": "M38",

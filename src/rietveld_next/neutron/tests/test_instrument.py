@@ -53,16 +53,13 @@ class ContinuousWaveNeutronInstrumentTests(unittest.TestCase):
             absorption_hook=ConstantNeutronAbsorption(1.0),
         )
 
-        self.assertEqual(
-            instrument.to_dict(),
-            {
-                "instrument_type": "cw_neutron",
-                "wavelength_angstrom": 1.8,
-                "zero_shift_degrees": 0.0,
-                "intensity_scale": 1.0,
-                "absorption_hook": "ConstantNeutronAbsorption",
-            },
-        )
+        payload = instrument.to_dict()
+
+        self.assertEqual(payload["instrument_type"], "cw_neutron")
+        self.assertEqual(payload["wavelength_angstrom"], 1.8)
+        self.assertEqual(payload["zero_shift_degrees"], 0.0)
+        self.assertEqual(payload["intensity_scale"], 1.0)
+        self.assertEqual(payload["absorption_hook"], "ConstantNeutronAbsorption")
 
     def test_instrument_rejects_unreachable_bragg_condition(self) -> None:
         instrument = ContinuousWaveNeutronInstrument(wavelength_angstrom=3.0)

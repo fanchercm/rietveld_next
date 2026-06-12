@@ -30,6 +30,8 @@ class BenchmarkRunnerTests(unittest.TestCase):
                 "numerical",
                 "--backend",
                 "rust",
+                "--kernel",
+                "pseudo_voigt_profile",
                 "--size",
                 "medium",
                 "--iterations",
@@ -41,6 +43,7 @@ class BenchmarkRunnerTests(unittest.TestCase):
 
         self.assertEqual(args.family, "numerical")
         self.assertEqual(args.backend, "rust")
+        self.assertEqual(args.kernel, "pseudo_voigt_profile")
         self.assertEqual(args.size, "medium")
         self.assertEqual(args.iterations, 3)
         self.assertEqual(args.warmup, 1)
@@ -75,6 +78,39 @@ class BenchmarkRunnerTests(unittest.TestCase):
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["name"], "numerical.gaussian_profile.python.small.synthetic")
         self.assertEqual(result["environment"]["dataset"]["sample_count"], 128)
+        validate_benchmark_result_dict(result)
+
+    def test_python_backend_runs_pseudo_voigt_kernel(self) -> None:
+        args = parse_args(["--backend", "python", "--kernel", "pseudo_voigt_profile", "--size", "small"])
+
+        output = run_selected_benchmark(args)
+        result = output["results"][0]
+
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["name"], "numerical.pseudo_voigt_profile.python.small.synthetic")
+        self.assertEqual(result["environment"]["dataset"]["variant"], "pseudo_voigt")
+        validate_benchmark_result_dict(result)
+
+    def test_python_backend_runs_profile_windowing_kernel(self) -> None:
+        args = parse_args(["--backend", "python", "--kernel", "profile_windowing", "--size", "small"])
+
+        output = run_selected_benchmark(args)
+        result = output["results"][0]
+
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["name"], "numerical.profile_windowing.python.small.synthetic")
+        self.assertIn("windowed_point_peak_pairs", result["environment"])
+        validate_benchmark_result_dict(result)
+
+    def test_rust_jax_comparison_kernel_skips_without_rust_fixture(self) -> None:
+        args = parse_args(["--kernel", "rust_jax_gaussian_comparison", "--size", "small"])
+
+        output = run_selected_benchmark(args)
+        result = output["results"][0]
+
+        self.assertEqual(result["status"], "skipped")
+        self.assertEqual(result["name"], "numerical.rust_jax_gaussian_comparison.rust_jax.small.synthetic")
+        self.assertIn("Rust Gaussian profile output was not supplied", result["skip_reason"])
         validate_benchmark_result_dict(result)
 
     def test_workflow_family_runs_sequential_smoke_benchmark(self) -> None:

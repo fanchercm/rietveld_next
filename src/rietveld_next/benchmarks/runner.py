@@ -18,6 +18,11 @@ from typing import Any, Sequence
 
 from rietveld_next.benchmarks.datasets import generate_synthetic_gaussian_profile_dataset, profile_dataset_presets
 from rietveld_next.benchmarks.jax_gaussian import run_jax_gaussian_microbenchmark
+from rietveld_next.benchmarks.profiles import (
+    run_profile_windowing_benchmark,
+    run_pseudo_voigt_profile_benchmark,
+    run_rust_jax_gaussian_comparison,
+)
 from rietveld_next.benchmarks.results import (
     BenchmarkResult,
     BenchmarkTiming,
@@ -30,6 +35,12 @@ from rietveld_next.benchmarks.workflow_ai_hpc import run_sequential_refinement_w
 
 RUN_SCHEMA_VERSION = "benchmark-run-v1"
 DEFAULT_KERNEL = "gaussian_profile"
+NUMERICAL_KERNELS = (
+    "gaussian_profile",
+    "pseudo_voigt_profile",
+    "profile_windowing",
+    "rust_jax_gaussian_comparison",
+)
 
 
 class BenchmarkRunnerError(ValueError):
@@ -66,6 +77,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         help="Benchmark family/workstream to select.",
     )
     parser.add_argument("--backend", choices=["python", "jax", "rust"], default="python", help="Backend to select.")
+    parser.add_argument("--kernel", choices=NUMERICAL_KERNELS, default=DEFAULT_KERNEL, help="Numerical kernel to select.")
     parser.add_argument("--size", choices=sorted(profile_dataset_presets()), default="small", help="Dataset size preset.")
     parser.add_argument("--iterations", type=_positive_int_arg, default=1, help="Measured steady-state iterations.")
     parser.add_argument("--warmup", type=_nonnegative_int_arg, default=0, help="Unmeasured warmup iterations.")
@@ -86,11 +98,12 @@ def run_selected_benchmark(args: argparse.Namespace) -> dict[str, Any]:
     Returns:
         Benchmark run envelope containing selection metadata and one result.
     """
-    kernel = "sequential_refinement" if args.family == BenchmarkWorkstream.WORKFLOW.value else DEFAULT_KERNEL
+    kernel = "sequential_refinement" if args.family == BenchmarkWorkstream.WORKFLOW.value else args.kernel
+    identity_backend = "rust_jax" if args.kernel == "rust_jax_gaussian_comparison" else args.backend
     identity = BenchmarkIdentity(
         workstream=args.family,
         kernel=kernel,
-        backend=args.backend,
+        backend=identity_backend,
         size=args.size,
         variant=args.variant,
     )
@@ -145,6 +158,88 @@ def run_selected_benchmark(args: argparse.Namespace) -> dict[str, Any]:
             reason=f"Benchmark family {args.family!r} is registered in the taxonomy but has no runner skeleton yet.",
             environment=_base_environment(args.seed, identity),
         )
+    elif args.kernel == "rust_jax_gaussian_comparison":
+        result = _normalize_result(
+            run_rust_jax_gaussian_comparison(input_size=input_size, dtype=args.dtype),
+            identity=identity,
+            seed=args.seed,
+            requested_iterations=args.iterations,
+            requested_warmup=args.warmup,
+        )
+    elif args.kernel == "pseudo_voigt_profile":
+        if args.backend != "python":
+            result = skipped_benchmark(
+                name=identity.benchmark_id(),
+                backend=args.backend,
+                dtype=args.dtype,
+                input_size=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                reason="Pseudo-Voigt profile smoke benchmark currently runs only on the Python backend.",
+                environment=_base_environment(args.seed, identity),
+            )
+        elif args.dtype != "float64":
+            result = skipped_benchmark(
+                name=identity.benchmark_id(),
+                backend=args.backend,
+                dtype=args.dtype,
+                input_size=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                reason="Pseudo-Voigt profile smoke benchmark uses Python float data; only dtype='float64' is reported.",
+                environment=_base_environment(args.seed, identity),
+            )
+        else:
+            raw_result = run_pseudo_voigt_profile_benchmark(
+                size=args.size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                seed=args.seed,
+            )
+            result = _normalize_result(
+                raw_result,
+                identity=identity,
+                seed=args.seed,
+                requested_iterations=args.iterations,
+                requested_warmup=args.warmup,
+            )
+    elif args.kernel == "profile_windowing":
+        if args.backend != "python":
+            result = skipped_benchmark(
+                name=identity.benchmark_id(),
+                backend=args.backend,
+                dtype=args.dtype,
+                input_size=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                reason="Profile windowing smoke benchmark currently runs only on the Python backend.",
+                environment=_base_environment(args.seed, identity),
+            )
+        elif args.dtype != "float64":
+            result = skipped_benchmark(
+                name=identity.benchmark_id(),
+                backend=args.backend,
+                dtype=args.dtype,
+                input_size=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                reason="Profile windowing smoke benchmark uses Python float data; only dtype='float64' is reported.",
+                environment=_base_environment(args.seed, identity),
+            )
+        else:
+            raw_result = run_profile_windowing_benchmark(
+                size=args.size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                seed=args.seed,
+            )
+            result = _normalize_result(
+                raw_result,
+                identity=identity,
+                seed=args.seed,
+                requested_iterations=args.iterations,
+                requested_warmup=args.warmup,
+            )
     elif args.backend == "python":
         if args.dtype != "float64":
             result = skipped_benchmark(
@@ -186,6 +281,7 @@ def run_selected_benchmark(args: argparse.Namespace) -> dict[str, Any]:
         "selection": {
             "family": args.family,
             "backend": args.backend,
+            "kernel": args.kernel,
             "size": args.size,
             "iterations": args.iterations,
             "warmup": args.warmup,

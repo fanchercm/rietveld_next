@@ -37,6 +37,9 @@ rietveld_next/
 - `src/rietveld_next/xray/` contains X-ray physics reference data and helpers.
 - `src/rietveld_next/neutron/` contains neutron physics reference data and
   helpers.
+- `src/rietveld_next/edxrd/` contains energy-dispersive X-ray diffraction
+  axis, fixed-angle Bragg conversion, calibration workflow, and import-template
+  helpers.
 - `src/rietveld_next/optimization/` contains dependency-free optimization
   reference interfaces.
 - `src/rietveld_next/workflows/` contains replayable workflow primitives.

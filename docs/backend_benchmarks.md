@@ -83,6 +83,54 @@ a Rust-style result fixture. A compiled Rust numerical package and executable
 are not yet present in this repository snapshot, so a real Rust Gaussian
 microbenchmark remains follow-up work.
 
+`compare_gaussian_profile_outputs()` and
+`run_rust_jax_gaussian_comparison()` provide the issue #294 comparison boundary.
+When a Rust profile vector is supplied and JAX is available, the comparison
+reports sample count, maximum absolute error, maximum relative error, checksum
+absolute error, and the applied tolerance policy. Float64 uses strict
+`1e-12` absolute and relative tolerances; float32 uses explicitly relaxed
+`5e-5` absolute and relative tolerances. Without a Rust vector or JAX runtime,
+the hook returns a structured skipped result rather than fabricating a
+cross-backend result.
+
+## Pseudo-Voigt And Profile Windowing Benchmarks
+
+Functions:
+
+```python
+run_pseudo_voigt_profile_benchmark(size="small")
+run_profile_windowing_benchmark(size="small")
+```
+
+Behavior:
+
+- `run_pseudo_voigt_profile_benchmark()` evaluates the dependency-free
+  area-scaled pseudo-Voigt reference kernel over deterministic synthetic peak
+  datasets. It supports the shared `small`, `medium`, and opt-in `large`
+  presets, reports checksum and runtime statistics, and records the evaluated
+  point-peak pair count.
+- The pseudo-Voigt benchmark differs from the Gaussian proxy because it mixes
+  Lorentzian and Gaussian terms with an explicit `eta` parameter. The synthetic
+  dataset remains a benchmark workload generator, not a scientific validation
+  corpus.
+- `run_profile_windowing_benchmark()` compares finite-window Gaussian profile
+  evaluation against a dense all-peak/all-point Gaussian reference. It reports
+  dense and windowed point-peak pairs, pair-count reduction, float64 pair-memory
+  estimates, checksum, runtime statistics, maximum absolute error, maximum
+  relative error, and the explicit truncation tolerance.
+- The windowing smoke benchmark uses a Gaussian profile by default because
+  pseudo-Voigt Lorentzian tails are nonzero outside any finite window. Future
+  pseudo-Voigt windowing measurements should report tail-truncation tolerances
+  explicitly rather than claiming exact equality.
+
+The CLI runner selects these numerical kernels with `--kernel`:
+
+```bash
+PYTHONPATH=src python3 -m rietveld_next.benchmarks.runner --kernel pseudo_voigt_profile --size small
+PYTHONPATH=src python3 -m rietveld_next.benchmarks.runner --kernel profile_windowing --size small
+PYTHONPATH=src python3 -m rietveld_next.benchmarks.runner --kernel rust_jax_gaussian_comparison --size small
+```
+
 ## Local Optimizer Benchmark
 
 Function:

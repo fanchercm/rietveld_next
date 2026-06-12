@@ -4472,6 +4472,9 @@ Deliver a granular, testable increment for X-ray and Synchrotron: Implement wave
 
 - **Category:** X-ray and Synchrotron
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** x-ray-and-synchrotron, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -4488,13 +4491,24 @@ Deliver a granular, testable increment for X-ray and Synchrotron: Implement zero
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement zero-shift calibration workflow` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement zero-shift calibration workflow` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/xray_neutron_physics.md`
+- `src/rietveld_next/xray/calibration.py`
+- `src/rietveld_next/xray/tests/test_calibration_beamline.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
+
 
 ### Issue #110: Implement fundamental-parameters API skeleton
 
@@ -4640,6 +4654,9 @@ Deliver a granular, testable increment for X-ray and Synchrotron: Implement 2D i
 
 - **Category:** X-ray and Synchrotron
 - **Phase:** Scientific Models
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** x-ray-and-synchrotron, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -4656,13 +4673,23 @@ Deliver a granular, testable increment for X-ray and Synchrotron: Implement sync
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement synchrotron beamline metadata template` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement synchrotron beamline metadata template` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/xray_neutron_physics.md`
+- `src/rietveld_next/xray/beamline.py`
+- `src/rietveld_next/xray/tests/test_calibration_beamline.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
 
 
 ## Neutron
@@ -4800,6 +4827,9 @@ Deliver a granular, testable increment for Neutron: Implement wavelength-depende
 
 - **Category:** Neutron
 - **Phase:** Neutron
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** neutron, neutron, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -4816,18 +4846,32 @@ Deliver a granular, testable increment for Neutron: Implement sample geometry co
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement sample geometry correction interface` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement sample geometry correction interface` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/xray_neutron_physics.md`
+- `src/rietveld_next/neutron/corrections.py`
+- `src/rietveld_next/neutron/tests/test_corrections.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
+
 
 ### Issue #120: Implement extinction correction interface
 
 - **Category:** Neutron
 - **Phase:** Neutron
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** neutron, neutron, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -4844,13 +4888,24 @@ Deliver a granular, testable increment for Neutron: Implement extinction correct
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement extinction correction interface` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement extinction correction interface` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `docs/xray_neutron_physics.md`
+- `src/rietveld_next/neutron/corrections.py`
+- `src/rietveld_next/neutron/tests/test_corrections.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
+
 
 ### Issue #121: Implement container background model
 
@@ -6195,6 +6250,9 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD synthetic benc
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex forked EDXRD M26 analysis
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6211,13 +6269,25 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD calibration wo
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement EDXRD calibration workflow` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement EDXRD calibration workflow` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/edxrd/calibration.py`
+- `src/rietveld_next/edxrd/import_template.py`
+- `src/rietveld_next/edxrd/tests/test_calibration_import.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #165: Implement EDXRD residual diagnostics
 
@@ -6251,6 +6321,9 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD residual diagn
 
 - **Category:** EDXRD
 - **Phase:** EDXRD
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex forked EDXRD M26 analysis
 - **Priority:** P2
 - **Labels:** edxrd, edxrd, p2, codex-ready, implementation
 - **Dependencies:** ##1, ##31, ##81
@@ -6267,13 +6340,25 @@ Deliver a granular, testable increment for EDXRD: Implement EDXRD import templat
 
 **Acceptance criteria**
 
-- [ ] Implementation or document for `Implement EDXRD import template` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
-- [ ] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
-- [ ] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
-- [ ] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
-- [ ] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
-- [ ] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
-- [ ] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+- [x] Implementation or document for `Implement EDXRD import template` is placed under the approved `src/` layout or docs location; no forbidden top-level source directories are created.
+- [x] Public APIs, schemas, or commands introduced by the issue include minimal usage documentation.
+- [x] Automated tests or validation checks cover the primary success path and at least one failure or edge case.
+- [x] The change preserves deterministic behavior where randomness, ordering, or generated IDs are involved.
+- [x] CI-relevant commands complete without requiring large benchmarks, GPU hardware, or facility-only resources.
+- [x] Scientific/numerical behavior is validated against a synthetic fixture, analytical expectation, or documented reference tolerance.
+- [x] Units, parameter bounds, and invalid-input behavior are explicitly handled.
+
+**Closure evidence**
+
+- `src/rietveld_next/edxrd/calibration.py`
+- `src/rietveld_next/edxrd/import_template.py`
+- `src/rietveld_next/edxrd/tests/test_calibration_import.py`
+- `docs/edxrd_guide.md`
+- `docs/ground_truths.md`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
 ### Issue #167: Implement EDXRD documentation example
 
@@ -11635,6 +11720,9 @@ Define and implement skip behavior for optional benchmark dependencies such as J
 
 - **Category:** Benchmarking
 - **Phase:** Numerical Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** benchmarking, codex-ready, diffraction, performance
 - **Dependencies:** #292, #293
@@ -11651,17 +11739,32 @@ Add a pseudo-Voigt profile benchmark to better approximate common Rietveld profi
 
 **Acceptance criteria**
 
-- [ ] Benchmark supports at least small and medium sizes.
-- [ ] Output includes checksum and runtime statistics.
-- [ ] Documentation explains differences from the Gaussian proxy benchmark.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Benchmark supports at least small and medium sizes.
+- [x] Output includes checksum and runtime statistics.
+- [x] Documentation explains differences from the Gaussian proxy benchmark.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `docs/backend_benchmarks.md`
+- `docs/benchmark_guide.md`
+- `src/rietveld_next/benchmarks/profiles.py`
+- `src/rietveld_next/benchmarks/tests/test_profiles.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
+
 
 ### Issue #299: Implement profile windowing benchmark
 
 - **Category:** Benchmarking
 - **Phase:** Numerical Benchmarks
+- **Status:** Closed
+- **Closed:** 2026-06-12
+- **Closed by:** Codex non-blocking batch execution
 - **Priority:** P1
 - **Labels:** benchmarking, codex-ready, diffraction, performance
 - **Dependencies:** #298
@@ -11678,12 +11781,24 @@ Benchmark finite peak-window evaluation versus dense all-peak/all-point evaluati
 
 **Acceptance criteria**
 
-- [ ] Windowed and dense outputs agree within tolerance for the tested window radius.
-- [ ] Benchmark reports number of evaluated point-peak pairs.
-- [ ] Results quantify speed and memory impact of windowing.
-- [ ] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
-- [ ] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
-- [ ] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+- [x] Windowed and dense outputs agree within tolerance for the tested window radius.
+- [x] Benchmark reports number of evaluated point-peak pairs.
+- [x] Results quantify speed and memory impact of windowing.
+- [x] All implementation source is placed under `src/`; no forbidden top-level implementation directories are created.
+- [x] Benchmark can be skipped or constrained in normal CI so expensive workloads do not run by default.
+- [x] Results are reproducible with fixed seeds, explicit dataset sizes, software versions, and hardware metadata where available.
+
+**Closure evidence**
+
+- `docs/backend_benchmarks.md`
+- `docs/benchmark_guide.md`
+- `src/rietveld_next/benchmarks/profiles.py`
+- `src/rietveld_next/benchmarks/tests/test_profiles.py`
+
+**Closure validation**
+
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s src/rietveld_next -p 'test_*.py'`
+
 
 ### Issue #300: Implement sparse Jacobian assembly benchmark
 

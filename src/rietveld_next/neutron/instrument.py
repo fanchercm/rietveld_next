@@ -11,6 +11,12 @@ from rietveld_next.neutron.absorption import (
     evaluate_absorption_transmission,
     validate_wavelength_angstrom,
 )
+from rietveld_next.neutron.corrections import (
+    ExtinctionCorrectionHook,
+    SampleGeometryCorrectionHook,
+    evaluate_extinction_correction,
+    evaluate_sample_geometry_correction,
+)
 from rietveld_next.neutron.scattering_lengths import (
     NeutronScatteringLength,
     lookup_bound_coherent_scattering_length,
@@ -87,6 +93,8 @@ class ContinuousWaveNeutronInstrument:
         intensity_scale: Non-negative dimensionless intensity scale.
         absorption_hook: Optional wavelength-dependent absorption hook. The
             hook is evaluated independently of profile kernels.
+        sample_geometry_hook: Optional sample-geometry correction hook.
+        extinction_hook: Optional extinction correction hook.
 
     Raises:
         ValueError: If wavelength, zero shift, scale, or hook metadata are
@@ -102,6 +110,8 @@ class ContinuousWaveNeutronInstrument:
     zero_shift_degrees: float = 0.0
     intensity_scale: float = 1.0
     absorption_hook: WavelengthDependentAbsorptionHook | None = None
+    sample_geometry_hook: SampleGeometryCorrectionHook | None = None
+    extinction_hook: ExtinctionCorrectionHook | None = None
 
     def __post_init__(self) -> None:
         """Validate continuous-wave neutron instrument metadata."""
@@ -116,6 +126,12 @@ class ContinuousWaveNeutronInstrument:
             getattr(self.absorption_hook, "transmission_factor", None)
         ):
             raise ValueError("absorption_hook must define transmission_factor(wavelength_angstrom).")
+        if self.sample_geometry_hook is not None and not callable(
+            getattr(self.sample_geometry_hook, "correction_factor", None)
+        ):
+            raise ValueError("sample_geometry_hook must define correction_factor(...).")
+        if self.extinction_hook is not None and not callable(getattr(self.extinction_hook, "extinction_factor", None)):
+            raise ValueError("extinction_hook must define extinction_factor(...).")
 
     def bragg_two_theta_degrees(self, d_spacing_angstrom: float, *, order: int = 1) -> float:
         """Compute CW neutron Bragg peak position in degrees two-theta.
@@ -190,13 +206,51 @@ class ContinuousWaveNeutronInstrument:
         wavelength = self.wavelength_angstrom if wavelength_angstrom is None else wavelength_angstrom
         return evaluate_absorption_transmission(self.absorption_hook, wavelength)
 
-    def scale_intensity(self, intensity: float, wavelength_angstrom: float | None = None) -> float:
+    def sample_geometry_correction(
+        self,
+        *,
+        two_theta_degrees: float,
+        wavelength_angstrom: float | None = None,
+    ) -> float:
+        """Evaluate the attached sample-geometry correction hook."""
+        wavelength = self.wavelength_angstrom if wavelength_angstrom is None else wavelength_angstrom
+        return evaluate_sample_geometry_correction(
+            self.sample_geometry_hook,
+            two_theta_degrees=two_theta_degrees,
+            wavelength_angstrom=wavelength,
+        )
+
+    def extinction_correction(
+        self,
+        *,
+        structure_factor_squared: float,
+        wavelength_angstrom: float | None = None,
+    ) -> float:
+        """Evaluate the attached extinction correction hook."""
+        wavelength = self.wavelength_angstrom if wavelength_angstrom is None else wavelength_angstrom
+        return evaluate_extinction_correction(
+            self.extinction_hook,
+            structure_factor_squared=structure_factor_squared,
+            wavelength_angstrom=wavelength,
+        )
+
+    def scale_intensity(
+        self,
+        intensity: float,
+        wavelength_angstrom: float | None = None,
+        *,
+        two_theta_degrees: float | None = None,
+        structure_factor_squared: float | None = None,
+    ) -> float:
         """Apply instrument scale and optional absorption transmission.
 
         Args:
             intensity: Non-negative synthetic intensity.
             wavelength_angstrom: Optional wavelength override in angstroms for
                 evaluating the absorption hook.
+            two_theta_degrees: Required when a sample-geometry hook is present.
+            structure_factor_squared: Required when an extinction hook is
+                present.
 
         Returns:
             Scaled intensity. The calculation is deterministic and independent
@@ -210,18 +264,37 @@ class ContinuousWaveNeutronInstrument:
         value = _finite_float(intensity, "intensity")
         if value < 0.0:
             raise ValueError(f"intensity must be non-negative, got {value!r}.")
-        return value * self.intensity_scale * self.absorption_transmission(wavelength_angstrom)
+        wavelength = self.wavelength_angstrom if wavelength_angstrom is None else wavelength_angstrom
+        geometry = 1.0
+        if self.sample_geometry_hook is not None:
+            if two_theta_degrees is None:
+                raise ValueError("two_theta_degrees is required when sample_geometry_hook is attached.")
+            geometry = self.sample_geometry_correction(two_theta_degrees=two_theta_degrees, wavelength_angstrom=wavelength)
+        extinction = 1.0
+        if self.extinction_hook is not None:
+            if structure_factor_squared is None:
+                raise ValueError("structure_factor_squared is required when extinction_hook is attached.")
+            extinction = self.extinction_correction(
+                structure_factor_squared=structure_factor_squared,
+                wavelength_angstrom=wavelength,
+            )
+        return value * self.intensity_scale * self.absorption_transmission(wavelength) * geometry * extinction
 
     def to_dict(self) -> dict[str, object]:
         """Return deterministic JSON-compatible instrument metadata."""
 
-        return {
+        payload: dict[str, object] = {
             "instrument_type": "cw_neutron",
             "wavelength_angstrom": self.wavelength_angstrom,
             "zero_shift_degrees": self.zero_shift_degrees,
             "intensity_scale": self.intensity_scale,
             "absorption_hook": type(self.absorption_hook).__name__ if self.absorption_hook is not None else None,
         }
+        if self.sample_geometry_hook is not None:
+            payload["sample_geometry_hook"] = type(self.sample_geometry_hook).__name__
+        if self.extinction_hook is not None:
+            payload["extinction_hook"] = type(self.extinction_hook).__name__
+        return payload
 
 
 def _finite_float(value: float, name: str) -> float:
