@@ -47,15 +47,16 @@ Validation cases must declare both absolute and relative tolerances plus units
 and rationale. The M34 smoke tests use simple scalar summaries so default CI
 does not depend on large reference files.
 
-Expensive validation must be triggered explicitly with a future validation or
-benchmark command and must not run in default unit tests.
+Expensive validation must be triggered explicitly with a validation or benchmark
+command and must not run in default unit tests. `compare_performance_regression()`
+provides a lightweight threshold comparator for opt-in timing baselines.
 
 ## External Comparisons
 
-`ComparisonHarness` records comparison backend intent. GSAS-II can be wired to a
-future command when redistributable fixtures are available. FullProf and TOPAS
-remain placeholders because this repository does not bundle proprietary or
-non-redistributable comparison data.
+`ComparisonHarness` records comparison backend intent. The GSAS-II harness has
+explicit offline and dry-run modes, and configured commands are never executed
+by default tests. FullProf and TOPAS remain placeholders because this repository
+does not bundle proprietary or non-redistributable comparison data.
 
 ## CI Matrix
 
@@ -77,10 +78,11 @@ python3 -m json.tool schemas/validation_report.schema.json
 
 ## Security And Links
 
-Security scanning policy for M34 is documentation-first: no secrets, generated
-tokens, facility credentials, or private datasets may be committed. Dependency
-security scanning should be added to hosted CI once the package/dependency
-manager is finalized.
+Security scanning policy for M34 is local and dependency-free: no secrets,
+generated tokens, facility credentials, or private datasets may be committed.
+`SecurityScanPolicy` checks common secret patterns in text fixtures; hosted
+dependency scanning can be added once the package/dependency manager is
+finalized.
 
 `check_markdown_links()` verifies local Markdown links without network access.
 External links are intentionally skipped in the default smoke check.

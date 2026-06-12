@@ -15,7 +15,9 @@ class DocumentationGovernanceTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[4]
         required = {
             "docs/architecture_overview.md": ("Purpose", "Scope", "Non-Goals", "Related Files"),
+            "docs/core_data_model.md": ("Entities", "Parameter Paths", "Serialization", "Validation Command"),
             "docs/numerical_engine_theory.md": ("Purpose", "Scope", "Non-Goals", "Example"),
+            "docs/optimization.md": ("Optimization", "residual", "Bounds", "Validation"),
             "docs/tof_refinement_guide.md": ("Purpose", "Scope", "Non-Goals", "Example"),
             "docs/neutron_refinement_guide.md": ("Purpose", "Scope", "Non-Goals", "Example"),
             "docs/magnetic_refinement_guide.md": ("Purpose", "Scope", "Non-Goals", "Example"),
