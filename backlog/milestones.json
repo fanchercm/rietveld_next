@@ -696,9 +696,10 @@
     ],
     "status": "closed",
     "closed_at": "2026-06-12",
-    "closed_by": "Codex non-blocking batch execution",
+    "closed_by": "Codex physics batch prompt execution",
     "closure_evidence": [
-      "docs/nonblocking_batch_completion_report.md"
+      "docs/m15_completion_report.md",
+      "src/rietveld_next/diffraction/models.py"
     ],
     "closure_validation": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'"
   },

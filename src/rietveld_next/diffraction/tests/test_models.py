@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 import unittest
 
+import rietveld_next.diffraction as diffraction
 from rietveld_next.diffraction.models import (
     ADPRecord,
     OccupancyConstraint,
@@ -107,6 +108,16 @@ class BackgroundModelTests(unittest.TestCase):
 
 class SyntheticPatternTests(unittest.TestCase):
     """Tests for ticks and deterministic synthetic pattern generation."""
+
+    def test_m15_helpers_are_exported_from_diffraction_package(self) -> None:
+        reflection = diffraction.SyntheticReflection("phase-a", (1, 0, 0), 30.0, 1.0, 0.2)
+        pattern = diffraction.generate_synthetic_pattern([30.0], [reflection])
+        fractions = diffraction.calculate_phase_fractions([diffraction.PhaseScaleComponent("phase-a", 1.0)])
+
+        self.assertEqual(pattern.phase_ticks[0].phase_id, "phase-a")
+        self.assertEqual(fractions.fractions, {"phase-a": 1.0})
+        self.assertIs(diffraction.validate_adp_records, validate_adp_records)
+        self.assertIs(diffraction.validate_occupancy_constraints, validate_occupancy_constraints)
 
     def test_generate_reflection_ticks_sorts_and_filters(self) -> None:
         reflections = [

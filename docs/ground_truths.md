@@ -175,6 +175,8 @@
   backgrounds, reflection ticks, synthetic pattern assembly, reference dataset
   registry records, phase scale/fraction summaries, occupancy checks, and ADP
   validation warnings.
+- M15-specific completion evidence is recorded in
+  [m15_completion_report.md](m15_completion_report.md).
 - Documentation/governance guides for issues #268-#287 live in
   `docs/user_guides.md` and `docs/governance_guides.md`.
 - Benchmark follow-up helpers in `src/rietveld_next/benchmarks/followups.py`

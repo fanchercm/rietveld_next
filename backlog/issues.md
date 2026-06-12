@@ -4042,7 +4042,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement Chebysh
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4070,8 +4070,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement reflect
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**
@@ -4084,7 +4085,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement reflect
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4112,8 +4113,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement synthet
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**
@@ -4126,7 +4128,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement synthet
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4154,8 +4156,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement standar
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**
@@ -4168,7 +4171,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement standar
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4196,8 +4199,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement phase s
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**
@@ -4210,7 +4214,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement phase s
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4238,8 +4242,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement phase f
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**
@@ -4252,7 +4257,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement phase f
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4280,8 +4285,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement atom oc
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**
@@ -4294,7 +4300,7 @@ Deliver a granular, testable increment for Diffraction Models: Implement atom oc
 - **Phase:** Scientific Models
 - **Status:** Closed
 - **Closed:** 2026-06-12
-- **Closed by:** Codex non-blocking batch execution
+- **Closed by:** Codex physics batch prompt execution
 - **Priority:** P1
 - **Labels:** diffraction-models, scientific-models, p1, codex-ready, implementation
 - **Dependencies:** ##1, ##2
@@ -4322,8 +4328,9 @@ Deliver a granular, testable increment for Diffraction Models: Implement ADP val
 **Closure evidence**
 
 - `src/rietveld_next/diffraction/models.py`
+- `src/rietveld_next/diffraction/__init__.py`
 - `src/rietveld_next/diffraction/tests/test_models.py`
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
 - `docs/ground_truths.md`
 
 **Closure validation**

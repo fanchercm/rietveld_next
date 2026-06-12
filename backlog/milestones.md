@@ -560,7 +560,7 @@ Implement first-generation preferred-orientation, size/strain broadening, and po
 
 - Status: Closed
 - Closed: 2026-06-12
-- Closed by: Codex non-blocking batch execution
+- Closed by: Codex physics batch prompt execution
 - Phase: Physics calculation
 - Priority: P1
 - Issues: #99, #100, #101, #102, #103, #104, #105
@@ -591,7 +591,8 @@ Create end-to-end synthetic pattern generation and phase quantification support 
 - [x] Codex-facing notes include commands to reproduce validation or benchmark results.
 
 ### Closure evidence
-- `docs/nonblocking_batch_completion_report.md`
+- `docs/m15_completion_report.md`
+- `src/rietveld_next/diffraction/models.py`
 
 ### Closure validation
 - `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p 'test*.py'`
