@@ -1,12 +1,13 @@
-# Rietveld Next Granular Milestones for Physics Calculation and Optimization
+# Rietveld Next Milestone Plan
 
 Total milestones: 40
-Total mapped issues: 327
 
-This milestone set expands the physics-calculation and optimization portions of the roadmap into finer work packages while preserving all issue mappings and the src/ layout guardrail.
 
 ## M01 Src-first architecture foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Foundation
 - Priority: P0
 - Issues: #1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14, #15
@@ -24,20 +25,30 @@ Establish the repository, source-layout guardrails, package boundaries, plugin c
 - architecture decision record template
 
 ### Acceptance criteria
-- [ ] Repository has no forbidden top-level implementation directories.
-- [ ] Build and lint commands are documented.
-- [ ] Package boundaries are explicit and enforceable.
-- [ ] Architecture decision records can be created and reviewed.
+- [x] Repository has no forbidden top-level implementation directories.
+- [x] Build and lint commands are documented.
+- [x] Package boundaries are explicit and enforceable.
+- [x] Architecture decision records can be created and reviewed.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/m01_completion_report.md`
+
+### Closure validation
+- `PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core/architecture`
+
 
 ## M02 Core project model and schemas
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Foundation
 - Priority: P0
 - Issues: #16, #17, #18, #19, #20, #21, #22, #23, #24, #25, #26, #27, #28, #29, #30, #31, #32, #33, #34, #35
@@ -54,20 +65,30 @@ Define typed project, experiment, dataset, histogram, phase, parameter, constrai
 - schema round-trip tests
 
 ### Acceptance criteria
-- [ ] All core entities serialize and deserialize deterministically.
-- [ ] Schema validation rejects malformed project files.
-- [ ] Parameter paths are stable and documented.
-- [ ] Core model tests pass.
+- [x] All core entities serialize and deserialize deterministically.
+- [x] Schema validation rejects malformed project files.
+- [x] Parameter paths are stable and documented.
+- [x] Core model tests pass.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/m02_completion_report.md`
+
+### Closure validation
+- `PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/core`
+
 
 ## M03 Storage and data interchange foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Foundation
 - Priority: P0
 - Issues: #36, #37, #38, #39, #40, #41, #42, #43, #44, #45, #46, #47, #48, #49, #50
@@ -84,20 +105,31 @@ Create the project package, storage adapters, provenance log, and baseline data 
 - import/export tests
 
 ### Acceptance criteria
-- [ ] Project packages can be created, opened, and validated.
-- [ ] Large array references are not embedded in JSON metadata.
-- [ ] Provenance actions are append-only and replayable in tests.
-- [ ] Storage documentation covers local and cloud usage.
+- [x] Project packages can be created, opened, and validated.
+- [x] Large array references are not embedded in JSON metadata.
+- [x] Provenance actions are append-only and replayable in tests.
+- [x] Storage documentation covers local and cloud usage.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/batch_d_foundation.md`
+- `src/rietveld_next/storage/`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M04 Residual objective and parameter transform foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Physics and numerical engine
 - Priority: P0
 - Issues: #51, #52, #53, #63, #64, #65, #66
@@ -115,19 +147,30 @@ Implement the residual-vector interface, parameter scaling, bounded transforms, 
 - Poisson likelihood objective
 
 ### Acceptance criteria
-- [ ] Gaussian least-squares, robust, and Poisson objectives are selectable through a common interface.
-- [ ] Invalid parameter values are handled through transforms or structured errors.
-- [ ] Small synthetic objective tests verify residual shapes and values.
+- [x] Gaussian least-squares, robust, and Poisson objectives are selectable through a common interface.
+- [x] Invalid parameter values are handled through transforms or structured errors.
+- [x] Small synthetic objective tests verify residual shapes and values.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/optimization.md`
+- `docs/numerical_kernels.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M05 Derivative and sparse Jacobian infrastructure
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Physics and numerical engine
 - Priority: P0
 - Issues: #54, #55, #56, #57, #69
@@ -144,19 +187,30 @@ Implement sparse Jacobian structures, finite-difference fallback, analytic deriv
 - gradient verification utilities
 
 ### Acceptance criteria
-- [ ] Sparse Jacobians preserve parameter-to-residual indexing.
-- [ ] Analytic derivatives match finite differences within tolerance on synthetic cases.
-- [ ] Gradient utilities produce actionable failure reports.
+- [x] Sparse Jacobians preserve parameter-to-residual indexing.
+- [x] Analytic derivatives match finite differences within tolerance on synthetic cases.
+- [x] Gradient utilities produce actionable failure reports.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/optimization.md`
+- `src/rietveld_next/optimization/jacobian.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M06 Profile kernel and reflection batching foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Physics calculation
 - Priority: P0
 - Issues: #58, #59, #60, #61, #62
@@ -173,19 +227,30 @@ Implement core peak-profile kernels and execution planning needed for efficient 
 - reflection batching plan
 
 ### Acceptance criteria
-- [ ] Each profile kernel has numerical tests and documented parameter conventions.
-- [ ] Peak windowing excludes negligible contributions without changing results beyond tolerance.
-- [ ] Reflection batching produces deterministic execution plans.
+- [x] Each profile kernel has numerical tests and documented parameter conventions.
+- [x] Peak windowing excludes negligible contributions without changing results beyond tolerance.
+- [x] Reflection batching produces deterministic execution plans.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/numerical_kernels.md`
+- `src/rietveld_next/diffraction/profiles.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M07 Uncertainty diagnostics and profile benchmark harness
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Physics and numerical engine
 - Priority: P1
 - Issues: #67, #68, #70
@@ -200,16 +265,24 @@ Implement covariance/correlation diagnostics and the first backend benchmark har
 - profile backend benchmark harness
 
 ### Acceptance criteria
-- [ ] Covariance and correlation outputs include parameter labels and units.
-- [ ] Singular or ill-conditioned cases return warnings rather than misleading uncertainties.
-- [ ] Benchmark results are machine-readable and reproducible.
+- [x] Covariance and correlation outputs include parameter labels and units.
+- [x] Singular or ill-conditioned cases return warnings rather than misleading uncertainties.
+- [x] Benchmark results are machine-readable and reproducible.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/optimization.md`
+- `docs/backend_benchmarks.md`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M08 Local optimization adapters and rollback state
 
@@ -240,8 +313,12 @@ Implement local refinement infrastructure, including SciPy adapters, Rust optimi
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M09 Global and multi-start optimization foundation
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Optimization
 - Priority: P1
 - Issues: #76, #77, #78, #79
@@ -257,16 +334,24 @@ Implement initial global-search infrastructure for rugged refinement problems an
 - Bayesian optimization placeholder API
 
 ### Acceptance criteria
-- [ ] Global optimizers share a common result schema.
-- [ ] Multi-start runs store seeds, candidates, objective values, and final local-refinement status.
-- [ ] Expensive global tests are opt-in and excluded from normal CI.
+- [x] Global optimizers share a common result schema.
+- [x] Multi-start runs store seeds, candidates, objective values, and final local-refinement status.
+- [x] Expensive global tests are opt-in and excluded from normal CI.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/optimization.md`
+- `src/rietveld_next/optimization/global_search.py`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M10 Probabilistic uncertainty and model comparison foundation
 
@@ -296,6 +381,7 @@ Add uncertainty and model-comparison APIs needed for scientific validation, publ
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M11 Optimizer safeguard heuristics
 
 - Phase: Optimization
@@ -322,8 +408,12 @@ Implement parameter-freezing and overparameterization diagnostics that protect a
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M12 Structural IO and symmetry baseline
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Physics calculation
 - Priority: P0
 - Issues: #86, #87, #88, #89
@@ -339,19 +429,30 @@ Implement CIF ingestion, validation reporting, space-group lookup, and reflectio
 - reflection generation service
 
 ### Acceptance criteria
-- [ ] Representative CIFs import successfully.
-- [ ] Validation reports identify missing/ambiguous crystallographic fields.
-- [ ] Reflection generation matches reference cases for simple space groups.
+- [x] Representative CIFs import successfully.
+- [x] Validation reports identify missing/ambiguous crystallographic fields.
+- [x] Reflection generation matches reference cases for simple space groups.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/structural_io.md`
+- `src/rietveld_next/structure/`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next/structure -p test*.py`
+
 
 ## M13 Scattering factors and basic corrections
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Physics calculation
 - Priority: P0
 - Issues: #90, #91, #92, #93
@@ -367,16 +468,25 @@ Implement scattering tables and first-pass diffraction corrections needed by X-r
 - Lorentz-polarization correction
 
 ### Acceptance criteria
-- [ ] Scattering tables include citation/provenance metadata.
-- [ ] Multiplicity and Lorentz-polarization tests match reference calculations.
-- [ ] X-ray and neutron scattering lookup APIs are radiation-specific.
+- [x] Scattering tables include citation/provenance metadata.
+- [x] Multiplicity and Lorentz-polarization tests match reference calculations.
+- [x] X-ray and neutron scattering lookup APIs are radiation-specific.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/numerical_kernels.md`
+- `src/rietveld_next/diffraction/`
+- `src/rietveld_next/neutron/`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M14 Orientation, microstructure, and background models
 
@@ -406,6 +516,7 @@ Implement first-generation preferred-orientation, size/strain broadening, and po
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M15 Synthetic patterns, phase scales, and structural validation
 
@@ -438,6 +549,7 @@ Create end-to-end synthetic pattern generation and phase quantification support 
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M16 Lab and synchrotron CW X-ray instrument baseline
 
 - Phase: Physics calculation
@@ -466,6 +578,7 @@ Implement lab and synchrotron CW X-ray instrument models and basic calibration/m
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M17 Fundamental-parameters and detector hook foundation
 
@@ -496,6 +609,7 @@ Create extensible APIs for fundamental-parameters, emission spectra, axial diver
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M18 CW neutron instrument and correction physics
 
 - Phase: Physics calculation
@@ -524,6 +638,7 @@ Implement CW neutron instrument modeling, isotope scattering lookup, absorption 
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M19 Neutron data integration and joint weighting
 
@@ -554,6 +669,7 @@ Implement neutron-specific background, joint weighting, Mantid import, and uncer
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M20 TOF data model, calibration, and masks
 
 - Phase: Physics calculation
@@ -582,6 +698,7 @@ Implement TOF histogram axis, detector bank model, calibration parameter set, DI
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M21 TOF bank profile and multi-bank objective
 
@@ -612,6 +729,7 @@ Implement bank-specific backgrounds, profile parameters, back-to-back exponentia
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M22 TOF validation diagnostics and workflow specs
 
 - Phase: Physics calculation
@@ -641,6 +759,7 @@ Add TOF benchmarks, calibration workflow specification, diagnostics, event-mode 
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M23 Magnetic entities and magnetic scattering foundation
 
 - Phase: Physics calculation
@@ -668,6 +787,7 @@ Introduce magnetic moment, propagation-vector, and magnetic form-factor entities
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M24 Magnetic symmetry and import foundation
 
 - Phase: Physics calculation
@@ -694,6 +814,7 @@ Create mCIF import skeleton, magnetic symmetry constraint API, and representatio
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M25 Magnetic joint-refinement validation and recipes
 
@@ -725,6 +846,7 @@ Implement nuclear-plus-magnetic coupling, magnetic reflection handling, validati
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M26 EDXRD axis and calibration foundation
 
 - Phase: Physics calculation
@@ -753,6 +875,7 @@ Implement energy-axis histograms, channel-to-energy calibration, fixed-angle Bra
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M27 EDXRD detector response and correction hooks
 
@@ -783,6 +906,7 @@ Implement the EDXRD detector response API, Gaussian response kernel, tail/escape
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M28 EDXRD high-pressure validation and documentation
 
 - Phase: Physics calculation
@@ -811,6 +935,7 @@ Add high-pressure entities, equation-of-state hook, synthetic benchmark, residua
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M29 Sequential and parametric workflow foundation
 
@@ -850,6 +975,7 @@ Implement sequential/parametric study execution, parameter evolution tables, and
 ### Closure validation
 - `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
+
 ## M30 AI tool-grounded refinement foundation
 
 - Status: Closed
@@ -887,6 +1013,7 @@ Implement deterministic tool contracts, agent diagnostics, rollback-aware planni
 
 ### Closure validation
 - `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M31 Desktop and web UX foundation
 
@@ -927,6 +1054,7 @@ Build the first desktop/web user experience for import, visualization, parameter
 ### Closure validation
 - `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
+
 ## M32 Visualization and diagnostics foundation
 
 - Status: Closed
@@ -964,6 +1092,7 @@ Implement core visual diagnostics for profiles, correlations, residuals, sequent
 
 ### Closure validation
 - `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M33 HPC and cloud execution foundation
 
@@ -1004,8 +1133,12 @@ Implement local, Slurm, Dask/Ray, Kubernetes, and result-store execution foundat
 ### Closure validation
 - `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
 
+
 ## M34 Validation and testing baseline
 
+- Status: Closed
+- Closed: 2026-06-12
+- Closed by: Codex batch closure audit
 - Phase: Quality
 - Priority: P0
 - Issues: #248, #249, #250, #251, #252, #253, #254, #255, #256, #257, #258, #259, #260, #261, #262, #263, #264, #265, #266, #267
@@ -1022,16 +1155,25 @@ Establish scientific validation, golden regression tests, CI gates, and numerica
 - validation report generator
 
 ### Acceptance criteria
-- [ ] Validation tests run in CI with documented tolerances.
-- [ ] Expensive tests are clearly marked.
-- [ ] Validation report summarizes pass/fail and known limitations.
+- [x] Validation tests run in CI with documented tolerances.
+- [x] Expensive tests are clearly marked.
+- [x] Validation report summarizes pass/fail and known limitations.
 
 ### Definition of done
-- [ ] All mapped issues are closed or explicitly deferred with rationale.
-- [ ] All implementation source created by this milestone is under src/.
-- [ ] Public APIs, schemas, and generated artifacts are documented.
-- [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
-- [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+- [x] All mapped issues are closed or explicitly deferred with rationale.
+- [x] All implementation source created by this milestone is under src/.
+- [x] Public APIs, schemas, and generated artifacts are documented.
+- [x] Unit, integration, or validation tests relevant to the milestone pass in CI.
+- [x] Codex-facing notes include commands to reproduce validation or benchmark results.
+
+### Closure evidence
+- `docs/m34_completion_report.md`
+- `src/rietveld_next/validation/`
+- `schemas/validation_report.schema.json`
+
+### Closure validation
+- `PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -B -m unittest discover -s src/rietveld_next -p test*.py`
+
 
 ## M35 Documentation and governance baseline
 
@@ -1063,6 +1205,7 @@ Create user, developer, theory, governance, citation, and reproducibility docume
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M36 Benchmarking foundation and result infrastructure
 
 - Phase: Benchmarking
@@ -1090,6 +1233,7 @@ Define benchmark taxonomy, result schemas, backend comparison harnesses, and ini
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M37 Numerical and optimization benchmark suite
 
@@ -1120,6 +1264,7 @@ Benchmark profile kernels, sparse Jacobians, AD, local optimizers, global optimi
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M38 Physics workflow benchmark suite
 
 - Phase: Benchmarking
@@ -1149,6 +1294,7 @@ Benchmark sequential, parametric, batch, TOF, neutron, magnetic, and EDXRD workf
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
 
+
 ## M39 Storage, diagnostics, visualization, AI, and HPC benchmark suite
 
 - Phase: Benchmarking
@@ -1177,6 +1323,7 @@ Benchmark storage backends, visualization payloads, diagnostics, AI-agent loops,
 - [ ] Public APIs, schemas, and generated artifacts are documented.
 - [ ] Unit, integration, or validation tests relevant to the milestone pass in CI.
 - [ ] Codex-facing notes include commands to reproduce validation or benchmark results.
+
 
 ## M40 Benchmark regression, dashboard, and CI integration
 
