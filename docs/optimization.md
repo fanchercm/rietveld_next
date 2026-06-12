@@ -13,6 +13,8 @@ Public API:
 ```python
 ObjectiveEvaluation(parameters, objective_value, residuals=(), status="ok")
 ObjectiveRegistry()
+ObjectiveSpec(name, observed, calculated, sigma=None, loss="linear", loss_scale=1.0)
+default_objective_registry(specs)
 least_squares_evaluation(parameters, residuals, loss="linear", loss_scale=1.0)
 poisson_deviance_evaluation(parameters, observed, expected)
 invalid_model_evaluation(parameters, message, **diagnostics)
@@ -21,6 +23,9 @@ invalid_model_evaluation(parameters, message, **diagnostics)
 Behavior:
 
 - Objective evaluations are structured and JSON-compatible.
+- `default_objective_registry()` binds built-in objective specs into a common
+  selectable interface for `gaussian_least_squares`, `robust_least_squares`,
+  and `poisson_deviance`.
 - Valid objective values are finite and non-negative.
 - Invalid model states use `status="invalid"` with a large finite penalty and
   diagnostic metadata.

@@ -25,6 +25,7 @@ from rietveld_next.benchmarks.results import (
     validate_benchmark_result_dict,
 )
 from rietveld_next.benchmarks.taxonomy import BenchmarkIdentity, BenchmarkWorkstream
+from rietveld_next.benchmarks.workflow_ai_hpc import run_sequential_refinement_workflow_overhead_benchmark
 
 
 RUN_SCHEMA_VERSION = "benchmark-run-v1"
@@ -85,17 +86,55 @@ def run_selected_benchmark(args: argparse.Namespace) -> dict[str, Any]:
     Returns:
         Benchmark run envelope containing selection metadata and one result.
     """
+    kernel = "sequential_refinement" if args.family == BenchmarkWorkstream.WORKFLOW.value else DEFAULT_KERNEL
     identity = BenchmarkIdentity(
         workstream=args.family,
-        kernel=DEFAULT_KERNEL,
+        kernel=kernel,
         backend=args.backend,
         size=args.size,
         variant=args.variant,
     )
     presets = profile_dataset_presets()
-    input_size = presets[args.size].sample_count
+    input_size = _workflow_sequence_points(args.size) if args.family == BenchmarkWorkstream.WORKFLOW.value else presets[args.size].sample_count
 
-    if args.family != BenchmarkWorkstream.NUMERICAL.value:
+    if args.family == BenchmarkWorkstream.WORKFLOW.value:
+        if args.backend != "python":
+            result = skipped_benchmark(
+                name=identity.benchmark_id(),
+                backend=args.backend,
+                dtype=args.dtype,
+                input_size=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                reason="Workflow smoke benchmarks currently run only on the Python backend.",
+                environment=_base_environment(args.seed, identity),
+            )
+        elif args.dtype != "float64":
+            result = skipped_benchmark(
+                name=identity.benchmark_id(),
+                backend=args.backend,
+                dtype=args.dtype,
+                input_size=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                reason="Workflow smoke benchmark uses Python float data; only dtype='float64' is reported.",
+                environment=_base_environment(args.seed, identity),
+            )
+        else:
+            raw_result = run_sequential_refinement_workflow_overhead_benchmark(
+                sequence_points=input_size,
+                iterations=args.iterations,
+                warmup=args.warmup,
+                seed=args.seed,
+            )
+            result = _normalize_result(
+                raw_result,
+                identity=identity,
+                seed=args.seed,
+                requested_iterations=args.iterations,
+                requested_warmup=args.warmup,
+            )
+    elif args.family != BenchmarkWorkstream.NUMERICAL.value:
         result = skipped_benchmark(
             name=identity.benchmark_id(),
             backend=args.backend,
@@ -269,6 +308,15 @@ def _normalize_result(
         skip_reason=result.skip_reason,
         memory_peak_bytes=result.memory_peak_bytes,
     )
+
+
+def _workflow_sequence_points(size: str) -> int:
+    mapping = {
+        "small": 4,
+        "medium": 16,
+        "large": 64,
+    }
+    return mapping[size]
 
 
 def _base_environment(seed: int, identity: BenchmarkIdentity) -> dict[str, Any]:

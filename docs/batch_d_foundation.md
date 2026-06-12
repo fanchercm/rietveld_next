@@ -35,6 +35,19 @@ datasets.
   missing or corrupt metadata.
 - Issue #37: Directory-backed project packages can be written with
   deterministic JSON and explicit overwrite protection.
+- Issue #38: Project JSON files can be validated through the dependency-free
+  storage CLI helper.
+- Issue #39: NeXus external dataset references record package URI, internal
+  dataset path, shape, dtype, and units without embedding large arrays.
+- Issue #40: HDF5 metadata references use the same external-reference record
+  with `format="hdf5"`.
+- Issue #41: Zarr profile-array references use package-relative array URIs and
+  internal dataset paths without importing optional Zarr dependencies.
+- Issue #42: Result tables can be written as deterministic JSON-lines
+  placeholders at Parquet workflow paths until an optional Parquet dependency is
+  introduced.
+- Issue #43: Refinement parameters can be exported as deterministic JSON-lines
+  placeholders at Arrow workflow paths.
 - Issue #45: Project package integrity can be checked without mutating files.
 - Issue #44: Provenance events can be appended to deterministic JSONL logs.
 - Issue #46: Package-relative and local file data URIs can be resolved with
@@ -45,6 +58,9 @@ datasets.
   codes for non-blocking import findings.
 - Issue #49: Project package metadata can be written as deterministic
   `project.json.gz` when gzip compression is explicitly selected.
+- Issue #50: Storage regression tests cover package write/read, gzip metadata,
+  warning reports, URI resolution, manifests, CLI validation, and adapter
+  placeholder exports.
 - Issue #248: Unit tests remain package-local under `src/rietveld_next/**/tests`
   until repository build conventions permit a different layout.
 

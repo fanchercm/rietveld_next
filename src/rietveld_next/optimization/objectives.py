@@ -102,6 +102,103 @@ class ObjectiveRegistry:
         return tuple(sorted(self._objectives))
 
 
+@dataclass(frozen=True)
+class ObjectiveSpec:
+    """Configuration for a built-in selectable objective.
+
+    Args:
+        name: Built-in objective name. Supported names are
+            ``"gaussian_least_squares"``, ``"robust_least_squares"``, and
+            ``"poisson_deviance"``.
+        observed: Observed intensities or counts in deterministic order.
+        calculated: Calculated intensities, or expected counts for Poisson
+            deviance.
+        sigma: Optional positive standard uncertainties for Gaussian and
+            robust least-squares residuals.
+        loss: Robust loss name for ``"robust_least_squares"``.
+        loss_scale: Positive robust-loss scale.
+    """
+
+    name: str
+    observed: tuple[float, ...]
+    calculated: tuple[float, ...]
+    sigma: tuple[float, ...] | None = None
+    loss: str = "linear"
+    loss_scale: float = 1.0
+
+    def __post_init__(self) -> None:
+        """Validate built-in objective configuration."""
+        if self.name not in _BUILT_IN_OBJECTIVE_NAMES:
+            raise ValueError(f"Unknown built-in objective {self.name!r}.")
+        observed_values = _finite_sequence(self.observed, "observed")
+        calculated_values = _finite_sequence(self.calculated, "calculated")
+        if len(observed_values) != len(calculated_values):
+            raise ValueError(
+                "observed and calculated must have the same length, "
+                f"got {len(observed_values)} and {len(calculated_values)}."
+            )
+        object.__setattr__(self, "observed", tuple(observed_values))
+        object.__setattr__(self, "calculated", tuple(calculated_values))
+        if self.sigma is not None:
+            sigma_values = _finite_sequence(self.sigma, "sigma")
+            if len(sigma_values) != len(observed_values):
+                raise ValueError(
+                    "sigma must have the same length as observed, "
+                    f"got {len(sigma_values)} and {len(observed_values)}."
+                )
+            for index, sigma_value in enumerate(sigma_values):
+                if sigma_value <= 0.0:
+                    raise ValueError(f"sigma[{index}] must be positive, got {sigma_value!r}.")
+            object.__setattr__(self, "sigma", tuple(sigma_values))
+        _positive_float(self.loss_scale, "loss_scale")
+
+
+_BUILT_IN_OBJECTIVE_NAMES = frozenset({"gaussian_least_squares", "robust_least_squares", "poisson_deviance"})
+
+
+def built_in_objective(spec: ObjectiveSpec) -> ObjectiveFunction:
+    """Create a standard objective callable from a built-in objective spec.
+
+    Args:
+        spec: Built-in objective configuration.
+
+    Returns:
+        Callable accepting a parameter vector and returning an
+        ``ObjectiveEvaluation``.
+    """
+
+    def evaluate(parameters: Sequence[float]) -> ObjectiveEvaluation:
+        residuals = _data_residuals(spec.observed, spec.calculated, spec.sigma)
+        if spec.name == "gaussian_least_squares":
+            return least_squares_evaluation(parameters, residuals, loss="linear", loss_scale=1.0)
+        if spec.name == "robust_least_squares":
+            return least_squares_evaluation(parameters, residuals, loss=spec.loss, loss_scale=spec.loss_scale)
+        if spec.name == "poisson_deviance":
+            return poisson_deviance_evaluation(parameters, spec.observed, spec.calculated)
+        raise AssertionError("validated ObjectiveSpec reached unknown objective")
+
+    return evaluate
+
+
+def default_objective_registry(specs: Sequence[ObjectiveSpec]) -> ObjectiveRegistry:
+    """Build a registry containing configured built-in objectives.
+
+    Args:
+        specs: Objective specifications to bind into callable objective
+            functions.
+
+    Returns:
+        Objective registry keyed by each spec name.
+
+    Raises:
+        ValueError: If duplicate objective names are supplied.
+    """
+    registry = ObjectiveRegistry()
+    for spec in specs:
+        registry.register(spec.name, built_in_objective(spec))
+    return registry
+
+
 def least_squares_evaluation(
     parameters: Sequence[float],
     residuals: Sequence[float],
@@ -216,6 +313,33 @@ def poisson_deviance_evaluation(
         residuals=tuple(residuals),
         diagnostics={"objective": "poisson_deviance"},
     )
+
+
+def _data_residuals(
+    observed: Sequence[float],
+    calculated: Sequence[float],
+    sigma: Sequence[float] | None,
+) -> tuple[float, ...]:
+    observed_values = _finite_sequence(observed, "observed")
+    calculated_values = _finite_sequence(calculated, "calculated")
+    if len(observed_values) != len(calculated_values):
+        raise ValueError(
+            "observed and calculated must have the same length, "
+            f"got {len(observed_values)} and {len(calculated_values)}."
+        )
+    residuals = [obs - calc for obs, calc in zip(observed_values, calculated_values, strict=True)]
+    if sigma is None:
+        return tuple(residuals)
+    sigma_values = _finite_sequence(sigma, "sigma")
+    if len(sigma_values) != len(observed_values):
+        raise ValueError(
+            "sigma must have the same length as observed, "
+            f"got {len(sigma_values)} and {len(observed_values)}."
+        )
+    for index, sigma_value in enumerate(sigma_values):
+        if sigma_value <= 0.0:
+            raise ValueError(f"sigma[{index}] must be positive, got {sigma_value!r}.")
+    return tuple(value / sigma_value for value, sigma_value in zip(residuals, sigma_values, strict=True))
 
 
 def _loss_value(residual: float, *, loss: str, scale: float) -> float:

@@ -32,6 +32,8 @@ rietveld_next/
   boundary checks plus M01 architecture foundation helpers.
 - `src/rietveld_next/diffraction/` contains dependency-free diffraction
   reference kernels.
+- `src/rietveld_next/structure/` contains startup structural IO, CIF, symmetry,
+  and reflection-generation helpers.
 - `src/rietveld_next/xray/` contains X-ray physics reference data and helpers.
 - `src/rietveld_next/neutron/` contains neutron physics reference data and
   helpers.

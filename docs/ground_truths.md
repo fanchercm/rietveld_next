@@ -125,6 +125,9 @@
 - Objective evaluations are structured by `ObjectiveEvaluation`; invalid model
   states use `status="invalid"` with diagnostic metadata and a large finite
   penalty rather than non-JSON infinity.
+- `ObjectiveSpec` and `default_objective_registry()` expose Gaussian
+  least-squares, robust least-squares, and Poisson deviance objectives through a
+  common selectable objective registry.
 - Parameter scaling and bounded transforms are generic and do not encode
   diffraction-specific assumptions.
 - `coordinate_search_minimize` is a deterministic local optimizer for synthetic
@@ -147,6 +150,19 @@
   optional JAX automatic differentiation, optimizer scaling, and global
   multi-start smoke benchmarks. The JAX AD benchmark returns a structured
   skipped result when JAX or float64 support is unavailable.
+## Structural IO
+
+- Startup structural records live in `src/rietveld_next/structure/` and carry
+  explicit angstrom, degree, and fractional-coordinate conventions.
+- CIF import v0 reads representative scalar cell tags, supported space-group
+  fields, and simple atom-site loops; validation reports missing cell,
+  space-group, and atom-site fields before import.
+- The current space-group lookup is a tiny metadata registry for P1 and Fd-3m
+  startup plumbing. Only P1 is marked as operation-supported; this is not a full
+  crystallographic symmetry engine.
+- Reflection generation enumerates deterministic P1 Miller-index records up to
+  an explicit `max_index` and computes d-spacing from the validated unit cell.
+  Non-P1 reflection generation remains intentionally unsupported.
 
 ## Batch E Foundations
 
@@ -231,6 +247,11 @@
   `compression="gzip"` only. Gzip output uses a fixed timestamp for
   deterministic bytes and ambiguous `project.json`/`project.json.gz`
   combinations are rejected.
+- M03 storage interchange helpers include schema validation CLI plumbing,
+  NeXus/HDF5/Zarr external dataset references, deterministic JSON-lines
+  placeholders for Parquet result tables and Arrow parameter exports, and
+  round-trip storage regression tests. These helpers do not embed large arrays
+  in project JSON and do not require optional storage libraries.
 - Unit test conventions are documented in
   [unit_test_conventions.md](unit_test_conventions.md); package-local tests
   remain under `src/rietveld_next/**/tests/` to satisfy the current source
