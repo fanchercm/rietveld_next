@@ -66,6 +66,10 @@
   package import smoke tests, and release checklist metadata. Cross-software
   GSAS-II, FullProf, and TOPAS comparisons remain placeholders until
   redistributable fixtures and backend execution policies are approved.
+- M35 documentation and governance baseline guides live under `docs/` and are
+  verified by package-local validation tests. Governance artifacts are kept in
+  `docs/` rather than top-level files to preserve the repository documentation
+  layout rule.
 
 ## Numerical Kernels
 
